@@ -1,0 +1,19 @@
+
+		CONECTAR DESDE OTRA RED
+
+Para conectar desde otra red necesitamos un VPN, en este caso tenemos
+zerotier.
+
+1º Instalamos:
+	$ sudo apt-get install zerotier-cli (creo)
+	* Nos dara un id de diez digitos, que tendremos darle al administrador de la red de zerotier para que nos incluya en la misma
+
+2º Nos tiene que mandar un token con el que nos podemos unir a la red:
+	$ zerotier-cli join [token]
+
+3º Una vez unido a la red, podremos conectarnos a un servidor desde cuarquier otra red mediante el cliente de zerotier (cono interfaz grafica o linea de comandos.
+	*OJO, desde la misma red no es necesario
+
+4º Haciendo ifconfig desde nuestro equipo cuando el cliente de zerotier este funcionando, deberia aparecer ademas de la ip normal, otra que nos da de esa red del tipo 192.168.3.2XX. (en nuestro caso)
+
+5º Haciendo ping a 192.168.3.254 deberiamos poder comprobar el acceso a la red, y conectarnos a la ip del modo que queramos (a proxmos utilizando el navegador, o si la maquina de proxmox esta arrancada por ssh a su ip con el usuario que tengamos)

@@ -1,0 +1,38 @@
+
+		MONITORIZAR EL SISTEMA
+
+	$ top
+	
+	Muestra los usuarios conectados, el uso de CPU, memoria y swap. Lista los procesos que se estan ejecutando.
+
+
+	------------------------------------------
+		MONTAR Y DESMONTAR UNIDADES
+
+1º Ver las unidades conectadas al sistema:
+	$ fdisk -l
+
+	* Entramos a gestionar el dispositivo con:
+		$ sudo fdisk /dev/sdb*		*ruta
+
+3º Particionamos:
+	$ mkfs.ext3 ruta	XXX -> Extension (ntfs, ext3, vfat...)
+
+4º Crear carpeta para montar el disco:
+	$ sudo mkdir /media/discoextra
+
+5º Montamos el disco:
+	$ mount /dev/sdb /media/discoextra	
+
+5º Comprobar unidades que hay montadas
+	$ df -h
+
+6º Escribir y leer de el:
+	$ sudo mkdir /media/discoextra/prueba
+	$ sudo nano  /media/discoextra/prueba/prueba.txt
+	$ sudo mv /media/discoextra/prueba ~
+	$ sudo rm -r prueba
+
+
+
+

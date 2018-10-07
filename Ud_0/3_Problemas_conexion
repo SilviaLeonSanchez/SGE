@@ -1,0 +1,8 @@
+
+		NO PODER CONECTAR AL SERVIDOR
+
+1º Hacer ping al servidor, si no funciona el ping no va a funcionar el ssh porque hay problemas con la red y las maquinas no van a conectar
+
+2º Si cambiamos de red tenemos que comprobar la ip del host, y si fuera necesario cambiar la del servidor para que la parte de red coincida (trabajando con VM).
+
+
