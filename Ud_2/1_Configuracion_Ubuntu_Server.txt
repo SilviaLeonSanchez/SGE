@@ -1,0 +1,18 @@
+
+1º Habilitar acceso remoto a root por ssh (por seguridad no se puede)
+
+	$ sudo nano /etc/ssh/sshd_config
+	Cambiar la linea: PermitRootLogin yes
+
+	Reiniciar el servicio: 
+	$ sudo service sshd restart
+	
+*Si indica que no puede reiniciar el servicio sshd porque hay demasiados documentos abiertos (el que hemos cambiado), reiniciamos la maquina para que cierre el nano
+
+
+2º Apuntamos la IP que aparece en proxmox e intentamos conectar por terminal o putty mediante ssh
+	192.168.3.58
+
+	Entramos con:
+	$ ssh root@192.168.3.58
+

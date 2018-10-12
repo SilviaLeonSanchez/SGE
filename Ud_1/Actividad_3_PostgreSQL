@@ -34,9 +34,12 @@
 
 	* No es sensible a mayusculas
 
-3º Cerrar conexion con base de datos CTRL+z (el servicio no se detiene)
+3º Cerrar sesion plsql
+	\q
 
+4º Cerrar conexion con base de datos CTRL+z (el servicio no se detiene)
 
+ 
 	----------------------------------------------
 		CREAR Y BORRAR BASE DE DATOS
 

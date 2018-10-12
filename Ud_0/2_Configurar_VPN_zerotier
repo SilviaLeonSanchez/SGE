@@ -5,7 +5,9 @@ Para conectar desde otra red necesitamos un VPN, en este caso tenemos
 zerotier.
 
 1º Instalamos:
-	$ sudo apt-get install zerotier-cli (creo)
+	$ curl -s 'https://pgp.mit.edu/pks/lookup?op=get&search=0x1657198823E52A61' | gpg --import && \
+if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
+
 	* Nos dara un id de diez digitos, que tendremos darle al administrador de la red de zerotier para que nos incluya en la misma
 
 2º Nos tiene que mandar un token con el que nos podemos unir a la red:
