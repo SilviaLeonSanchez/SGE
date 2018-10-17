@@ -1,0 +1,61 @@
+
+1º Tememos que cambiar la codificacion de la base de datos, por lo que conectamos con el usuario postgres y arrancamos la base de datos.
+
+	$ ssh postgres@192.168.3.58
+	$ psql postgres
+
+2º Ejecutamos
+
+	update pg_database set datallowconn = TRUE where datname = 'template0';
+
+	\c template0
+
+	update pg_database set datistemplate = FALSE where datname = 'template1';
+
+	drop database template1;
+
+	create database template1 with template = template0 encoding = 'UTF8';
+
+	update pg_database set datistemplate = TRUE where datname = 'template1';
+
+	\c template1
+
+	update pg_database set datallowconn = FALSE where datname = 'template0';
+
+	** Para salir del psql ejecutamos \q
+
+	** Para cerrar la conexion con la maquina ejecutamos:
+
+	$ exit
+
+3º Crear base de datos 'prueba' con datos de prueba.
+
+4º Instalar internacialización de Odoo al castellano. (desde video de youtube)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

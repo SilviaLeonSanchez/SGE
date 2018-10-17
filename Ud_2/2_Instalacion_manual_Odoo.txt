@@ -183,7 +183,16 @@ WantedBy=default.target
 	$ sudo systemctl start odoo10.service
 	$ sudo systemctl stop odoo10.service
 
-	
+
+##### INSTANTANEA TERMINADA #####
+
+18º Reiniciando la máquina el servicio se inicia solo, podemos cerrar el terminal y trabajar desde el navegador en http://192.168.3.58:8069
+
+19º Si quisieramos simplemente iniciar Odoo como proceso y no como servicio ejecutamos el comando
+
+	$ /home/odoo/odoo/odoo-bin -c /home/odoo/odoo-server.conf
+
+
 
 	
 
