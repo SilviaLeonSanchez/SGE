@@ -30,11 +30,11 @@
 1º Conectar por ssh normal y arrancar el servicio desde usuario con permiso
 
 2º Cambiar al usuario postgre y ejecutar
-	$ plsql
+	$ psql
 
 	* No es sensible a mayusculas
 
-3º Cerrar sesion plsql
+3º Cerrar sesion psql
 	\q
 
 4º Cerrar conexion con base de datos CTRL+z (el servicio no se detiene)
@@ -73,4 +73,5 @@ postgres=# SELECT * FROM nombre_tabla;
 1º En la maquina que va a acceder a la base de datos del servidor instalar el cliente postgreSQL:
 
 	$ sudo apt-get install pgadmin3
+
 

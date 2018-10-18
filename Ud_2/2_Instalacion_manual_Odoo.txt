@@ -116,6 +116,8 @@ Cambiamos de directorio para que descargue el repositorio en la carpeta home de 
 
 	$ git clone https://github.com/Odoo/odoo.git --depth 1 --branch 10.0 --single-branch odoo
 
+	** Importantisimo: se indica la rama 10 y se tendra  que clonar siempre esta rama porque hay otras ramas desarrollandose simultaneamente y si no indicamos nada descarga la ultima (11)
+
 ---CAPTURA 14---
 
 13º Instalar requisitos de python que aparecen en la documentacion:
@@ -169,6 +171,8 @@ User=odoo
 ExecStart=/home/odoo/odoo/odoo-bin -c /home/odoo/odoo-server.conf
 [Install]
 WantedBy=default.target
+
+** Todos los servicios se tienen que crear desde root para que tengan permiso de ejecucion, aunque el servicio una vez arrancado se indica que sea propiedad de el usuario ooo
 
 ---CAPTURA 17---
 
