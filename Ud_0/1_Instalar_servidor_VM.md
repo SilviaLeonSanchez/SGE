@@ -1,17 +1,20 @@
 		
-		CONFIGURAR LA RED DEL SERVIDOR (MAQUINA VIRTUAL)
+### CONFIGURAR LA RED DEL SERVIDOR (MAQUINA VIRTUAL)
 
 * En la maquina virtual cambiamos red NAT por Adaptador puente para poder tener IP propia y permitir las conexiones entrantes.
 
 1º Consultar informacion de red del servidor: 
+
 	$ sudo ifconfig:
 
 2º Cambiar el archvo de configuracion:
+
 	$ sudo nano /etc/network/interfaces
 
 	* Aparece:
 		auto enpos3
 		iface enpos3 inet dhcp
+		
 	* Cambiar a:
 		auto enpos3
 		iface enpos3 inet static
@@ -23,19 +26,23 @@
 	* Cuando acabamos pulsamos control+X para guardar cambios
 
 3º Hacemos flush a la ip actual:
+
 	$ sudo ip addr flush enp0s3
 
 4º Reiniciamos el servicio de red:
+
 	$ sudo service networking restart
 
 5º Comprobamos que tengamos asignada la nueva ip estatica con ipconfig	
 
 * En el paso 3 podemos directamente reiniciar la maquina con:
+
 	$ sudo reboot
 	
 
 	-----------------------------------------
-		INSTALAR PAQUETE SSH
+	
+### INSTALAR PAQUETE SSH
 
 1º Actualizar e instalar paquete 
 
@@ -44,9 +51,11 @@
 
 
 	-----------------------------------------
-		COMPROBAR SSH
+	
+### COMPROBAR SSH
 
 1º Comprobamos los procesos que se estan ejecutando 
+
 	$ ps aux (salen todos)
 	$ ps aux | grep ssh (filtramos lineas que incluyen 'ssh')
 
@@ -54,13 +63,18 @@
 
 
 	-----------------------------------------
-		CONECTAR AL SERVIDOR
+	
+### CONECTAR AL SERVIDOR
 
 1º Desde cualquier ordenador (localhost si el server esta en una VM):
+
 	$ ssh usuario@ip
 	$ ssh silvia@192.168.3.110
 
-	* Puedo conectarme desde la terminal de mi ordenador a la maquina virtual y comprobar que estoy en ella con ifconfig. Para salir:
+	* Puedo conectarme desde la terminal de mi ordenador a la maquina virtual y comprobar que estoy en ella con ifconfig. 
+	
+	Para salir:
+	
 	$ exit
 
 2º SSH trabaja en el puerto 22, tanto el cliente como el servidor lo tienen que tener instalado (linux lo tiene por defecto, para windows instalar putty)
@@ -71,9 +85,11 @@
 	$ ssh -x usuario@ip
 
 	-----------------------------------------
-		COPIAR DESDE SERVIDOR
+	
+### COPIAR DESDE SERVIDOR
 
 * De servidor a ubicacion local (o donde quieras)
+
 	$ scp [ip servidor]:[ruta origen] [ruta destino]
 	$ scp 192.168.3.29:~/ubuntu.iso .
 
@@ -81,22 +97,28 @@
 
 
 * Para conectarse con un usuario distinto (poner usuario del servidor)
+
 	$ usuarioServidor@192.168.3.28:/ubuntu.iso .
 
 
 	-----------------------------------------
-		CREAR USUARIO EN EL SERVIDOR
+	
+### CREAR USUARIO EN EL SERVIDOR
 
 1º Comando:
+
 	$ sudo adduser alumno
 
 2º Conecta mediante ssh al servidor con el usuario alumno:
+
 	$ ssh alumno@192.168.3.110
 
 
 	------------------------------------------
-		HACER INSTANTANEA DE LA MAQUINA
+	
+### HACER INSTANTANEA DE LA MAQUINA
 
-1º Desde VirtualBox hacemos una instantanea para guardar el estado de la maquina y poder utilizarla en caso de emergencia dandole a recuperar
+1º Desde VirtualBox hacemos una instantanea para guardar el estado de la maquina y
+poder utilizarla en caso de emergencia dandole a recuperar
 
 
