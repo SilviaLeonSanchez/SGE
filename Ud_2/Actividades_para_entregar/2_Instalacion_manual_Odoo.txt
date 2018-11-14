@@ -41,7 +41,7 @@
 	Creamos el enlace con:
 
 	$ ln -s /usr/bin/nodejs /usr/bin/node
-	
+
 	Intalamos less desde npm:
 
 	$ npm install -g less less-plugin-clean-css
@@ -50,20 +50,16 @@
 
 6º Instalamos pip ya que lo vamos a necesitar en  el siguiente paso:
 
-	$ apt-get install
-
-7º Para no tener problemas con el procesamiento de imagenes al instalar datos demo, instalamos el paquete python de Pillow:
-
 	$ apt-get install python3-pip python-pip
 
 ---CAPTURA 6---
 
-8º Instalacion de Pillow:
+7º Para no tener problemas con el procesamiento de imagenes al instalar datos demo, instalamos el paquete python de Pillow:
 
 	$ pip install --no-cache-dir -I pillow
 
 ---CAPTURA 7---
-	
+
 	*En mi caso propone actualizar pip con:
 
 	$ pip install --upgrade pip
@@ -133,7 +129,7 @@ Cambiamos de directorio para que descargue el repositorio en la carpeta home de 
 14º Crear el archivo de configuracion para que lea los parametros que necesita al ejecutarse sin que tengamos que pasarlos nosotros.
 
 	$ su odoo
-	
+
 	$ nano ~/odoo-server.conf
 
 	* La ruta del archivo debe ser: /home/odoo/odoo-server.conf
@@ -153,7 +149,7 @@ addons_path = /home/odoo/odoo/addons
 
 ---CAPTURA 16---
 
-15º Configurar Odoo para que arranque al inicio. 
+15º Configurar Odoo para que arranque al inicio.
 
 	Crear el archivo /etc/systemd/system/odoo10.service:
 
@@ -195,43 +191,3 @@ WantedBy=default.target
 19º Si quisieramos simplemente iniciar Odoo como proceso y no como servicio ejecutamos el comando
 
 	$ /home/odoo/odoo/odoo-bin -c /home/odoo/odoo-server.conf
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
