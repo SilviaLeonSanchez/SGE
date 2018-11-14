@@ -1,0 +1,7 @@
+Errores
+
+Configurar el archivo de log de odoo (odoo-server.log)
+
+Borrarlo y forzar el error para verlo en el log.
+
+Tambien se puede parar el servicio y arrancarlo como proceso en la terminal, para que muestre el error por la consola.

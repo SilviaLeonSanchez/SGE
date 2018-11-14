@@ -1,0 +1,130 @@
+
+--- BACKUP PUNTUAL
+
+1º Desde la pagina inicial de Odoo (antes de entrar) aparece la opcion manage databases
+
+2º Pinchar en backup
+
+---CAPTURA backup_bbdd_manual---
+
+---CAPTURA restore_bbdd_manual---
+
+--- BACKUP AUTOMATICO
+
+* Cron ejecuta tareas programadas. Cada usuario tiene un archivo de cron y se ejecuta con ese usuario con sus permisos.
+
+	$ crontab -l
+
+listar el cron del usuario con el que lo ejecutes
+
+	$ crontab -e
+
+editarlo y añadir las tareas ( viene informacion sobre como hacerlo)
+
+	* Si vamos a ejecutar un script tenemos que poner la ruta absoluta
+
+*El comando > redirecciona la salida por consola, normalmente a un fichero:
+	$ ls -l > fichero.txt 
+*El inverso pone como flujo de entrada a un comando un fichero
+	$ cat < fichero.txt
+
+* Comando pg_dump (de postgres) para hacer un volcado completo de la base de datos mediante un script. 
+
+	Para hacer la copia
+	$ pg_dump -Fc mydb > db.dump
+
+---CAPTURA 21---
+
+	Para restaurar
+	$ pg_restore -d newdb db.dump
+		Solo restaura sobre la base de datos vacia
+
+	$ pg_restore -C -d newdb db.dump
+		Para que cree la base de datos y restaure informacion
+
+Necesitamos pasarle la password de odoo pero en el script no podemos, asique en la primera linea del scrip tenemos que añadirla como variable de entorno
+
+	export PGPASSWORD="..."
+
+Ejecutamos el script con el cron para que lo haga el solo cuando queramos
+
+Comando date para que nos devuelva la fecha (se puede formatear), para generar el nombre de fichero con la fecha y la hora. La formateamos 
+
+Para concatenar con el nombre:
+	# $(date + "%m_%d_%Y)dump.sql
+	Evalua el comando entre parentesis primero y luego hace lo demas
+
+Borrar las antiguas para dejar colo las de los ultimos X dias.
+
+* Comando find:
+	$ find ./my_dir -mtime +10 -type f -delete
+	Esto borra en my_dir los directorios mas antiguos de dias
+
+* Para ser muy pro y no hacer las copias solo en el mismo disco podemos instalar un cliente de dropbox y sincronizar la carpeta donde estan las copias
+
+* Para buscar en el manual:
+	$ man find
+	$ /mtime (por ejemplo)
+
+
+
+SERVICIOS (ZEROTIER)
+
+$ sudo systemctl status
+
+	Comprobar los servicios activos
+
+$ sudo systemctl status zerotier-one.service
+
+	Comprobar un servicio concreto
+
+* sudo systemctl enable zerotier-one.service
+
+	Activar un servicio al inicio (disable desactivar)
+
+
+PRUEBAS:
+
+1º Como postgres creo una carpeta donde se guardaran las copias 
+	$ cd ~
+	$ mkdir backup
+
+2º Comprobar el nombre de la base de datos
+	$ psql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

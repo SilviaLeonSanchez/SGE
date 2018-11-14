@@ -1,0 +1,77 @@
+
+	----------------------------------------------
+		INSTALAR POSTGRE
+
+1º Con el comando:
+	$ sudo apt-get update (actualiza la lista de paquetes disponibles para descargar)
+	$ sudo apt-get install postgresql
+
+	Automaticamente crea un usuario, pero la primera vez no tiene contraseña, la cambiamos antes de conectar:
+	$ sudo passwd postgres
+
+2º Para iniciar sesion desde el terminal, con la nueva contraseña:
+	$ su postgres
+
+3º Ejecuto el comando para iniciar el cliente de postgres (ahora solo puede el usuario postgre que es el unico que se ha creado en la instalacion)
+	$ psql
+	
+	* Ya podemos ejecutar comandos sql en el servidor
+
+
+	----------------------------------------------
+	SERVICIO DE LA BASE DE DATOS
+
+	$ sudo service postgresql [start|stop|restart]
+
+
+	----------------------------------------------
+		CONECTAR A POSTGRE MEDIANTE SSH
+
+1º Conectar por ssh normal y arrancar el servicio desde usuario con permiso
+
+2º Cambiar al usuario postgre y ejecutar
+	$ psql
+
+	* No es sensible a mayusculas
+
+3º Cerrar sesion psql
+	\q
+
+4º Cerrar conexion con base de datos CTRL+z (el servicio no se detiene)
+
+ 
+	----------------------------------------------
+		CREAR Y BORRAR BASE DE DATOS
+
+postgres=# CREATE DATABASE nombre WITH OWNER propietario;
+postgres=# DROP DATABASE nombre;
+
+	----------------------------------------------
+		CREAR Y ALTERAR TABLAS
+
+postgres=# CREATE TABLE nombre(
+postgres(# campo1 VARCHAR(20),
+postgres(# campo2 integer
+postgres(# );
+
+postgres=# DROP TABLE nombre;
+
+* DATOS: varchar, text, integer...
+
+postgres=# INSERT INTO nombre VALUES ('texto');
+
+
+	----------------------------------------------
+		REALIZAR CONSULTAS
+
+postgres=# SELECT * FROM nombre_tabla;
+
+
+	----------------------------------------------
+		ACCEDER A BASE DE DATOS DEL SERVIDOR
+
+1º En la maquina que va a acceder a la base de datos del servidor instalar el cliente postgreSQL:
+
+	$ sudo apt-get install pgadmin3
+
+
