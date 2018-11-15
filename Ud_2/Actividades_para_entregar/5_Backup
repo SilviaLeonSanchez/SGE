@@ -1,5 +1,5 @@
-
---- BACKUP PUNTUAL
+c
+--- BACKUP DESDE ODOO
 
 1º Desde la pagina inicial de Odoo (antes de entrar) aparece la opcion manage databases
 
@@ -9,56 +9,147 @@
 
 ---CAPTURA restore_bbdd_manual---
 
---- BACKUP AUTOMATICO
+--- BACKUP MANUAL
 
-* Cron ejecuta tareas programadas. Cada usuario tiene un archivo de cron y se ejecuta con ese usuario con sus permisos.
+1. Backup
+
+$ su odoo
+$ cd ~
+
+
+* Comando pg_dump (de postgres) para hacer un volcado completo de la base de datos
+* Con > lo redireccionamos hacia el archivo indicado
+
+	Para hacer la copia
+	$ pg_dump -Fc mydb > copiamydb.sql
+
+---CAPTURA 1---
+
+Comando date para que nos devuelva la fecha (se puede formatear), para generar el nombre de fichero con la fecha y la hora. 
+
+La formateamos:
+
+$date +"%m-%d-%Y_%H-%M"
+
+Para concatenar con el nombre:
+	# pg_dump -Fc test > $(date +"%m-%d-%Y_%H-%M_")test.sql
+
+	Con $ evalua el comando entre parentesis primero y luego hace lo demas
+
+---CAPTURA 2---
+
+2. Borrar base de datos
+
+	Vamos a la pagina de odoo
+
+---CAPTURA 3---
+
+---CAPTURA 4---
+
+3. Para restaurar
+
+Reinicio la maquina y paro odoo
+$ su root
+$ ps aux | grep odoo
+$ kill -9 pid_proceso
+
+--- CAPTURA 5---
+
+Creamos la base de datos antes de restaurar
+
+$ su odoo
+$ createdb test
+
+Restaurar 
+
+$ pg_restore -d test 11-15-2018_08-43_test.sql
+
+* No pide password porque estamos trabajando con el usuario odoo en el sistema y tambien hay un usuario odoo equivalente en postgres.
+
+---CAPTURA 6---
+
+Iniciamos el servicio odoo de nuevo
+Comprobamos en odoo que la base de datos existe otra vez
+
+--- BACKUP AUTOMATICO 
+
+1. Guardamos el comando de copia en un script
+
+$ nano copia.sh
+
+---CAPTURA 7---
+
+2. Le damos permiso de ejecucion
+
+$ chmod +x copia.sh
+
+3. Planificamos la tarea en el crontab
+
+* Cron ejecuta tareas programadas. Cada usuario tiene un archivo de cron y se ejecuta con ese usuario con sus permisos en las fechas que indiquemos.
+
+Comprobar si el usuario odoo tiene crontab:
 
 	$ crontab -l
 
-listar el cron del usuario con el que lo ejecutes
+Editamos el archivo:
 
 	$ crontab -e
 
-editarlo y añadir las tareas ( viene informacion sobre como hacerlo)
+Añadir las tareas ( viene informacion sobre como hacerlo)
 
 	* Si vamos a ejecutar un script tenemos que poner la ruta absoluta
+
+minutos horas dia diasemana mes comando
+
+00 00 * * * /home/odoo/copia.sh
+
+--- CAPTURA 8---
+
+Pongo una hora de prueba y compruebo que hace la copia
+
+---CAPTURA 9---
+
+Creo un directorio para guardar las copias
+
+$ mkdir backups
+
+Cambio el script para que la guarde ahi
+
+---CAPTURA 10---
+
+Creo un script para borrar las mas antiguas
+
+
+Borrar las antiguas para dejar colo las de los ultimos X dias.
+
+* Comando find:
+	$ find /home/odoo/backups -mtime +10 -type f -delete
+	Esto borra los directorios mas antiguos de 10 dias
+
+$ nano borrado_copias.sh
+
+$ chmod +x borrado_copias.sh
+clea
+
+Lo añado al crontab 
+
+---CAPTURA 13?---
+##########################
+
+----
 
 *El comando > redirecciona la salida por consola, normalmente a un fichero:
 	$ ls -l > fichero.txt 
 *El inverso pone como flujo de entrada a un comando un fichero
 	$ cat < fichero.txt
 
-* Comando pg_dump (de postgres) para hacer un volcado completo de la base de datos mediante un script. 
-
-	Para hacer la copia
-	$ pg_dump -Fc mydb > db.dump
-
----CAPTURA 21---
-
-	Para restaurar
-	$ pg_restore -d newdb db.dump
-		Solo restaura sobre la base de datos vacia
-
-	$ pg_restore -C -d newdb db.dump
-		Para que cree la base de datos y restaure informacion
-
+------
+NO HACE FALTA
 Necesitamos pasarle la password de odoo pero en el script no podemos, asique en la primera linea del scrip tenemos que añadirla como variable de entorno
 
 	export PGPASSWORD="..."
+------
 
-Ejecutamos el script con el cron para que lo haga el solo cuando queramos
-
-Comando date para que nos devuelva la fecha (se puede formatear), para generar el nombre de fichero con la fecha y la hora. La formateamos 
-
-Para concatenar con el nombre:
-	# $(date + "%m_%d_%Y)dump.sql
-	Evalua el comando entre parentesis primero y luego hace lo demas
-
-Borrar las antiguas para dejar colo las de los ultimos X dias.
-
-* Comando find:
-	$ find ./my_dir -mtime +10 -type f -delete
-	Esto borra en my_dir los directorios mas antiguos de dias
 
 * Para ser muy pro y no hacer las copias solo en el mismo disco podemos instalar un cliente de dropbox y sincronizar la carpeta donde estan las copias
 
@@ -83,14 +174,6 @@ $ sudo systemctl status zerotier-one.service
 	Activar un servicio al inicio (disable desactivar)
 
 
-PRUEBAS:
-
-1º Como postgres creo una carpeta donde se guardaran las copias 
-	$ cd ~
-	$ mkdir backup
-
-2º Comprobar el nombre de la base de datos
-	$ psql
 
 
 
