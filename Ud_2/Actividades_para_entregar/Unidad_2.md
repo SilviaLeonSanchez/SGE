@@ -1,5 +1,9 @@
 # UNIDAD 2
 
+~~~
+
+~~~
+
 ## CONFIGURACIÓN UBUNTU SERVER
 
 ### Habilitar acceso remoto
@@ -20,7 +24,9 @@
 
   `$ ssh root@192.168.3.58`
 
----
+~~~
+
+~~~
 
 ## PREPARAR INSTALACIÓN ODOO
 
@@ -42,6 +48,8 @@
 
 ![Captura de pantalla 1][img1]
 
+~~~
+~~~
 
 ### 4. Instalar el siguiente paquete para realizar informes en pdf desde Odoo
 
@@ -50,6 +58,9 @@
   `$ wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb`
 
   ![Captura de pantalla 2][img2]
+
+~~~
+~~~
 
   * Desempaquetar indicando que instale el paquete:
 
@@ -63,6 +74,9 @@
 
   ![Captura de pantalla 3][img3]
 
+~~~
+~~~
+
 ### 5. Instalar npm para que funcione correctamente el servidor web
 
   * Instalar:
@@ -71,6 +85,8 @@
 
   ![Captura de pantalla 4][img4]
 
+~~~
+~~~
   * Crear el enlace:
 
   `$ ln -s /usr/bin/nodejs /usr/bin/node`
@@ -81,23 +97,34 @@
 
   ![Captura de pantalla 5][img5]
 
+~~~
+~~~
+
 ### 6. Instalar pip
 
   `$ apt-get install python3-pip python-pip`
 
   ![Captura de pantalla 6][img6]
 
+~~~
+~~~
 ### 7. Instalar el paquete python de Pillow para no tener problemas con el procesamiento de imágenes al instalar datos demo
 
   `$ pip install --no-cache-dir -I pillow`
 
   ![Captura de pantalla 7][img7]
 
+~~~
+~~~
+
   En mi caso propone actualizar pip con:
 
   `$ pip install --upgrade pip`
 
   ![Captura de pantalla 8][img8]
+
+~~~
+~~~
 
 ### 8. Instalar git
 
@@ -107,7 +134,9 @@
  INSTANTÁNEA INSTALACIÓN_ODOO_MANUAL
 ~~~
 
----
+~~~
+
+~~~
 
 ## INSTALAR POSTGRES
 
@@ -115,7 +144,13 @@
 
   ![Captura de pantalla 9][img9]
 
+~~~
+~~~
+
   ![Captura de pantalla 10][img10]
+
+~~~
+~~~
 
   Dar contraseña al usuario postgres que se ha creado durante la instalación:
 
@@ -123,7 +158,10 @@
 
   ![Captura de pantalla 11][img11]
 
----
+
+~~~
+
+~~~
 
 ## CREAR USUARIOS ODOO
 
@@ -146,6 +184,9 @@ Argumentos:
 
   ![Captura de pantalla 12][img12]
 
+~~~
+~~~
+
 ### 2. Crear usuario odoo en el sistema
 
   `$ su root`
@@ -154,7 +195,10 @@ Argumentos:
 
   ![Captura de pantalla 13][img13]
 
----
+
+~~~
+
+~~~
 
 ## INSTALAR ODOO
 
@@ -170,6 +214,9 @@ Argumentos:
 
   ![Captura de pantalla 14][img14]
 
+~~~
+~~~
+
 ### 2. Instalar requisitos de python
 
   `$ su root`
@@ -177,6 +224,9 @@ Argumentos:
   `$ pip install -r /home/odoo/odoo/requirements.txt`
 
   ![Captura de pantalla 15][img15]
+
+~~~
+~~~
 
 ~~~
 INSTANTÁNEA PRE-CONFIGURACION
@@ -209,6 +259,9 @@ addons_path = /home/odoo/odoo/addons
 
   ![Captura de pantalla 16][img16]
 
+~~~
+~~~
+
 ### 4. Configurar Odoo para que arranque al inicio
 
  * Crear el archivo:
@@ -234,11 +287,17 @@ WantedBy=default.target
 
   ![Captura de pantalla 17][img17]
 
+~~~
+~~~
+
  * Habilitar el servicio para que se arranque al inicio:
 
   `$ sudo systemctl enable odoo10.service`
 
   ![Captura de pantalla 18][img18]
+
+~~~
+~~~
 
  * Probamos a arrancar y parar el servicio manualmente:
 
