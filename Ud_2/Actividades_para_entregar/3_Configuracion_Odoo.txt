@@ -1,5 +1,6 @@
 
-1º Tememos que cambiar la codificacion de la base de datos, por lo que conectamos con el usuario postgres y arrancamos la base de datos.
+1º Tememos que cambiar la codificacion de la base de datos, por lo que
+conectamos con el usuario postgres y arrancamos la base de datos.
 
 	$ ssh postgres@192.168.3.58
 	$ psql postgres
@@ -30,7 +31,7 @@
 
 ---CAPTURA 19---
 
-3º Crear base de datos 'prueba' con datos de prueba.
+3º Crear base de datos 'test' con datos de prueba.
 
 su postgres
 
@@ -47,8 +48,6 @@ psql
 -------------------------------------
 4º Instalar internacialización de Odoo al castellano. (desde video de youtube)
 
-INSTALAR MODULO DE INTERNACIONALIZACION
-
 modulos de internacionalizacion siempre empiezan por l10n
 
 buscar en www.github.com/oca
@@ -63,7 +62,7 @@ siempre la version de nuestra rama!
 
 2º borrar de la carpeta addons el modulo l10n_es
 
-	$ rm -r ~/odoo/addons/l10n_es 
+	$ rm -r ~/odoo/addons/l10n_es
 
 3º Descargamos el repositorio entero en home de odoo:
 
@@ -92,7 +91,7 @@ Una vez que comprobamos que estan ahi, borramos la carpeta del repositorio que t
 
 Instalar el modulo de toponimos:
 
-* Buscar en una web 
+* Buscar en una web
 base_location_geonames_import site: copiamos la url del sitio de github de oca
 
 Vamos al enlace del repositorio donde esta el modulo que buscamos
@@ -112,18 +111,18 @@ copiamos el modulo que nos interesa a la carpeta addons.
 	$ cp -r ~/partner-contact/base_location_geonames_import /home/odoo/odoo/addons/
 
 Instalamos los requerimientos con
-	
+
 	$ su root
-	$ pip install -r requirements.txt 
-
-Borramos la carpeta del repositorio (Esperar a instalar el modulo porque puede pedir instalar alguna dependencia que este aqui)
-
-	$ rm -r /home/odoo/partner-contact/
-	$ su odoo
+	$ pip install -r requirements.txt
 
 Actualizamos la lista aplicaciones para instalar y buscamos por l10n_es
 Tendrian que salir los modulos recien incorporados.
 	* Asegurarse de tener activado el modo desarrollador
+
+Borramos la carpeta del repositorio (Esperar a instalar el modulo porque puede pedir instalar alguna dependencia que este aqui)
+
+		$ rm -r /home/odoo/partner-contact/
+		$ su odoo
 
 Reiniciamos la maquina
 
@@ -135,7 +134,7 @@ Reiniciamos el navegador y la lista de aplicaciones. Lo instalamos.
 --------------------
 Instalar dependencias del modulo (suponiendo que el repositorio esta en home)
 
- mv ~/partner-contact/base_location ~/odoo/addons/ 
+ mv ~/partner-contact/base_location ~/odoo/addons/
 --------------------
 
 
@@ -149,7 +148,7 @@ https://luengocabanillas.com/2017/05/27/10-modulos-para-odoo-10/
 	git clone -b 10.0 https://github.com/JayVora-SerpentCS/Jasperreports_odoo.git
 imprime pdf
 
-** pendiente git clone -b 10.0 https://github.com/Openworx/backend_theme.git 
+** pendiente git clone -b 10.0 https://github.com/Openworx/backend_theme.git
 
 git clone -b 10.0 https://github.com/OCA/web.git
 web_export_view
@@ -163,20 +162,3 @@ sudo pip install --upgrade cryptography
 sudo python -m easy_install --upgrade pyOpenSSL
 
 no sirve
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
