@@ -1,7 +1,8 @@
-c
+
 --- BACKUP DESDE ODOO
 
-1º Desde la pagina inicial de Odoo (antes de entrar) aparece la opcion manage databases
+1º Desde la pagina inicial de Odoo (antes de entrar)
+aparece la opcion manage databases
 
 2º Pinchar en backup
 
@@ -17,7 +18,9 @@ $ su odoo
 $ cd ~
 
 
-* Comando pg_dump (de postgres) para hacer un volcado completo de la base de datos
+* Comando pg_dump (de postgres) para hacer un volcado
+completo de la base de datos
+
 * Con > lo redireccionamos hacia el archivo indicado
 
 	Para hacer la copia
@@ -25,7 +28,8 @@ $ cd ~
 
 ---CAPTURA 1---
 
-Comando date para que nos devuelva la fecha (se puede formatear), para generar el nombre de fichero con la fecha y la hora. 
+Comando date para que nos devuelva la fecha (se puede formatear),
+para generar el nombre de fichero con la fecha y la hora.
 
 La formateamos:
 
@@ -60,18 +64,20 @@ Creamos la base de datos antes de restaurar
 $ su odoo
 $ createdb test
 
-Restaurar 
+Restaurar
 
 $ pg_restore -d test 11-15-2018_08-43_test.sql
 
-* No pide password porque estamos trabajando con el usuario odoo en el sistema y tambien hay un usuario odoo equivalente en postgres.
+* No pide password porque estamos trabajando con el
+usuario odoo en el sistema y tambien hay un usuario
+odoo equivalente en postgres.
 
 ---CAPTURA 6---
 
 Iniciamos el servicio odoo de nuevo
 Comprobamos en odoo que la base de datos existe otra vez
 
---- BACKUP AUTOMATICO 
+--- BACKUP AUTOMATICO
 
 1. Guardamos el comando de copia en un script
 
@@ -85,7 +91,9 @@ $ chmod +x copia.sh
 
 3. Planificamos la tarea en el crontab
 
-* Cron ejecuta tareas programadas. Cada usuario tiene un archivo de cron y se ejecuta con ese usuario con sus permisos en las fechas que indiquemos.
+* Cron ejecuta tareas programadas. Cada usuario tiene
+un archivo de cron y se ejecuta con ese usuario con
+sus permisos en las fechas que indiquemos.
 
 Comprobar si el usuario odoo tiene crontab:
 
@@ -131,27 +139,35 @@ $ nano borrado_copias.sh
 $ chmod +x borrado_copias.sh
 clea
 
-Lo añado al crontab 
+Lo añado al crontab
 
 ---CAPTURA 13?---
 ##########################
 
 ----
 
-*El comando > redirecciona la salida por consola, normalmente a un fichero:
-	$ ls -l > fichero.txt 
+*El comando > redirecciona la salida por consola,
+normalmente a un fichero:
+
+	$ ls -l > fichero.txt
+
 *El inverso pone como flujo de entrada a un comando un fichero
+
 	$ cat < fichero.txt
 
 ------
 NO HACE FALTA
-Necesitamos pasarle la password de odoo pero en el script no podemos, asique en la primera linea del scrip tenemos que añadirla como variable de entorno
+Necesitamos pasarle la password de odoo pero en el script
+no podemos, asique en la primera linea del scrip tenemos
+que añadirla como variable de entorno
 
 	export PGPASSWORD="..."
 ------
 
 
-* Para ser muy pro y no hacer las copias solo en el mismo disco podemos instalar un cliente de dropbox y sincronizar la carpeta donde estan las copias
+* Para ser muy pro y no hacer las copias solo en el mismo
+disco podemos instalar un cliente de dropbox y sincronizar
+la carpeta donde estan las copias
 
 * Para buscar en el manual:
 	$ man find
@@ -172,42 +188,3 @@ $ sudo systemctl status zerotier-one.service
 * sudo systemctl enable zerotier-one.service
 
 	Activar un servicio al inicio (disable desactivar)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

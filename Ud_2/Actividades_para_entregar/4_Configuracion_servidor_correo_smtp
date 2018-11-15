@@ -1,9 +1,11 @@
 
-1º Desde la aplicacion web entramos en pestaña Configuracion -> Opciones Generales -> Correo electronico -> Configurar servidores de correo saliente
+1º Desde la aplicacion web entramos en
+pestaña Configuracion -> Opciones Generales ->
+Correo electronico -> Configurar servidores de correo saliente
 
 2º Creamos uno nuevo:
 
-	* Si es una cuenta de gmail: 
+	* Si es una cuenta de gmail:
 	Prioridad: la maxima es 1 (si queremos que los envie desde este)
 	Servidor smtp: si es gmail es smtp.gmail.com
 	Puerto: 465
@@ -11,8 +13,10 @@
 	Nombre usuario: cuenta de correo
 	Contraseña: La de la cuenta
 
-3º En la cuenta de correo hay que cambiar las preferencias para permitir envio de correos desde aplicaciones inseguras
+3º En la cuenta de correo hay que cambiar las preferencias
+para permitir envio de correos desde aplicaciones inseguras
 
 4º Probamos a enviar un correo desde cualquier aplicacion
 
-5º En mi caso instalo tambien el modulo de correo masivo para campañas ce correo 
+5º En mi caso instalo tambien el modulo de correo
+masivo para campañas ce correo

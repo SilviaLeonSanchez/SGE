@@ -359,7 +359,7 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
 
   * Activar las opciones de desarrollador:
 
-  En la pagina de odoo enteramos en configuración y las encontramos en la esquina inferior derecha.
+  En la pagina de Odoo enteramos en configuración y las encontramos en la esquina inferior derecha.
 
   * Actualizar lista de aplicaciones:
 
@@ -403,7 +403,7 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
 
    `$ reboot`
 
-  * Instalar el módulo en el odoo:
+  * Instalar el módulo en Odoo:
 
   Ahora que esta en la carpeta de addons lo tenemos disponible para instalar, asique actualizamos el navegador y la lista de aplicaciones y buscamos l10n_es (asegurarse de tener activo el modo desarrollador).
 
@@ -448,17 +448,57 @@ Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
 
 #### Base FontAwesome
 
-Ofrece diferentes tipos de letras para utilizarlos en odoo.
+Ofrece diferentes tipos de letras para utilizarlos en Odoo.
 Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
 
 
+## CONFIGURACIÓN SERVIDOR DE CORREO SMTP
+
+### 1. Configurar servidor de correo saliente
+
+  * Desde el cliente web de Odoo entramos en:
+
+  Configuración  ->  Opciones Generales  ->  Correo electronico  ->  Configurar servidores de correo saliente
+
+  * Creamos un servidor nuevo:
+
+~~~
+Prioridad:      Máxima 1 (enviaría el correo desde este servidor)
+Servidor        smtp (si es gmail es smtp.gmail.com)
+Puerto:         465
+Seguridad:      SSL/TLS
+Nombre usuario: El de la cuenta de correo
+Contraseña:     La de la cuenta de correo
+~~~
+
+### 2. Configurar cuenta de correos
+
+Cambiar las preferencias para permitir envío de correos desde aplicaciones inseguras.
+
+### 3. Realizar pruebas
+
+Se pueden enviar correos desde muchas de las aplicaciones de Odoo, elegir una y mandar un correo a una cuenta donde podamos comprobar si llega correctamente.
+
+### 4. Instalación del módulo para campañas de correo masivo
+
+  (OPCIONAL)
 
 
+## CONFIGURACIÓN DE COPIAS DE SEGURIDAD
 
+### DESDE ODOO
 
+Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opcion Manage databases:
 
+  * Backup:
+  Pinchamos en la opción backups
+  
 
+### DESDE EL SERVIDOR
 
+#### MANUALES
+
+#### AUTOMÁTICAS
 
 
 
