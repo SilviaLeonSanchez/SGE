@@ -92,6 +92,8 @@ Creamos el usuario:
 
 ---CAPTURA 12---
 
+
+
 11º Creacion usuario odoo en el sistema.
 
 	$ su root
