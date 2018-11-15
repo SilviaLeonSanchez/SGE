@@ -1,7 +1,5 @@
 # UNIDAD 2
 
----
-
 ## CONFIGURACIÓN UBUNTU SERVER
 
 ### Habilitar acceso remoto
