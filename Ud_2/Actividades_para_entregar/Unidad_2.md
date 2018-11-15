@@ -36,14 +36,14 @@
   `$ apt-get update`
 
 
-### 3. Instalamos las depencias que vamos a necesitar para instalar Odoo con
+### 3. Instalar las depencias que vamos a necesitar para instalar Odoo
 
   `$ apt-get -yq install adduser postgresql-client python-dateutil python-docutils python-feedparser python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-psycopg2 python-psutil python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi poppler-utils python-pip python-pypdf python-passlib python-decorator gcc python-dev libxml2-dev libxslt-dev libsasl2-dev libldap2-dev libssl-dev libpq-dev libjpeg-dev libjpeg8-dev python-setuptools python-markupsafe python-reportlab-accel python-zsi python-yaml python-argparse python-openssl python-egenix-mxdatetime python-usb python-serial lptools make python-pydot python-psutil python-paramiko poppler-utils python-pdftools antiword python-requests python-xlsxwriter python-suds python-software-properties`
 
 ![Captura de pantalla 1][img1]
 
 
-### 4. Instalar el siguiente paquete para realizar informes en pdf desde Odoo con
+### 4. Instalar el siguiente paquete para realizar informes en pdf desde Odoo
 
   * Descargar:
 
