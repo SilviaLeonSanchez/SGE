@@ -174,7 +174,9 @@ Argumentos:
 
   `$ git clone https://github.com/Odoo/odoo.git --depth 1 --branch 10.0 --single-branch odoo`
 
-      ¡OJO! Se indica la rama 10 y se tendrá que clonar SIEMPRE esta rama porque si no indicamos nada descarga la ultima (11).
+~~~
+¡OJO! Se indica la rama 10 y se tendrá que clonar SIEMPRE esta rama, si no descarga la ultima por defecto.
+~~~
 
   ![Captura de pantalla 14][img14]
 
@@ -351,9 +353,9 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
 
   * Al descargar el repositorio nos crea una carpeta con todos los modulos dentro, pero necesitamos una carpeta en addons por cada modulo, asique los copiamos con odoo:
 
-  `$ su odoo0`
+  `$ su odoo`
 
-  `$ rm -r /home/odoo/odoo/l10n-spain/`
+  `$ cp -r -d l10n-spain/* /home/odoo/odoo/addons/`
 
   * Activar las opciones de desarrollador:
 
