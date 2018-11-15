@@ -257,7 +257,7 @@ WantedBy=default.target
 
   `$ sudo systemctl start odoo10.service`
 
-	`$ sudo systemctl stop odoo10.service`
+  `$ sudo systemctl stop odoo10.service`
 
 ~~~
 INSTANTANEA TERMINADA
