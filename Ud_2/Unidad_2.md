@@ -23,12 +23,15 @@
   * [Instalar internacialización de Odoo al castellano](#id6b)
   * [Instalar el módulo de topónimos](#id6c)
   * [Instalar módulos extra](#id6d)
+  * [Instalar modulos desde Odoo](#id6e)
 * [Configurar servidor de correo smtp](#id7)
 * [Configurar copias de seguridad](#id8)
   * [Desde Odoo](#id8a)
   * [Desde el servidor manuales](#id8b1)
   * [Desde el servidor automáticas](#id8b2)
 * [Configurar master password](#id9)
+
+
 
 ***
 
@@ -496,6 +499,8 @@ Disponible en el siguiente enlace:
 
 #### Web Export View
 
+Para exportar a un fichero Excel cualquier listado de la aplicación con las 
+mismas columnas que estamos viendo en pantalla.
 Disponible en el siguiente enlace:
 
 `git clone -b 10.0 https://github.com/OCA/web.git`
@@ -509,6 +514,16 @@ Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
 
 Ofrece diferentes tipos de letras para utilizarlos en Odoo.
 Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
+
+[**INDICE**](#indice)
+
+### 6. Instalar modulos desde Odoo<a name="id6e"/>
+
+Desde Odoo es extremadamente sencillo instalar modulos que ya se encuentran en la carpeta addons. 
+Solo tenemos que actualizar la lista de aplicaciones y buscar el modulo deseado en la pestaña Aplicaciones. 
+
+Realizo la instalación de los módulos requeridos de Compras, Ventas, Inventario y TPV. 
+Además instalo Contabilidad/Facturación, CRM, y RRHH entre otros.
 
 [**INDICE**](#indice)
 
@@ -738,7 +753,6 @@ sus permisos en las fechas que indiquemos.
 Se puede asignar una master password desde la web de Odoo (la pagina de entrada) o desde el servidor, modificando el archivo de configuracion odoo-server.conf. 
 
 La master password servirá para pedir confirmación de que se tienen los permisos adecuados para realizar determinados trámites. Por ejemplo [borrar](#backup) o [restaurar](#restore) la base de datos.
-
 
 
 
