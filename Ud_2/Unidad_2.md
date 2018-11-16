@@ -28,6 +28,7 @@
   * [Desde Odoo](#id8a)
   * [Desde el servidor manuales](#id8b1)
   * [Desde el servidor automáticas](#id8b2)
+* [Configurar master password](#id9)
 
 ***
 
@@ -553,11 +554,11 @@ Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Mana
 
   * Backup:   Realizar una copia de la base de datos
 
-    ![Captura 21][img21]
+    ![Captura 21][img21]<a name="backup"/>
 
   * Restore:  Restaurar desde una copia guardada de la base de datos
 
-    ![Captura 22][img22]
+    ![Captura 22][img22]<a name="restore"/>
     
 [**INDICE**](#indice)
 
@@ -731,6 +732,12 @@ sus permisos en las fechas que indiquemos.
    ![Captura 35][img35]
 
 [**INDICE**](#indice)
+
+## CONFIGURACIÓN DE LA MASTER PASSWORD<a name="id9"/>
+
+Se puede asignar una master password desde la web de Odoo (la pagina de entrada) o desde el servidor, modificando el archivo de configuracion odoo-server.conf. 
+
+La master password servirá para pedir confirmación de que se tienen los permisos adecuados para realizar determinados trámites. Por ejemplo [borrar](#backup) o [restaurar](#restore) la base de datos.
 
 
 
