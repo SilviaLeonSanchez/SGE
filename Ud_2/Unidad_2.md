@@ -1,4 +1,4 @@
-# INDICE
+# INDICE<a name="indice"/>
 
 * [Configurar acceso remoto a Ubuntu Server](#id1)
 
@@ -58,7 +58,7 @@
 
   `$ ssh root@192.168.3.58`
 
-
+[**INDICE**](#indice)
 
 ## PREPARAR INSTALACIÓN ODOO<a name="id2"/>
 
@@ -81,6 +81,7 @@ Instalar las depencias que vamos a necesitar para instalar Odoo:
 
 ![Captura de pantalla 1][img1]
 
+[**INDICE**](#indice)
 
 ### 2. Instalar el paquete *wkhtmltopdf*<a name="id2b"/>
 
@@ -104,6 +105,7 @@ Para realizar informes en pdf desde Odoo.
 
   ![Captura de pantalla 3][img3]
 
+[**INDICE**](#indice)
 
 ### 3. Instalar *npm*<a name="id2c"/>
 
@@ -125,12 +127,15 @@ Para que funcione correctamente el servidor web.
 
   ![Captura de pantalla 5][img5]
 
+[**INDICE**](#indice)
 
 ### 4. Instalar *pip*<a name="id2d"/>
 
   `$ apt-get install python3-pip python-pip`
 
   ![Captura de pantalla 6][img6]
+  
+[**INDICE**](#indice)
 
 ### 5. Instalar el paquete *pillow*<a name="id2e"/>
 
@@ -147,6 +152,7 @@ Para no tener problemas con el procesamiento de imágenes al instalar datos demo
 
   ![Captura de pantalla 8][img8]
 
+[**INDICE**](#indice)
 
 ### 6. Instalar *git*<a name="id2f"/>
 
@@ -156,6 +162,7 @@ Para no tener problemas con el procesamiento de imágenes al instalar datos demo
  INSTANTÁNEA INSTALACIÓN_ODOO_MANUAL
 ~~~
 
+[**INDICE**](#indice)
 
 ## INSTALAR POSTGRES<a name="id3"/>
 
@@ -172,7 +179,7 @@ Para no tener problemas con el procesamiento de imágenes al instalar datos demo
 
   ![Captura de pantalla 11][img11]
 
-
+[**INDICE**](#indice)
 
 ## CREAR USUARIOS ODOO<a name="id4"/>
 
@@ -195,6 +202,7 @@ Argumentos:
 
   ![Captura de pantalla 12][img12]
 
+[**INDICE**](#indice)
 
 ### 2. Crear usuario odoo en el sistema<a name="id4b"/>
 
@@ -204,7 +212,7 @@ Argumentos:
 
   ![Captura de pantalla 13][img13]
 
-
+[**INDICE**](#indice)
 
 ## INSTALAR ODOO<a name="id5"/>
 
@@ -222,6 +230,7 @@ Argumentos:
 
   ![Captura de pantalla 14][img14]
 
+[**INDICE**](#indice)
 
 ### 2. Instalar requisitos de python<a name="id5b"/>
 
@@ -235,6 +244,8 @@ Argumentos:
 ~~~
 INSTANTÁNEA PRE-CONFIGURACION
 ~~~
+
+[**INDICE**](#indice)
 
 ### 3. Crear el archivo de configuración<a name="id5c"/>
 
@@ -263,6 +274,7 @@ addons_path = /home/odoo/odoo/addons
 
   ![Captura de pantalla 16][img16]
 
+[**INDICE**](#indice)
 
 ### 4. Configurar Odoo para que arranque al inicio<a name="id5d"/>
 
@@ -307,6 +319,8 @@ WantedBy=default.target
 INSTANTANEA TERMINADA
 ~~~
 
+[**INDICE**](#indice)
+
 ### 5. Iniciar Odoo<a name="id5e"/>
 
 Reiniciando la máquina el servicio se inicia solo, puedo cerrar el terminal y trabajar desde el navegador en la direccion de mi Odoo:
@@ -317,6 +331,7 @@ Si quisieramos simplemente iniciar Odoo como proceso y no como servicio ejecutam
 
   `$ /home/odoo/odoo/odoo-bin -c /home/odoo/odoo-server.conf`
 
+[**INDICE**](#indice)
 
 ## CONFIGURAR ODOO<a name="id6"/>
 
@@ -351,6 +366,8 @@ Conectar con el usuario postgres y arrancar la base de datos:
   ~~~
 
  ![Captura 19][img19]
+ 
+ [**INDICE**](#indice)
 
 ### 2. Crear base de datos con datos de prueba
 
@@ -364,6 +381,8 @@ En psql comprobamos las bases de datos que existen:
 \c bbdd Cambiar a la base de datos
 \dt     Listar las tablas de la base de datos
 ~~~
+
+[**INDICE**](#indice)
 
 ### 3. Instalar internacialización de Odoo al castellano<a name="id6b"/>
 
@@ -406,6 +425,8 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
   * Actualizar lista de aplicaciones:
 
   Al ir a la pestaña aplicaciones deberia aparecer el la barra lateral izquierda la opción Actualizar lista de aplicaciones.
+
+[**INDICE**](#indice)
 
 ### 4. Instalar el módulo de topónimos<a name="id6c"/>
 
@@ -468,6 +489,8 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
 
   `$ rm -r /home/odoo/partner-contact/`
 
+[**INDICE**](#indice)
+
 ### 5. Instalar módulos extra<a name="id6d"/>
 
 #### Jasper Reports
@@ -493,6 +516,7 @@ Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
 Ofrece diferentes tipos de letras para utilizarlos en Odoo.
 Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
 
+[**INDICE**](#indice)
 
 ## CONFIGURACIÓN SERVIDOR DE CORREO SMTP<a name="id7"/>
 
@@ -513,6 +537,7 @@ Nombre usuario: El de la cuenta de correo
 Contraseña:     La de la cuenta de correo
 ~~~
 
+
 ### 2. Configurar cuenta de correos
 
 Cambiar las preferencias para permitir envío de correos desde aplicaciones inseguras.
@@ -525,6 +550,7 @@ Se pueden enviar correos desde muchas de las aplicaciones de Odoo, elegir una y 
 
   (OPCIONAL)
 
+[**INDICE**](#indice)
 
 ## CONFIGURACIÓN DE COPIAS DE SEGURIDAD<a name="id8"/>
 
@@ -539,12 +565,12 @@ Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Mana
   * Restore:  Restaurar desde una copia guardada de la base de datos
 
     ![Captura 22][img22]
+    
+[**INDICE**](#indice)
 
-### DESDE EL SERVIDOR<a name="id8b"/>
+### MANUALES DESDE EL SERVIDOR<a name="id8b1"/>
 
-#### MANUALES<a name="id8b1"/>
-
-##### COPIA
+#### COPIA
 
 1. Nos conectamos con el usuario odoo y vamos a la carpeta donde queramos guardar la copia:
 
@@ -556,7 +582,7 @@ Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Mana
 
   `$ pg_dump -Fc test > test.sql`
 
-    ![Captura 23][img23]
+   ![Captura 23][img23]
 
 3. Generar el nombre del fichero con la fecha mediante el comando date:
 
@@ -572,17 +598,21 @@ Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Mana
   Con $(...) conseguimos que evalue primero la expresión interna y luego utiliza el resultado para evaluar el resto de la expresión.
   ~~~
 
-    ![Captura 24][img24]
+   ![Captura 24][img24]
+    
+[**INDICE**](#indice)
 
-##### BORRADO
+#### BORRADO
 
   * Borrar base de datos desde la pagina de Odoo:
 
     ![Captura 25][img25]
 
     ![Captura 26][img26]
+    
+[**INDICE**](#indice)
 
-##### RESTAURACIÓN
+#### RESTAURACIÓN
 
 1. Reiniciar la máquina y parar Odoo:
 
@@ -596,7 +626,7 @@ Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Mana
 
   `$ sudo systemctl stop odoo10.service`
 
-    ![Captura 27][img27]
+   ![Captura 27][img27]
 
 2. Crear la base de datos vacia:
 
@@ -621,8 +651,9 @@ en el sistema y tambien hay un usuario odoo equivalente en postgres.
 
 5. Comprobar en Odoo que la base de datos ha sido restaurada correctamente revisando la informacion (productos, pedidos, clientes... )
 
+[**INDICE**](#indice)
 
-#### AUTOMÁTICAS<a name="id8b2"/>
+### AUTOMÁTICAS DESDE EL SERVIDOR<a name="id8b2"/>
 
 1. Guardamos el comando de copia en un script:
 
@@ -706,6 +737,7 @@ sus permisos en las fechas que indiquemos.
 
     ![Captura 35][img35]
 
+[**INDICE**](#indice)
 
 
 
