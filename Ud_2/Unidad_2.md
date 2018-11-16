@@ -1,7 +1,6 @@
 # INDICE<a name="indice"/>
 
 * [Configurar acceso remoto a Ubuntu Server](#id1)
-
 * [Preparar instalación Odoo](#id2)
   * [Instalar las dependencias](#id2a)
   * [Instalar *wkhtmltopdf*](#id2b)
@@ -9,28 +8,22 @@
   * [Instalar *pip*](#id2d)
   * [Instalar el paquete *pillow*](#id2e)
   * [Instalar *git*](#id2f)
-  
 * [Instalar Postgres](#id3)
-
 * [Crear usuarios Odoo](#id4)
   * [En la base de datos](#id4a)
   * [En el sistema](#id4b)
-  
 * [Instalar Odoo](#id5)
   * [Descargar el repositorio de Odoo](#id5a)
   * [Instalar requisitos de python](#id5b)
   * [Crear el archivo de configuración](#id5c)
   * [Configurar Odoo para que arranque al inicio](#id5d)
   * [Iniciar Odoo](#id5e)
-  
 * [Configurar Odoo](#id6)
   * [Cambiar codificación de la base de datos](#id6a)
   * [Instalar internacialización de Odoo al castellano](#id6b)
   * [Instalar el módulo de topónimos](#id6c)
   * [Instalar módulos extra](#id6d)
-  
 * [Configurar servidor de correo smtp](#id7)
-
 * [Configurar copias de seguridad](#id8)
   * [Desde Odoo](#id8a)
   * [Desde el servidor manuales](#id8b1)
