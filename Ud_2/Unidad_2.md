@@ -1,10 +1,46 @@
 # INDICE
 
+* [Configurar acceso remoto a Ubuntu Server](#id1)
+
+* [Preparar instalación Odoo](#id2)
+  * [Instalar las dependencias](#id2a)
+  * [Instalar *wkhtmltopdf*](#id2b)
+  * [Instalar *npm*](#id2c)
+  * [Instalar *pip*](#id2d)
+  * [Instalar el paquete *pillow*](#id2e)
+  * [Instalar *git*](#id2f)
+  
+* [Instalar Postgres](#id3)
+
+* [Crear usuarios Odoo](#id4)
+  * [En la base de datos](#id4a)
+  * [En el sistema](#id4b)
+  
+* [Instalar Odoo](#id5)
+  * [Descargar el repositorio de Odoo](#id5a)
+  * [Instalar requisitos de python](#id5b)
+  * [Crear el archivo de configuración](#id5c)
+  * [Configurar Odoo para que arranque al inicio](#id5d)
+  * [Iniciar Odoo](#id5e)
+  
+* [Configurar Odoo](#id6)
+  * [Cambiar codificación de la base de datos](#id6a)
+  * [Instalar internacialización de Odoo al castellano](#id6b)
+  * [Instalar el módulo de topónimos](#id6c)
+  * [Instalar módulos extra](#id6d)
+  
+* [Configurar servidor de correo smtp](#id7)
+
+* [Configurar copias de seguridad](#id8)
+  * [Desde Odoo](#id8a)
+  * [Desde el servidor manuales](#id8b1)
+  * [Desde el servidor automáticas](#id8b2)
+
+***
+
 # CONTENIDO
 
-## CONFIGURACIÓN UBUNTU SERVER
-
-### Habilitar acceso remoto
+## CONFIGURAR ACCESO REMOTO A UBUNTU SERVER<a name="id1"/>
 
   Por seguridad no se puede acceder por ssh al usuario root, por lo que necesitamos cambiar el archivo de configuración de ssh desde proxmox:
 
@@ -24,28 +60,31 @@
 
 
 
-## PREPARAR INSTALACIÓN ODOO
+## PREPARAR INSTALACIÓN ODOO<a name="id2"/>
 
-### 1. Conectar mediante ssh
+### 1. Instalar las dependencias<a name="id2a"/>
+
+Conectar mediante ssh:
 
   `$ ssh root@192.168.3.58`
 
   Conectamos con root para tener todos los permisos, y no tener que otorgarnos permisos temporales escribiendo sudo delante de cada comando.
 
 
-### 2. Actualizar la lista de paquetes disponibles
+Actualizar la lista de paquetes disponibles:
 
   `$ apt-get update`
 
-
-### 3. Instalar las depencias que vamos a necesitar para instalar Odoo
+Instalar las depencias que vamos a necesitar para instalar Odoo:
 
   `$ apt-get -yq install adduser postgresql-client python-dateutil python-docutils python-feedparser python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-psycopg2 python-psutil python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi poppler-utils python-pip python-pypdf python-passlib python-decorator gcc python-dev libxml2-dev libxslt-dev libsasl2-dev libldap2-dev libssl-dev libpq-dev libjpeg-dev libjpeg8-dev python-setuptools python-markupsafe python-reportlab-accel python-zsi python-yaml python-argparse python-openssl python-egenix-mxdatetime python-usb python-serial lptools make python-pydot python-psutil python-paramiko poppler-utils python-pdftools antiword python-requests python-xlsxwriter python-suds python-software-properties`
 
 ![Captura de pantalla 1][img1]
 
 
-### 4. Instalar el paquete *wkhtmltopdf* para realizar informes en pdf desde Odoo
+### 2. Instalar el paquete *wkhtmltopdf*<a name="id2b"/>
+
+Para realizar informes en pdf desde Odoo.
 
   * Descargar:
 
@@ -66,7 +105,9 @@
   ![Captura de pantalla 3][img3]
 
 
-### 5. Instalar npm para que funcione correctamente el servidor web
+### 3. Instalar *npm*<a name="id2c"/>
+
+Para que funcione correctamente el servidor web.
 
   * Instalar:
 
@@ -85,13 +126,14 @@
   ![Captura de pantalla 5][img5]
 
 
-### 6. Instalar pip
+### 4. Instalar *pip*<a name="id2d"/>
 
   `$ apt-get install python3-pip python-pip`
 
   ![Captura de pantalla 6][img6]
 
-### 7. Instalar el paquete *pillow*
+### 5. Instalar el paquete *pillow*<a name="id2e"/>
+
 Para no tener problemas con el procesamiento de imágenes al instalar datos demo instalamos este paquete de python:
 
   `$ pip install --no-cache-dir -I pillow`
@@ -106,7 +148,7 @@ Para no tener problemas con el procesamiento de imágenes al instalar datos demo
   ![Captura de pantalla 8][img8]
 
 
-### 8. Instalar *git*
+### 6. Instalar *git*<a name="id2f"/>
 
   `$ sudo apt-get install git`
 
@@ -115,7 +157,7 @@ Para no tener problemas con el procesamiento de imágenes al instalar datos demo
 ~~~
 
 
-## INSTALAR POSTGRES
+## INSTALAR POSTGRES<a name="id3"/>
 
   `$ apt-get install postgresql`
 
@@ -132,9 +174,9 @@ Para no tener problemas con el procesamiento de imágenes al instalar datos demo
 
 
 
-## CREAR USUARIOS ODOO
+## CREAR USUARIOS ODOO<a name="id4"/>
 
-### 1. Crear usuario odoo en la base de datos postgres
+### 1. Crear usuario odoo en la base de datos postgres<a name="id4a"/>
 
   Cambiar al usuario postgres que se acaba de crear en la instalacion:
 
@@ -154,7 +196,7 @@ Argumentos:
   ![Captura de pantalla 12][img12]
 
 
-### 2. Crear usuario odoo en el sistema
+### 2. Crear usuario odoo en el sistema<a name="id4b"/>
 
   `$ su root`
 
@@ -164,9 +206,9 @@ Argumentos:
 
 
 
-## INSTALAR ODOO
+## INSTALAR ODOO<a name="id5"/>
 
-### 1. Descargar el repositorio de Odoo
+### 1. Descargar el repositorio de Odoo<a name="id5a"/>
 
   `$ su odoo`
 
@@ -181,7 +223,7 @@ Argumentos:
   ![Captura de pantalla 14][img14]
 
 
-### 2. Instalar requisitos de python
+### 2. Instalar requisitos de python<a name="id5b"/>
 
   `$ su root`
 
@@ -194,7 +236,7 @@ Argumentos:
 INSTANTÁNEA PRE-CONFIGURACION
 ~~~
 
-### 3. Crear el archivo de configuración
+### 3. Crear el archivo de configuración<a name="id5c"/>
 
 Para que lea los parametros que necesita al ejecutarse sin que tengamos que pasarlos nosotros.
 
@@ -222,7 +264,7 @@ addons_path = /home/odoo/odoo/addons
   ![Captura de pantalla 16][img16]
 
 
-### 4. Configurar Odoo para que arranque al inicio
+### 4. Configurar Odoo para que arranque al inicio<a name="id5d"/>
 
  * Crear el archivo:
 
@@ -265,7 +307,7 @@ WantedBy=default.target
 INSTANTANEA TERMINADA
 ~~~
 
-### 5. Iniciar Odoo
+### 5. Iniciar Odoo<a name="id5e"/>
 
 Reiniciando la máquina el servicio se inicia solo, puedo cerrar el terminal y trabajar desde el navegador en la direccion de mi Odoo:
 
@@ -276,9 +318,9 @@ Si quisieramos simplemente iniciar Odoo como proceso y no como servicio ejecutam
   `$ /home/odoo/odoo/odoo-bin -c /home/odoo/odoo-server.conf`
 
 
-## CONFIGURAR ODOO
+## CONFIGURAR ODOO<a name="id6"/>
 
-### 1. Cambiar codificación de la base de datos
+### 1. Cambiar codificación de la base de datos<a name="id6a"/>
 
 Conectar con el usuario postgres y arrancar la base de datos:
 
@@ -323,7 +365,7 @@ En psql comprobamos las bases de datos que existen:
 \dt     Listar las tablas de la base de datos
 ~~~
 
-### 3. Instalar internacialización de Odoo al castellano
+### 3. Instalar internacialización de Odoo al castellano<a name="id6b"/>
 
 Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el que necesitamos se encuentra en www.github.com/oca.
 
@@ -365,7 +407,7 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
 
   Al ir a la pestaña aplicaciones deberia aparecer el la barra lateral izquierda la opción Actualizar lista de aplicaciones.
 
-### 4. Instalar el módulo de topónimos
+### 4. Instalar el módulo de topónimos<a name="id6c"/>
 
   * Buscar el repositorio:
 
@@ -426,7 +468,7 @@ Los modulos de internacionalizacion siempre empiezan por l10n, en este caso el q
 
   `$ rm -r /home/odoo/partner-contact/`
 
-### 5. Instalar módulos extra
+### 5. Instalar módulos extra<a name="id6d"/>
 
 #### Jasper Reports
 
@@ -452,7 +494,7 @@ Ofrece diferentes tipos de letras para utilizarlos en Odoo.
 Disponible en el modulo Server Tools (dependencia del modulo de toponimos).
 
 
-## CONFIGURACIÓN SERVIDOR DE CORREO SMTP
+## CONFIGURACIÓN SERVIDOR DE CORREO SMTP<a name="id7"/>
 
 ### 1. Configurar servidor de correo saliente
 
@@ -484,9 +526,9 @@ Se pueden enviar correos desde muchas de las aplicaciones de Odoo, elegir una y 
   (OPCIONAL)
 
 
-## CONFIGURACIÓN DE COPIAS DE SEGURIDAD
+## CONFIGURACIÓN DE COPIAS DE SEGURIDAD<a name="id8"/>
 
-### DESDE ODOO
+### DESDE ODOO<a name="id8a"/>
 
 Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Manage databases:
 
@@ -498,9 +540,9 @@ Desde la pagina principal de Odoo (antes de entrar) pinchamos en la opción Mana
 
     ![Captura 22][img22]
 
-### DESDE EL SERVIDOR
+### DESDE EL SERVIDOR<a name="id8b"/>
 
-#### MANUALES
+#### MANUALES<a name="id8b1"/>
 
 ##### COPIA
 
@@ -580,7 +622,7 @@ en el sistema y tambien hay un usuario odoo equivalente en postgres.
 5. Comprobar en Odoo que la base de datos ha sido restaurada correctamente revisando la informacion (productos, pedidos, clientes... )
 
 
-#### AUTOMÁTICAS
+#### AUTOMÁTICAS<a name="id8b2"/>
 
 1. Guardamos el comando de copia en un script:
 
