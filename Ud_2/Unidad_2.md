@@ -698,7 +698,7 @@ sus permisos en las fechas que indiquemos.
 
   Cambio el script para que la guarde ahi:
 
-    ![Captura 32][img32]
+   ![Captura 32][img32]
 
 5. Creo un script para borrar las más antiguas:
 
@@ -718,7 +718,7 @@ sus permisos en las fechas que indiquemos.
 
   Lo añado al crontab.
 
-    ![Captura 33][img33]
+   ![Captura 33][img33]
 
   Compruebo que funcione correctamente:
 
@@ -728,35 +728,9 @@ sus permisos en las fechas que indiquemos.
 
   Una vez terminada la comprobación establezco la hora de backup (00:00 de cada dia) y pongo la hora de borrado 5 minutos despues.
 
-    ![Captura 35][img35]
+   ![Captura 35][img35]
 
 [**INDICE**](#indice)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
