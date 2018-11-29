@@ -342,8 +342,16 @@ En Movimientos de existencias comprobamos que se realizó la venta correctamente
 
 imagen
 
+# MÓDULO CRM
 
+1. Instalación
 
+En modo desarrollador buscar el modulo CRM en Aplicaciones e instalar.
+En Ventas aprecen funcionalidades nuevas ademas de otras pestañas como Calendario o Rastreador de enlaces
+
+imagen
+
+2. Crear oportunidades de venta
 
 
 
