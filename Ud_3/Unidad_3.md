@@ -376,6 +376,21 @@ Pulsamos en Enviar
 
 4. Planificar llamada a cliente
 
+En Ventas -> Flujo de Ventas aparecen las Oportunidades creadas, en este caso el presupuesto enviado.
+
+imagen
+
+Pinchamos en la oportunidad, en un circulo de color muy pequeño que aparece junto al simbolo de la camara. Rellenar el dialogo que aparece con la informacion de la actividad a realizar y pinchar Planificar actividad.
+
+imagen
+
+5. Ganar oportunidad de venta
+
+En Ventas -> Flujo de ventas pinchamos en la oportunidad y en la opción Marcar como ganada
+imagen
+
+
+
 
 
 
