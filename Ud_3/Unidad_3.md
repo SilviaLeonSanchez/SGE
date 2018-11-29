@@ -261,7 +261,7 @@ En Inventario -> Informes -> Movimientos de existencias podemos comprobar todas 
 
 En Ventas -> Presupuestos seleccionamos los pedidos de los que vamos a generar la factura y pinchamos en el desplegable Accion -> Orden de facturacion.
 
-Elegimos Crear y ver facturas
+Elegimos Crear y ver facturas y Validar
 
 imagen
 
@@ -278,6 +278,10 @@ Elegir la forma de pago y Validar
 Debe aparecer como pagada.
 
 # INSTALACIÓN MÓDULO TPV
+
+Activar el modo desarrollador en Configuración (esquina inferior derecha)
+
+Buscamos en Aplicaciones el modulo Punto de Venta e instalamos.
 
 
 
