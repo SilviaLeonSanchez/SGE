@@ -210,8 +210,6 @@ Modificar el documento indicando en cada producto la misma cantidad en Hecho que
 
 imagen 35
 
----------------------
-
 Ahora el pedido aparece en estado Para facturar y en Inventario -> Movimientos de existencias aparecen los productos situados en la Tienda.
 
 imagen 28
@@ -221,10 +219,43 @@ imagen 28
 En el pedido pinchamos en Facturas de p... (esquina superior derecha del formulario del pedido) y en Crear.
 Aparece el nombre del proveedor seleccionado y los datos del pedido. Elegir la fecha de la facura y Validar.
 
+imagen dia 29
+
 4. Realizar pago
 Pinchar en la opcion de Registrar pago (esquina superrior izquierda en el desde la propia factura)
+imagen
 
+En el dialogo que aparece elegir la opcion de pago elegido y validar
 
+imagen
+
+Debe aparecer como Pagado.
+
+# REALIZAR VENTA A CLIENTE
+
+1. Realizar venta
+
+En Ventas -> Clientes elegimos el cliente que desea realizar la compra. 
+imagen
+
+Pinchamos en Ventas (esquina superior derecha de la ficha del cliente) y aparecera el listado de todas las ventas realizadas a ese cliente. Seleccionamos la opcion Crear.
+
+imagen
+
+Seleccionar los productos y la cantidad.Debe aparecer toda la informacion de los mismos en el formulario automaticamente.
+Seleccionamos la tarifa que se le aplica.
+En la pestaña Otra informacion podemos elegir desde que ubicación se le envian los productos. Asegurarse de que es la correcta y comprobar si es necesario si hay existencias suficientes.
+
+Guardamos y pinchamos en Confirmar venta si todo es correcto.
+imagen
+
+Si queremos realizar varios pedidos repetimos el proceso.
+
+2. Generar factura
+
+En Ventas -> Presupuestos seleccionamos los pedidos de los que vamos a generar la factura y pinchamos en el desplegable Accion -> Orden de facturacion.
+
+Elegimos Crear y ver facturas
 
 
 
