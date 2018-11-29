@@ -176,7 +176,6 @@ imagen 22?
 Se añaden los elementos sobre los que se va a aplicar la tarifa, en este caso sobre una determinada categoria.
 
 Para indicar un precio sobre el precio de coste se indica la opcion formula, donde marcamos sobre precio de coste, y en descuento ponemos un descuento negativo para que resulte en el aumento de precio que queremos conseguir.
-Se puede conseguir el mismo resultado en la opcion porcentaje.
 
 Para que el precio del software sea de 1.9 el precio de coste indico un descuento del -90%.
 
@@ -216,6 +215,14 @@ imagen 35
 Ahora el pedido aparece en estado Para facturar y en Inventario -> Movimientos de existencias aparecen los productos situados en la Tienda.
 
 imagen 28
+
+3. Generar factura
+
+En el pedido pinchamos en Facturas de p... (esquina superior derecha del formulario del pedido) y en Crear.
+Aparece el nombre del proveedor seleccionado y los datos del pedido. Elegir la fecha de la facura y Validar.
+
+4. Realizar pago
+Pinchar en la opcion de Registrar pago (esquina superrior izquierda en el desde la propia factura)
 
 
 
