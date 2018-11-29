@@ -265,6 +265,15 @@ imagen
 
 4. Registrar pago
 
+Desde Contabilidad -> Ventas -> Factura de cliente elegimos la factura y nos aparece el formulario de la misma.
+
+Pinchar en Registrar pago
+
+imagen
+
+Elegir la forma de pago y Validar
+
+Debe aparecer como pagada.
 
 
 
