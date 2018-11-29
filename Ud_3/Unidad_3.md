@@ -353,6 +353,32 @@ imagen
 
 2. Crear oportunidades de venta
 
+Pinchamos en Ventas directas -> Nuevo -> Oportunidad
+
+imagen
+
+Pinchamos en presupuesto y aparece un formulario.
+En el presuopuesto le vamos a aplicar un 10% de descuento, para ello creamos una tarifa sobre la Tarifa general (pinchamos en el desplegable Tarifa -> Crear tarifa) y se la aplicamos.
+
+imagen
+
+Añadir los productos al presupuesto y guardar.
+
+3. Enviar presupuesto por correo electrónico
+
+En el presupuesto pinchar en Enviar por correo electrónico.
+
+imagen
+
+imagen
+
+Pulsamos en Enviar
+
+4. Planificar llamada a cliente
+
+
+
+
 
 
 
