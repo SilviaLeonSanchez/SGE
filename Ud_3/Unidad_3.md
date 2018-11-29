@@ -293,9 +293,34 @@ Eliminamos los que no sean necesarios seleccionando el producto y pinchando en A
 
 imagen
 
-En Punto de venta -> Configuración -> Configuración elegimos las opciones que consideremos oportunas para el funcionamiento del modulo.
+En Punto de venta -> Configuración -> Configuración elegimos las opciones que consideremos oportunas para el funcionamiento del modulo y seleccionamos Aplicar.
 
 imagen
+
+3. Realización de ventas
+
+En Punto de venta -> Tablero aparecen las sesiones disponibles. Si no tenemos ninguna elegir Nueva sesión.
+
+imagen
+
+Aparece el terminal de venta 
+
+imagen
+
+Pinchamos en los productos que se van a vender y elegimos el cliente
+
+imagen
+
+Pinchamos en Pagos, seleccionamos el metodo de pago, si es Efectivo introducimos tambien la cantidad introducida y pinchamos en Validar.
+
+imagen
+
+Genera la venta y muestra el ticket
+
+imagen
+
+
+
 
 
 
