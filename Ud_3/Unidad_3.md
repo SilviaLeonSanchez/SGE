@@ -279,9 +279,23 @@ Debe aparecer como pagada.
 
 # INSTALACIÓN MÓDULO TPV
 
-Activar el modo desarrollador en Configuración (esquina inferior derecha)
+1. Instalación
 
+Activar el modo desarrollador en Configuración (esquina inferior derecha)
 Buscamos en Aplicaciones el modulo Punto de Venta e instalamos.
+
+2. Configuración
+Comprobamos los productos que estarán disponibles para su venta en Punto de Venta -> Pedidos -> Productos
+
+imagen
+
+Eliminamos los que no sean necesarios seleccionando el producto y pinchando en Accion -> Suprimir.
+
+imagen
+
+En Punto de venta -> Configuración -> Configuración elegimos las opciones que consideremos oportunas para el funcionamiento del modulo.
+
+imagen
 
 
 
