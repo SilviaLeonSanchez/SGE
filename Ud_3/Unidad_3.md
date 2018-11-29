@@ -251,11 +251,21 @@ imagen
 
 Si queremos realizar varios pedidos repetimos el proceso.
 
-2. Generar factura
+2. Comprobar stock
+
+En Inventario -> Informes -> Movimientos de existencias podemos comprobar todas las operaciones realizadas sobre el stock: movimientos de una ubicacion a otra, compras, ventas... Aparece la informacion de los productos, su ubicacion inicial y final y su estado.
+
+3. Generar factura
 
 En Ventas -> Presupuestos seleccionamos los pedidos de los que vamos a generar la factura y pinchamos en el desplegable Accion -> Orden de facturacion.
 
 Elegimos Crear y ver facturas
+
+imagen
+
+4. Registrar pago
+
+
 
 
 
