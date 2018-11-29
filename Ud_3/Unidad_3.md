@@ -183,6 +183,8 @@ imagen 23
 
 Para aplicar las tarifas deberemos hacerlo al crear un pedido de ventas.
 
+Se puede crear una Tarifa general y añadir reglas que aplicaran distintos calculos segun los criterios que indiquemos como la categoria de producto. Asi podra incluir distintas formas de calcular el precio si en un mismo pedido tenemos productos de distintas categorias.
+
 # REALIZAR PEDIDO A PROVEEDOR
 
 Compras -> Pedidos de compra -> Crear 
@@ -274,6 +276,10 @@ imagen
 Elegir la forma de pago y Validar
 
 Debe aparecer como pagada.
+
+# INSTALACIÓN MÓDULO TPV
+
+
 
 
 
