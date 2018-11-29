@@ -277,7 +277,7 @@ Elegir la forma de pago y Validar
 
 Debe aparecer como pagada.
 
-# INSTALACIÓN MÓDULO TPV
+# MÓDULO TPV
 
 1. Instalación
 
@@ -319,6 +319,28 @@ Genera la venta y muestra el ticket
 
 imagen
 
+4. Realización de devoluciones
+
+Hay que salir del modo terminal de venta pinchando en Cerrar y Confirmar (en la esquina superior derecha).
+En Punto de venta -> Pedidos -> Pedidos seleccionamos el pedido del que se quiere realizar la devolución.
+
+imagen
+
+Elegir la opcion Devolver productos
+
+imagen
+
+Al volver a Pedidos aparece otro pedido igual pero con el importe negativo por ser una devolución. 
+
+Pinchar en el y confirmar la devolucion del dinero eligiendo Pagos -> Realizar pago
+
+imagen
+
+5. Comprobacion de stock
+
+En Movimientos de existencias comprobamos que se realizó la venta correctamente pasando los productos del almacen a la ubicación del cliente, y que al realizar la devolución el producto volvió del cliente al almacen.
+
+imagen
 
 
 
