@@ -389,10 +389,26 @@ imagen
 En Ventas -> Flujo de ventas pinchamos en la oportunidad y en la opción Marcar como ganada
 imagen
 
+# CREAR SITIO WEB
 
+1. Instalar Constructor de sitio web
 
+Con el modo desarrollador activado vamos a Aplicaciones e instalamos Constructor del sitio web.
 
+2. Elegir tipo de plantilla
+  
+imagen 1 3/12
 
+Aparece estas dos opciones al instalar la aplicación. Elijo Plain Bootstrap y pincho en el boton Instalar que tiene en la esquina inferior derecha.
+
+imagen 2
+
+3. Personalizar la pagina
+
+Solo es necesario seguir las marcas que aparecen del tutorial e ir realizando las acciones que nos indican.
+En primer lugar pulsamos en Editar y empezamos a modificar los elementos:
+
+imagen 3
 
 
 
