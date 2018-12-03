@@ -410,9 +410,23 @@ En primer lugar pulsamos en Editar y empezamos a modificar los elementos:
 
 imagen 3
 
+4. Incorporar localización con Google Maps
+
+En Administración del sitio web -> Configuración -> Dominio -> Google Maps seguir el enlace para crear la clave API
+
+imagen 
+
+Crear una key de la API de Google
+
+imagen anterior
+
+Introducirla en Odoo
 
 
 
+# INSTALAR TIENDA ONLINE
+
+Problema en la instalacion
 
 
 
