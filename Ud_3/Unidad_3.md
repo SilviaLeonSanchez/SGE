@@ -426,7 +426,21 @@ Introducirla en Odoo
 
 # INSTALAR TIENDA ONLINE
 
-Problema en la instalacion
+Encuentro problemas en la instalacion de la tienda asique tengo que volver a una instantanea anterior, justo despues de la creación de los productos, los clientes y los proveedores.
+
+imagen dia 4
+
+1. Instalar la aplicaión
+
+En modo desarrollador ir a Aplicaciones e instalar Tienda del sitio web. Si no se ha instalado la aplicación del sitio web esta se instalará automaticamente.
+
+2. Editar la tienda y el sitio web
+
+Elegir el tema entre los dos que te proponen. Aparece la página de inicio y solo hay que seguir el tutorial empezando por opción Editar. Es como con configurar el sitio web, solo que esta vez añaden la pestaña tienda.
+
+imagen
+
+
 
 
 
