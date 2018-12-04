@@ -440,6 +440,24 @@ Elegir el tema entre los dos que te proponen. Aparece la página de inicio y sol
 
 imagen
 
+En la tienda aparecen automáticamente los productos que hubiera ya creados.
+
+imagen
+
+Personalizar el sitio web arrastrando los componentes de la paleta que aparece a la izquierda y modificando textos e imagenes.
+
+imagen
+
+3. Cambiar la configuración de la tienda y el sitio web
+
+En Administración del sitio web -> Configuración 
+
+imagen
+
+Entre otras cosas podemos editar la configuración de envios de email de confirmación de pedido
+
+
+
 
 
 
