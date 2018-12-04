@@ -471,9 +471,58 @@ Administración del sitio web -> Configuración -> Tienda del sitio web -> Metod
 
 imagen
 
-Compruebo que Transgerencia bancaria este instalado y si es necesario cambio la configuración. 
+Compruebo que Transferencia bancaria este instalado y si es necesario cambio la configuración. 
 
 imagen
+
+6. Realizar compra a traves de la tienda online
+
+Al haber añadido las tarifas se deben visualizar correctamente los precios de los productos.
+
+imagen
+
+Realizamos la primera compra para comprobar que todo funciona correctamente. Pincho en Añadir a la cesta.
+
+imagen
+
+Elijo Continuar a caja y en la Cesta elijo Procesar compra para pasar al ingreso de los datos y el pago de la misma.
+
+imagen
+
+Después de confirmar la dirección de envío y facturación llegamos a la elección del método de pago. En este caso solo añadimos Transferencia bancaria.
+
+imagen
+
+Al confirmar el pedido aparece pendiente de realizar el pago.
+
+imagen
+
+Vamos Administracion del sitio web -> Pedidos -> Órdenes sin pagar donde se ha creado un registro con el nuevo pedido.
+
+imagen
+
+Si pinchamos en ella podemos Confirmar venta y Facturar.
+
+imagen
+
+Validar la factura y Registrar el pago.
+
+imagen
+
+Ahora en facturas ya aparece la orden como pagada.
+
+7. Enviar email de confiramción de compra
+
+En Administración del sitio web -> Pedidos podemos pinchar en el pedido y enviar por correo electrónico.
+Elegimos la plantilla que hemos creado anterioemente en la configuración.
+
+imagen
+
+
+
+
+
+
 
 
 
