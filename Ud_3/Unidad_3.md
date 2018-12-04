@@ -459,6 +459,23 @@ Si vamos al sitio web, en la pestaña contáctenos aparece un mapa con la direcc
 
 imagen mapa
 
+5. Formas de pago
+
+Añadir la tarifa que se va a aplicar a los productos de la tienda.
+Administración del sitio web -> Catálogo -> Tarifas -> Crear 
+
+imagen
+
+Añadir metodos de pago.
+Administración del sitio web -> Configuración -> Tienda del sitio web -> Metodos de pago
+
+imagen
+
+Compruebo que Transgerencia bancaria este instalado y si es necesario cambio la configuración. 
+
+imagen
+
+
 
 
 
