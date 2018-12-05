@@ -37,7 +37,7 @@ Se rellenan los datos automaticamente con la informacion que tenemos de los modu
 
 Pinchamos en Aplicar.
 
-imagen 6 
+imagen 6
 
 # INSTALAR LOS MODULOS NECESARIOS
 
@@ -47,7 +47,7 @@ imagen 7
 Gestion de inventario
 imagen 8
 
-Gestion de compras 
+Gestion de compras
 imagen 9
 
 
@@ -74,7 +74,7 @@ imagen 21??
 
 # CREAR PROVEEDORES
 
-Compras -> Proveedores -> Crear 
+Compras -> Proveedores -> Crear
 
 imagen 10
 
@@ -110,7 +110,7 @@ Inventario -> Categoria de productos -> Crear
 
 imagen 16
 
-Creamos las categorias jerarquicamente: 
+Creamos las categorias jerarquicamente:
 
 1. 'Software' que herede de 'Todos'
 
@@ -118,7 +118,7 @@ Creamos las categorias jerarquicamente:
 
 imagen 17
 
-Repetimos la operacion con la categoria 'Hardware' que tendra varios niveles de subcategorías: 
+Repetimos la operacion con la categoria 'Hardware' que tendra varios niveles de subcategorías:
 
 1. Crear categoria 'Hardware' que herede de 'Todos'
 
@@ -187,7 +187,7 @@ Se puede crear una Tarifa general y añadir reglas que aplicaran distintos calcu
 
 # REALIZAR PEDIDO A PROVEEDOR
 
-Compras -> Pedidos de compra -> Crear 
+Compras -> Pedidos de compra -> Crear
 
 1. Realizar pedido:
 
@@ -237,7 +237,7 @@ Debe aparecer como Pagado.
 
 1. Realizar venta
 
-En Ventas -> Clientes elegimos el cliente que desea realizar la compra. 
+En Ventas -> Clientes elegimos el cliente que desea realizar la compra.
 imagen
 
 Pinchamos en Ventas (esquina superior derecha de la ficha del cliente) y aparecera el listado de todas las ventas realizadas a ese cliente. Seleccionamos la opcion Crear.
@@ -303,7 +303,7 @@ En Punto de venta -> Tablero aparecen las sesiones disponibles. Si no tenemos ni
 
 imagen
 
-Aparece el terminal de venta 
+Aparece el terminal de venta
 
 imagen
 
@@ -330,7 +330,7 @@ Elegir la opcion Devolver productos
 
 imagen
 
-Al volver a Pedidos aparece otro pedido igual pero con el importe negativo por ser una devolución. 
+Al volver a Pedidos aparece otro pedido igual pero con el importe negativo por ser una devolución.
 
 Pinchar en el y confirmar la devolucion del dinero eligiendo Pagos -> Realizar pago
 
@@ -396,7 +396,7 @@ imagen
 Con el modo desarrollador activado vamos a Aplicaciones e instalamos Constructor del sitio web.
 
 2. Elegir tipo de plantilla
-  
+
 imagen 1 3/12
 
 Aparece estas dos opciones al instalar la aplicación. Elijo Plain Bootstrap y pincho en el boton Instalar que tiene en la esquina inferior derecha.
@@ -437,7 +437,7 @@ imagen
 
 3. Cambiar la configuración de la tienda y el sitio web
 
-En Administración del sitio web -> Configuración 
+En Administración del sitio web -> Configuración
 
 imagen
 
@@ -447,7 +447,7 @@ Entre otras cosas podemos editar la configuración de envios de email de confirm
 
 En Administración del sitio web -> Configuración -> Dominio -> Google Maps seguir el enlace para crear la clave API
 
-imagen 
+imagen
 
 Crear una key de la API de Google
 
@@ -462,7 +462,7 @@ imagen mapa
 5. Formas de pago
 
 Añadir la tarifa que se va a aplicar a los productos de la tienda.
-Administración del sitio web -> Catálogo -> Tarifas -> Crear 
+Administración del sitio web -> Catálogo -> Tarifas -> Crear
 
 imagen
 
@@ -471,7 +471,7 @@ Administración del sitio web -> Configuración -> Tienda del sitio web -> Metod
 
 imagen
 
-Compruebo que Transferencia bancaria este instalado y si es necesario cambio la configuración. 
+Compruebo que Transferencia bancaria este instalado y si es necesario cambio la configuración.
 
 imagen
 
@@ -518,35 +518,65 @@ Elegir la plantilla que hemos creado anterioemente en la configuración y Enviar
 
 imagen
 
-# ANÁLISIS DE BASE DE DATOS ODOOJ
+# ANÁLISIS DE BASE DE DATOS ODOO
 
+Para comprobar la estructura de la base de datos creada por Odoo tenemos varias opciones de conexión (desde el propio servidor, conectar por ssh al servidor y conectar por psql...).
+En este caso voy a establecer una conexión remota directamente con la base de datos.
+Para ello hay que modificar la configuración de postgres para permitir las conexiones remotas.
 
+1. Acceder a los archivos de configuración de postgres en el servidor
 
+Conectar con root:
 
+$ ssh root@192.168.3.58
 
+$ nano /etc/postgresql/9.5/main/postgresql.conf
 
+imagen
 
+Descomentamos la linea listen_addresses y ponemos '*'
+para que permita conectar a cualquier IP.
 
+imagen
 
+$ /etc/postgresql/9.5/main/pg_hba.conf
 
+* Cambiar 9.5 por la version de postgres que se tenga instalada.
 
+En IPv4 local connections poner all en todas las opciones y guardar.
 
+imagen
 
+2. Instalar cliente de base de datos postgresql
 
+En la máquina desde la que quieres acceder debes instalar el cliente postgres.
 
+$ sudo apt-get install postgresql-client
 
+3. Instalación cliente de base de DATOS
 
+Instalar pgAdmin3, que se puede encontrar facilmente en la aplicación de software.
 
+4. Conectar remotamente a la base de datos
 
+Crear una nueva conexión a base de datos e introducir la información de la misma.
 
+imagenes
 
+5. Acceder a la información de la base de DATOS
 
+Elegir la base de datos deseada en el panel izquierdo y navegar a través de las pestañas desplegables que aparecen para ver la información.
 
+imagen
 
+En este caso la base de datos informatica_sotrondio cuenta con 341 tablas en total, que al pinchar en Tables aparecen listadas en la pestaña Properties del panel derecho.
 
+Podemos acceder a toda la información de la empresa desde aquí, como por ejemplo la información de login de la empresa.
 
+imagen
 
+Para buscar cualquier objeto de la base de datos accedemos desde la pestaña Edit -> Search objects.
 
+Si queremos acceder a la información de las tablas solo tenemos que pinchar el botón derecho soble el nombre de la tabla y elegir View data.
 
-
-
+imagen
