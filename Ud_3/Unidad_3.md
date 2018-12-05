@@ -485,19 +485,19 @@ Realizamos la primera compra para comprobar que todo funciona correctamente. Pin
 
 imagen
 
-Elijo Continuar a caja y en la Cesta elijo Procesar compra para pasar al ingreso de los datos y el pago de la misma.
+Elegir Continuar a caja y en la Cesta elegir la opción Procesar compra para pasar al ingreso de los datos y el pago de la misma.
 
 imagen
 
-Después de confirmar la dirección de envío y facturación llegamos a la elección del método de pago. En este caso solo añadimos Transferencia bancaria.
+Después de confirmar la dirección de envío y facturación llegamos a la elección del método de pago. En este caso solo tenemos Transferencia bancaria.
 
 imagen
 
-Al confirmar el pedido aparece pendiente de realizar el pago.
+Al confirmar, el pedido aparece pendiente de pago.
 
 imagen
 
-Vamos Administracion del sitio web -> Pedidos -> Órdenes sin pagar donde se ha creado un registro con el nuevo pedido.
+Vamos a Administracion del sitio web -> Pedidos -> Órdenes sin pagar donde se ha creado un registro con el nuevo pedido.
 
 imagen
 
