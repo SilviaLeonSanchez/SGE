@@ -514,9 +514,12 @@ Ahora en facturas ya aparece la orden como pagada.
 7. Enviar email de confiramción de compra
 
 En Administración del sitio web -> Pedidos podemos pinchar en el pedido y enviar por correo electrónico.
-Elegimos la plantilla que hemos creado anterioemente en la configuración.
+Elegir la plantilla que hemos creado anterioemente en la configuración y Enviar.
 
 imagen
+
+# ANÁLISIS DE BASE DE DATOS ODOOJ
+
 
 
 
