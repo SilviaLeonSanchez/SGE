@@ -1,11 +1,25 @@
+# INDICE<a name="indice"/>
 
-# CREAR NUEVA BASE DE DATOS NUEVA
+* [Configurar acceso remoto a Ubuntu Server](#id1)
+* [Preparar instalación Odoo](#id2)
+  * [Instalar las dependencias](#id2a)
+  * [Instalar *wkhtmltopdf*](#id2b)
+
+***
+
+# CONTENIDO
+
+
+## CREAR NUEVA BASE DE DATOS NUEVA<a name="id1"/>
 
 Al conectar a Odoo a través del servicio web  nos ofrece conectarnos a las bases de datos de que disponemos, y tambien crear nuevas:
 
 imagen 1
+![Captura de pantalla 1][img1]
 
-# MODIFICAR LA COMPAÑIA POR DEFECTO
+[**INDICE**](#indice)
+
+## MODIFICAR LA COMPAÑIA POR DEFECTO
 
 Configuracion -> Compañias -> Editar
 
@@ -13,21 +27,21 @@ Incluimos los datos necesarios.
 
 imagen 5
 
-# INSTALAR LOS MODULOS NECESARIOS PARA LA PRACTICA
+## INSTALAR LOS MODULOS NECESARIOS PARA LA PRACTICA
 
-l10n_es
+* l10n_es
 
 imagen 2
 
-l10n_es_partner
+* l10n_es_partner
 
 imagen 3
 
-l10n_es_toponyms
+* l10n_es_toponyms
 
 imagen 4
 
-# ESTABLECER EL PLAN CONTABLE PARA UNA PYME ESPAÑOLA
+## ESTABLECER EL PLAN CONTABLE PARA UNA PYME ESPAÑOLA
 
 Contabilidad -> Configuracion -> Plan Contable -> Plantilla
 
@@ -39,7 +53,7 @@ Pinchamos en Aplicar.
 
 imagen 6
 
-# INSTALAR LOS MODULOS NECESARIOS
+## INSTALAR LOS MODULOS NECESARIOS
 
 Ventas
 imagen 7
@@ -51,7 +65,7 @@ Gestion de compras
 imagen 9
 
 
-# CREAR ALMACENES
+## CREAR ALMACENES
 
 En Inventario -> Configuracion -> Ubicación y almacén -> Nivel de uso de almacenes y ubicaciones marcar la opcion:
 Gestiona varios Almacenes, con varias ubicaciones cada uno
@@ -72,7 +86,7 @@ imagen 31
 
 imagen 21??
 
-# CREAR PROVEEDORES
+## CREAR PROVEEDORES
 
 Compras -> Proveedores -> Crear
 
@@ -90,7 +104,7 @@ Si hemos marcado en la pestaña Ventas y Compras del formulario la casilla indic
 
 imagen 12
 
-# CREAR CLIENTES DE LA EMPRESA
+## CREAR CLIENTES DE LA EMPRESA
 
 Ventas -> Clientes -> Crear
 
@@ -104,7 +118,7 @@ Comprobamos que aparecen en la pagina de Clientes:
 
 imagen 15
 
-# CREAR CATEGORIAS DE PRODUCTOS
+## CREAR CATEGORIAS DE PRODUCTOS
 
 Inventario -> Categoria de productos -> Crear
 
@@ -131,7 +145,7 @@ Deberia quedar asi:
 imagen 18
 
 
-# CREAR PRODUCTOS
+## CREAR PRODUCTOS
 
 Inventario -> Productos -> Crear
 
@@ -159,7 +173,7 @@ Al terminar se deberian encontrar todos en la pagina principal de productos
 imagen 22
 
 
-# CREAR TARIFA DE VENTA
+## CREAR TARIFA DE VENTA
 
 En Ventas -> Configuracion -> Precio -> Precio de Venta marcamos:
 
@@ -183,9 +197,11 @@ imagen 23
 
 Para aplicar las tarifas deberemos hacerlo al crear un pedido de ventas.
 
+~~~
 Se puede crear una Tarifa general y añadir reglas que aplicaran distintos calculos segun los criterios que indiquemos como la categoria de producto. Asi podra incluir distintas formas de calcular el precio si en un mismo pedido tenemos productos de distintas categorias.
+~~~
 
-# REALIZAR PEDIDO A PROVEEDOR
+## REALIZAR PEDIDO A PROVEEDOR
 
 Compras -> Pedidos de compra -> Crear
 
@@ -233,7 +249,7 @@ imagen
 
 Debe aparecer como Pagado.
 
-# REALIZAR VENTA A CLIENTE
+## REALIZAR VENTA A CLIENTE
 
 1. Realizar venta
 
@@ -277,7 +293,7 @@ Elegir la forma de pago y Validar
 
 Debe aparecer como pagada.
 
-# MÓDULO TPV
+## MÓDULO TPV
 
 1. Instalación
 
@@ -342,7 +358,7 @@ En Movimientos de existencias comprobamos que se realizó la venta correctamente
 
 imagen
 
-# MÓDULO CRM
+## MÓDULO CRM
 
 1. Instalación
 
@@ -389,7 +405,7 @@ imagen
 En Ventas -> Flujo de ventas pinchamos en la oportunidad y en la opción Marcar como ganada
 imagen
 
-# CREAR SITIO WEB
+## CREAR SITIO WEB
 
 1. Instalar Constructor de sitio web
 
@@ -411,7 +427,7 @@ En primer lugar pulsamos en Editar y empezamos a modificar los elementos:
 imagen 3
 
 
-# INSTALAR TIENDA ONLINE
+## INSTALAR TIENDA ONLINE
 
 Encuentro problemas en la instalacion de la tienda asique tengo que volver a una instantanea anterior, justo despues de la creación de los productos, los clientes y los proveedores.
 
@@ -518,7 +534,7 @@ Elegir la plantilla que hemos creado anterioemente en la configuración y Enviar
 
 imagen
 
-# ANÁLISIS DE BASE DE DATOS ODOO
+## ANÁLISIS DE BASE DE DATOS ODOO
 
 Para comprobar la estructura de la base de datos creada por Odoo tenemos varias opciones de conexión (desde el propio servidor, conectar por ssh al servidor y conectar por psql...).
 En este caso voy a establecer una conexión remota directamente con la base de datos.
@@ -528,9 +544,9 @@ Para ello hay que modificar la configuración de postgres para permitir las cone
 
 Conectar con root:
 
-$ ssh root@192.168.3.58
+`$ ssh root@192.168.3.58`
 
-$ nano /etc/postgresql/9.5/main/postgresql.conf
+`$ nano /etc/postgresql/9.5/main/postgresql.conf`
 
 imagen
 
@@ -539,7 +555,7 @@ para que permita conectar a cualquier IP.
 
 imagen
 
-$ /etc/postgresql/9.5/main/pg_hba.conf
+`$ /etc/postgresql/9.5/main/pg_hba.conf`
 
 * Cambiar 9.5 por la version de postgres que se tenga instalada.
 
@@ -551,7 +567,7 @@ imagen
 
 En la máquina desde la que quieres acceder debes instalar el cliente postgres.
 
-$ sudo apt-get install postgresql-client
+`$ sudo apt-get install postgresql-client`
 
 3. Instalación cliente de base de DATOS
 
@@ -580,3 +596,15 @@ Para buscar cualquier objeto de la base de datos accedemos desde la pestaña Edi
 Si queremos acceder a la información de las tablas solo tenemos que pinchar el botón derecho soble el nombre de la tabla y elegir View data.
 
 imagen
+
+
+
+
+
+
+
+
+
+[img1]: ./CAPTURAS/CAPTURA_1.png
+
+
