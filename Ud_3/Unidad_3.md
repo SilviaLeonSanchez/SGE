@@ -7,7 +7,7 @@
   * [Instalar las dependencias](#id2a)
   * [Instalar *wkhtmltopdf*](#id2b)
 
-***
+
 
 # Contenido
 
