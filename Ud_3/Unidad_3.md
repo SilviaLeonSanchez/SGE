@@ -14,12 +14,23 @@
 * [Crear proveedores](#id7)
 * [Crear clientes](#id8)
 * [Crear categorías de productos](#id9)
+* [Crear productos](#id10)
+* [Crear tarifa de venta](#id11)
+* [Realizar pedido a proveedor](#id12)
+  1. [Realizar pedido](#id12a)
+  2. [Recibir pedido](#id12b)
+  3. [Generar factura](#id12c)
+  4. [Realizar pago](#id12d)
+* [Realizar venta a cliente](#id13)
+  1. [Realizar venta](#id13a)
+  2. [Comprobar stock](#id13b)
+  3. [Generar factura](#id13c)
+  4. [Registrar pago](#id13d)
 
 
 
 
 # Contenido
-
 
 ## Crear nueva base de datos<a name="id1"/>
 
@@ -89,8 +100,7 @@ Pinchamos en Aplicar.
 
 > Inventario > Configuracion > Ubicación y almacén > Nivel de uso de almacenes y ubicaciones
 
-Marcar la opcion:
-Gestiona varios Almacenes, con varias ubicaciones cada uno.
+Marcar la opción **Gestiona varios Almacenes, con varias ubicaciones cada uno**.
 
 ![Captura de pantalla 10][img10]
 
@@ -148,9 +158,9 @@ Comprobamos que aparecen en la pagina de Clientes:
 
 ## Crear categorías de productos<a name="id9"/>
 
-Inventario -> Categoria de productos -> Crear
+> Inventario > Categoria de productos > Crear
 
-imagen 16
+![Captura de pantalla 20][img20]
 
 Creamos las categorias jerarquicamente:
 
@@ -158,7 +168,7 @@ Creamos las categorias jerarquicamente:
 
 2. Despues 'Sistemas operativos' que herede de 'Software'
 
-imagen 17
+![Captura de pantalla 21][img21]
 
 Repetimos la operacion con la categoria 'Hardware' que tendra varios niveles de subcategorías:
 
@@ -170,120 +180,136 @@ Repetimos la operacion con la categoria 'Hardware' que tendra varios niveles de 
 
 Deberia quedar asi:
 
-imagen 18
+![Captura de pantalla 22][img22]
 
 [**Indice**](#indice)
 
-## CREAR PRODUCTOS
+## Crear productos<a name="id10"/>
 
-Inventario -> Productos -> Crear
+> Inventario > Productos > Crear
 
-imagen 19
+![Captura de pantalla 23][img23]
 
-Categoria se indica en Categoria interna.
+Rellenar los datos con la información del producto.
 
-Coste se indica en Coste.
+Indicar el **coste del producto** en *Coste*.
 
-En Factura tenemos que indicar los impuestos de compra y de venta para que aparezca de forma automatica.
+En *Factura* tenemos que indicar los **impuestos de compra y de venta** para que aparezca de forma automática.
 
-En Precio de venta no pongo nada porque despues se utilizara una Tarifa para que lo calcule automaticamente en la factura.
+En *Precio de venta* no pongo nada porque despues se utilizara una Tarifa para que lo calcule automáticamente en la factura.
 
-El proveedor lo indico en la pestaña Inventario, añadiendo uno nuevo y eligiendo uno de los proveedores ya existentes, incluyendo el nombre del producto y el precio.
+El **proveedor** lo indico en la pestaña *Inventario*, añadiendo uno nuevo y eligiendo uno de los proveedores ya existentes, incluyendo el nombre del producto y el precio.
 
-Incluyo la descripcion en la pestaña Notas.
+Incluyo la **descripcion** en la pestaña *Notas*.
 
-Para indicar la cantidad que hay en stock pinchar en el boton Actualizar cantidad de stock fisico (arriba a la izquierda) y elegir la ubicacion.
-Incluir las actualizaciones necesarias para incluir las existencias de cada ubicacion.
+Para indicar la **cantidad** que hay en stock pinchar en el boton *Actualizar cantidad de stock fisico* (arriba a la izquierda) y elegir la ubicacion.
+Añadir las actualizaciones necesarias para incluir las existencias de cada ubicacion.
 
-imagen 20
+![Captura de pantalla 24][img24]
 
 Al terminar se deberian encontrar todos en la pagina principal de productos
 
-imagen 22
+![Captura de pantalla 25][img25]
 
 [**Indice**](#indice)
 
-## CREAR TARIFA DE VENTA
+## Crear tarifa de venta<a name="id11"/>
 
-En Ventas -> Configuracion -> Precio -> Precio de Venta marcamos:
+> Ventas > Configuracion > Precio > Precio de Venta
 
-Precios avanzados basados en fórmulas (descuentos, márgenes, redondeo)
-y aparece la opcion Tarifas.
+Marcar la opción **Precios avanzados basados en fórmulas (descuentos, márgenes, redondeo)**.
+
+![Captura de pantalla 25b][img25b]
+
+Aparece la opcion *Tarifas*.
 
 Para crear una nueva:
-imagen 32
 
-Ventas -> Tarifas -> Crear
+![Captura de pantalla 26][img26]
 
-imagen 22?
+> Ventas > Tarifas > Crear  
 
 Se añaden los elementos sobre los que se va a aplicar la tarifa, en este caso sobre una determinada categoria.
 
-Para indicar un precio sobre el precio de coste se indica la opcion formula, donde marcamos sobre precio de coste, y en descuento ponemos un descuento negativo para que resulte en el aumento de precio que queremos conseguir.
+Para establecer un precio calculado sobre el precio de coste se indica la opcion *Fórmula*, donde marcamos *Sobre precio de coste*, y en *Descuento* ponemos un descuento negativo para que resulte en el aumento de precio que queremos conseguir.
 
 Para que el precio del software sea de 1.9 el precio de coste indico un descuento del -90%.
 
-imagen 23
+Se puede visualizar la lista completa de tarifas:
+
+![Captura de pantalla 27][img27]
 
 Para aplicar las tarifas deberemos hacerlo al crear un pedido de ventas.
 
-Se puede crear una Tarifa general y añadir reglas que aplicaran distintos calculos segun los criterios que indiquemos como la categoria de producto. Asi podra incluir distintas formas de calcular el precio si en un mismo pedido tenemos productos de distintas categorias.
+Se puede crear una Tarifa general y añadir reglas que calcularán el precio con distintas fórmulas según la categoria de producto. Asi, si en un mismo pedido tenemos productos de distintas categorías, aplicando la Tarifa general realizará los cálculos correctamente para todos los productos de forma independiente.
 
 [**Indice**](#indice)
 
-## REALIZAR PEDIDO A PROVEEDOR
+## Realizar pedido a proveedor<a name="id12"/>
 
-Compras -> Pedidos de compra -> Crear
+> Compras > Pedidos de compra > Crear
 
-1. Realizar pedido:
+#### 1. Realizar pedido<a name="id12a"/>
 
-Elegir el proveedor y la fecha
-Añadir los productos, eligiendo del desplegable, deberia aparecer la informacion del producto al elegirlo.
-El IVA deberia aparecer automaticamente si se ha indicado en la creacion del producto.
-Indicar las unidades de cada producto.
+* Elegir el proveedor y la fecha.
+* Añadir los productos, eligiendo del desplegable (deberia aparecer la informacion del producto al elegirlo).
+* El IVA deberia aparecer automaticamente si se ha indicado en la creación del producto.
+* Indicar las unidades de cada producto.
 
-imagen 24?
+![Captura de pantalla 28][img28]
 
-Se ha creado la solicitud de presupuesto. Ahora pinchamos en confirmar pedido.
+Se ha creado la solicitud de presupuesto. Ahora pinchamos en *Confirmar pedido*.
 
-imagen 25
-
-2. Recibir el pedido
-
-Pincho en recibir productos
-
-imagen 26
-
-Modificar el documento indicando en cada producto la misma cantidad en Hecho que la que aparece en Para ejecutar y modificando la ubicacion de recepcion. Pinchando despues en validar
-
-imagen 35
-
-Ahora el pedido aparece en estado Para facturar y en Inventario -> Movimientos de existencias aparecen los productos situados en la Tienda.
-
-imagen 28
-
-3. Generar factura
-
-En el pedido pinchamos en Facturas de p... (esquina superior derecha del formulario del pedido) y en Crear.
-Aparece el nombre del proveedor seleccionado y los datos del pedido. Elegir la fecha de la facura y Validar.
-
-imagen dia 29
-
-4. Realizar pago
-Pinchar en la opcion de Registrar pago (esquina superrior izquierda en el desde la propia factura)
-imagen
-
-En el dialogo que aparece elegir la opcion de pago elegido y validar
-
-imagen
-
-Debe aparecer como Pagado.
+![Captura de pantalla 29][img29]
 
 [**Indice**](#indice)
 
-## REALIZAR VENTA A CLIENTE
+#### 2. Recibir pedido<a name="id12b"/>
 
-1. Realizar venta
+Elijo el pedido y pincho en *Recibir productos*.
+
+![Captura de pantalla 30][img30]
+
+Modificar el documento indicando en cada producto la misma **cantidad** en *Hecho* que la que aparece en *Para ejecutar* y modificando la **ubicacion** de recepcion. Pinchando despues en *Validar*.
+
+![Captura de pantalla 31][img31]
+
+Ahora el pedido aparece en estado *Para facturar*.
+
+Se pueden consultar todos los Movimientos en:
+
+> Inventario > Movimientos de existencias
+
+[**Indice**](#indice)
+
+
+#### 3. Generar factura<a name="id12c"/>
+
+En el pedido pinchamos en *Facturas de p...* (esquina superior derecha del formulario del pedido) y en *Crear*.
+
+Aparece el nombre del proveedor seleccionado y los datos del pedido. Elegir la fecha de la factura y pinchar en *Validar*.
+
+![Captura de pantalla 32][img32]  
+
+[**Indice**](#indice)
+
+#### 4. Realizar pago<a name="id12d"/>
+
+Pinchar en la opcion *Registrar pago* (esquina superior izquierda en la propia factura).
+
+![Captura de pantalla 33][img33]   
+
+En el diálogo que aparece indicar la opcion de pago elegido y *Validar*.
+
+![Captura de pantalla 34][img34]   
+
+Debe aparecer como **Pagado**.
+
+[**Indice**](#indice)
+
+## Realizar venta a cliente<a name="id13"/>
+
+#### 1. Realizar venta<a name="id13a"/>
 
 En Ventas -> Clientes elegimos el cliente que desea realizar la compra.
 imagen
@@ -301,11 +327,15 @@ imagen
 
 Si queremos realizar varios pedidos repetimos el proceso.
 
-2. Comprobar stock
+[**Indice**](#indice)
+
+#### 2. Comprobar stock<a name="id13b"/>
 
 En Inventario -> Informes -> Movimientos de existencias podemos comprobar todas las operaciones realizadas sobre el stock: movimientos de una ubicacion a otra, compras, ventas... Aparece la informacion de los productos, su ubicacion inicial y final y su estado.
 
-3. Generar factura
+[**Indice**](#indice)
+
+#### 3. Generar factura<a name="id13c"/>
 
 En Ventas -> Presupuestos seleccionamos los pedidos de los que vamos a generar la factura y pinchamos en el desplegable Accion -> Orden de facturacion.
 
@@ -313,7 +343,9 @@ Elegimos Crear y ver facturas y Validar
 
 imagen
 
-4. Registrar pago
+[**Indice**](#indice)
+
+#### 4. Registrar pago<a name="id13d"/>
 
 Desde Contabilidad -> Ventas -> Factura de cliente elegimos la factura y nos aparece el formulario de la misma.
 
@@ -347,6 +379,8 @@ En Punto de venta -> Configuración -> Configuración elegimos las opciones que 
 
 imagen
 
+[**Indice**](#indice)
+
 3. Realización de ventas
 
 En Punto de venta -> Tablero aparecen las sesiones disponibles. Si no tenemos ninguna elegir Nueva sesión.
@@ -369,6 +403,8 @@ Genera la venta y muestra el ticket
 
 imagen
 
+[**Indice**](#indice)
+
 4. Realización de devoluciones
 
 Hay que salir del modo terminal de venta pinchando en Cerrar y Confirmar (en la esquina superior derecha).
@@ -385,6 +421,8 @@ Al volver a Pedidos aparece otro pedido igual pero con el importe negativo por s
 Pinchar en el y confirmar la devolucion del dinero eligiendo Pagos -> Realizar pago
 
 imagen
+
+[**Indice**](#indice)
 
 5. Comprobacion de stock
 
@@ -403,6 +441,8 @@ En Ventas aprecen funcionalidades nuevas ademas de otras pestañas como Calendar
 
 imagen
 
+[**Indice**](#indice)
+
 2. Crear oportunidades de venta
 
 Pinchamos en Ventas directas -> Nuevo -> Oportunidad
@@ -416,6 +456,8 @@ imagen
 
 Añadir los productos al presupuesto y guardar.
 
+[**Indice**](#indice)
+
 3. Enviar presupuesto por correo electrónico
 
 En el presupuesto pinchar en Enviar por correo electrónico.
@@ -426,6 +468,8 @@ imagen
 
 Pulsamos en Enviar
 
+[**Indice**](#indice)
+
 4. Planificar llamada a cliente
 
 En Ventas -> Flujo de Ventas aparecen las Oportunidades creadas, en este caso el presupuesto enviado.
@@ -435,6 +479,8 @@ imagen
 Pinchamos en la oportunidad, en un circulo de color muy pequeño que aparece junto al simbolo de la camara. Rellenar el dialogo que aparece con la informacion de la actividad a realizar y pinchar Planificar actividad.
 
 imagen
+
+[**Indice**](#indice)
 
 5. Ganar oportunidad de venta
 
@@ -457,6 +503,8 @@ Aparece estas dos opciones al instalar la aplicación. Elijo Plain Bootstrap y p
 
 imagen 2
 
+[**Indice**](#indice)
+
 3. Personalizar la pagina
 
 Solo es necesario seguir las marcas que aparecen del tutorial e ir realizando las acciones que nos indican.
@@ -476,6 +524,8 @@ imagen dia 4
 
 En modo desarrollador ir a Aplicaciones e instalar Tienda del sitio web. Si no se ha instalado la aplicación del sitio web esta se instalará automaticamente.
 
+[**Indice**](#indice)
+
 2. Editar la tienda y el sitio web
 
 Elegir el tema entre los dos que te proponen. Aparece la página de inicio y solo hay que seguir el tutorial empezando por opción Editar. Es como con configurar el sitio web, solo que esta vez añaden la pestaña tienda.
@@ -490,6 +540,8 @@ Personalizar el sitio web arrastrando los componentes de la paleta que aparece a
 
 imagen
 
+[**Indice**](#indice)
+
 3. Cambiar la configuración de la tienda y el sitio web
 
 En Administración del sitio web -> Configuración
@@ -497,6 +549,8 @@ En Administración del sitio web -> Configuración
 imagen
 
 Entre otras cosas podemos editar la configuración de envios de email de confirmación de pedido
+
+[**Indice**](#indice)
 
 4. Incorporar localización con Google Maps
 
@@ -514,6 +568,8 @@ Si vamos al sitio web, en la pestaña contáctenos aparece un mapa con la direcc
 
 imagen mapa
 
+[**Indice**](#indice)
+
 5. Formas de pago
 
 Añadir la tarifa que se va a aplicar a los productos de la tienda.
@@ -529,6 +585,8 @@ imagen
 Compruebo que Transferencia bancaria este instalado y si es necesario cambio la configuración.
 
 imagen
+
+[**Indice**](#indice)
 
 6. Realizar compra a traves de la tienda online
 
@@ -565,6 +623,8 @@ Validar la factura y Registrar el pago.
 imagen
 
 Ahora en facturas ya aparece la orden como pagada.
+
+[**Indice**](#indice)
 
 7. Enviar email de confiramción de compra
 
@@ -604,21 +664,29 @@ En IPv4 local connections poner all en todas las opciones y guardar.
 
 imagen
 
+[**Indice**](#indice)
+
 2. Instalar cliente de base de datos postgresql
 
 En la máquina desde la que quieres acceder debes instalar el cliente postgres.
 
 `$ sudo apt-get install postgresql-client`
 
+[**Indice**](#indice)
+
 3. Instalación cliente de base de DATOS
 
 Instalar pgAdmin3, que se puede encontrar facilmente en la aplicación de software.
+
+[**Indice**](#indice)
 
 4. Conectar remotamente a la base de datos
 
 Crear una nueva conexión a base de datos e introducir la información de la misma.
 
-imagenes
+imagen
+
+[**Indice**](#indice)
 
 5. Acceder a la información de la base de DATOS
 
@@ -666,3 +734,23 @@ imagen
 [img18]: ./capturas/img18.png
 [img19]: ./capturas/img19.png
 [img20]: ./capturas/img20.png
+[img21]: ./capturas/img21.png
+[img22]: ./capturas/img22.png
+[img23]: ./capturas/img23.png
+[img24]: ./capturas/img24.png
+[img25]: ./capturas/img25.png
+[img25b]: ./capturas/img25b.png
+[img26]: ./capturas/img26_.png
+[img27]: ./capturas/img27.png
+[img28]: ./capturas/img28.png
+[img29]: ./capturas/img29.png
+[img30]: ./capturas/img30.png
+[img31]: ./capturas/img31.png
+[img32]: ./capturas/img32.png
+[img33]: ./capturas/img33.png
+[img34]: ./capturas/img34.png
+[img35]: ./capturas/img35.png
+[img36]: ./capturas/img36.png
+[img37]: ./capturas/img37.png
+[img38]: ./capturas/img38.png
+[img39]: ./capturas/img39.png
