@@ -22,7 +22,7 @@ Al conectar a Odoo a través del servicio web  nos ofrece conectarnos a las base
 
 ## Modificar la compañia por defecto<a name="id2"/>
 
-Configuracion -> Compañias -> Editar
+> Configuracion -> Compañias -> Editar
 
 Incluimos los datos necesarios.
 
