@@ -38,8 +38,18 @@
   3. [Enviar presupuesto por correo electrónico](#id15c)
   4. [Planificar llamada a cliente](#id15d)
   5. [Ganar oportunidad de venta](#id15e)
-
-
+* [Crear sitio web](#id16)
+* [Tienda online](#id17)
+  1. [Instalación](#id17a)
+  2. [Configuración](#id17b)
+  3. [Editar la tienda y el sitio web](#id17c)
+  4. [Incorporar localización con Google Maps](#id17d)
+  5. [Formas de pago](#id17e)
+  6. [Realizar compra a traves de la tienda online](#id17f)
+  7. [Enviar email de confirmación de compra](#id17g)
+* [Base de datos de Odoo](#id18)
+  * [Configurar Postgres para conexiones remotas](#id18a)
+  * [Acceder a la información de la base de datos](#id18b)
 
 # Contenido
 
@@ -574,19 +584,29 @@ En primer lugar pulsamos en Editar y empezamos a modificar los elementos:
 
 [**Indice**](#indice)
 
-## Instalar tienda online<a name="id17"/>
+## Tienda online<a name="id17"/>
 
 Encuentro problemas en la instalacion de la tienda asique tengo que volver a una instantanea anterior, justo despues de la creación de los productos, los clientes y los proveedores.
 
 ![Captura de pantalla 65][img65]
 
-#### 1. Instalar la aplicación
+#### 1. Instalación<a name="id17a"/>
 
 En **modo desarrollador** ir a *Aplicaciones* e instalar *Tienda del sitio web*. Si no se ha instalado la aplicación *Sitio web* esta se instalará automaticamente.
 
 [**Indice**](#indice)
 
-#### 2. Editar la tienda y el sitio web
+#### 2. Configuración<a name="id17b"/>
+
+> Administración del sitio web > Configuración
+
+![Captura de pantalla 69][img69]
+
+Entre otras cosas podemos editar la configuración de envios de email de confirmación de pedido.
+
+[**Indice**](#indice)
+
+#### 3. Editar la tienda y el sitio web<a name="id17c"/>
 
 Elegir el tema entre los dos que te proponen. Aparece la página de inicio y solo hay que seguir el tutorial empezando por opción Editar. Es como con configurar el sitio web, solo que esta vez añaden la pestaña *Tienda*.
 
@@ -602,17 +622,7 @@ Personalizar el sitio web arrastrando los componentes de la paleta que aparece a
 
 [**Indice**](#indice)
 
-#### 3. Cambiar la configuración de la tienda y el sitio web
-
-> Administración del sitio web > Configuración
-
-![Captura de pantalla 69][img69]
-
-Entre otras cosas podemos editar la configuración de envios de email de confirmación de pedido.
-
-[**Indice**](#indice)
-
-#### 4. Incorporar localización con Google Maps
+#### 4. Incorporar localización con Google Maps<a name="id17d"/>
 
 > Administración del sitio web > Configuración > Dominio > Google Maps
 
@@ -632,141 +642,155 @@ Si vamos al **sitio web**, en la pestaña *Contáctenos* aparece un mapa con la 
 
 [**Indice**](#indice)
 
-#### 5. Formas de pago
+#### 5. Formas de pago<a name="id17e"/>
 
-Añadir la tarifa que se va a aplicar a los productos de la tienda.
-Administración del sitio web -> Catálogo -> Tarifas -> Crear
+Añadir la **tarifa** que se va a aplicar a los productos de la **tienda online**.
 
-imagen
+> Administración del sitio web > Catálogo > Tarifas > Crear
+
+![Captura de pantalla 73][img73]
 
 Añadir metodos de pago.
-Administración del sitio web -> Configuración -> Tienda del sitio web -> Metodos de pago
 
-imagen
+> Administración del sitio web > Configuración > Tienda del sitio web > Metodos de pago
 
-Compruebo que Transferencia bancaria este instalado y si es necesario cambio la configuración.
+![Captura de pantalla 74][img74]
 
-imagen
+Compruebo que *Transferencia bancaria* este instalado y si es necesario cambio la configuración.
+
+![Captura de pantalla 75][img75]
 
 [**Indice**](#indice)
 
-#### 6. Realizar compra a traves de la tienda online
+#### 6. Realizar compra a traves de la tienda online<a name="id17f"/>
 
 Al haber añadido las tarifas se deben visualizar correctamente los precios de los productos.
 
-imagen
+![Captura de pantalla 76][img76]
 
-Realizamos la primera compra para comprobar que todo funciona correctamente. Pincho en Añadir a la cesta.
+Realizamos la primera compra para comprobar que todo funciona correctamente pinchando en *Añadir a la cesta*.
 
-imagen
+![Captura de pantalla 77][img77]
 
-Elegir Continuar a caja y en la Cesta elegir la opción Procesar compra para pasar al ingreso de los datos y el pago de la misma.
+Elegir *Continuar a caja* y en la Cesta elegir la opción *Procesar compra* para pasar al ingreso de los datos y el pago de la misma.
 
-imagen
+![Captura de pantalla 78][img78]
 
-Después de confirmar la dirección de envío y facturación llegamos a la elección del método de pago. En este caso solo tenemos Transferencia bancaria.
+Después de confirmar la dirección de envío y facturación llegamos a la elección del método de pago. En este caso solo disponemos de *Transferencia bancaria*.
 
-imagen
+![Captura de pantalla 79][img79]
 
 Al confirmar, el pedido aparece pendiente de pago.
 
-imagen
+![Captura de pantalla 80][img80]
 
-Vamos a Administracion del sitio web -> Pedidos -> Órdenes sin pagar donde se ha creado un registro con el nuevo pedido.
+Consultar la orden de compra en:
 
-imagen
+> Administracion del sitio web -> Pedidos -> Órdenes sin pagar
 
-Si pinchamos en ella podemos Confirmar venta y Facturar.
+Se ha creado un registro con el nuevo pedido que aparece aún sin pagar.
 
-imagen
+![Captura de pantalla 81][img81]
 
-Validar la factura y Registrar el pago.
+Pinchar en ella y seleccionar *Confirmar venta* y *Facturar*.
 
-imagen
+Después *Validar* la factura.
 
-Ahora en facturas ya aparece la orden como pagada.
+![Captura de pantalla 82][img82]
+
+ Y *Registrar el pago*.
+
+![Captura de pantalla 83][img83]
+
+Ahora en *Facturas* ya aparece la orden como pagada.
+
+![Captura de pantalla 84][img84]
 
 [**Indice**](#indice)
 
-#### 7. Enviar email de confiramción de compra
+#### 7. Enviar email de confirmación de compra<a name="id17g"/>
 
-En Administración del sitio web -> Pedidos podemos pinchar en el pedido y enviar por correo electrónico.
-Elegir la plantilla que hemos creado anterioemente en la configuración y Enviar.
+> Administración del sitio web > Pedidos
 
-imagen
+Pinchar en el pedido y en la opción *Enviar por correo electrónico*.
+
+Elegir la plantilla que hemos creado anteriremente en la *Configuración*. Al haber utilizado expresiones para acceder a los datos, rellena automaticamente el correo con la información del pedido.
+
+Pulsar *Enviar*.
+
+![Captura de pantalla 85][img85]
 
 [**Indice**](#indice)
 
-## ANÁLISIS DE BASE DE DATOS ODOO
+## Base de datos de Odoo<a name="id18"/>
 
 Para comprobar la estructura de la base de datos creada por Odoo tenemos varias opciones de conexión (desde el propio servidor, conectar por ssh al servidor y conectar por psql...).
+
 En este caso voy a establecer una conexión remota directamente con la base de datos.
-Para ello hay que modificar la configuración de postgres para permitir las conexiones remotas.
+Para ello hay que modificar la configuración de la base de datos Postgres para permitir las conexiones remotas.
 
-1. Acceder a los archivos de configuración de postgres en el servidor
+#### Configurar Postgres para conexiones remotas<a name="id18a"/>
 
-Conectar con root:
+##### 1. Cambiar archivos de configuración de Postgres
+
+Conectar con root al servidor:
 
 `$ ssh root@192.168.3.58`
 
 `$ nano /etc/postgresql/9.5/main/postgresql.conf`
 
-imagen
+Cambiar 9.5 por la version de postgres que se tenga instalada.
 
-Descomentamos la linea listen_addresses y ponemos un asterisco
+Descomentamos la linea *listen_addresses* y ponemos un asterisco
 para que permita conectar a cualquier IP.
 
-imagen
+![Captura de pantalla 87][img87]
 
 `$ /etc/postgresql/9.5/main/pg_hba.conf`
 
-* Cambiar 9.5 por la version de postgres que se tenga instalada.
-
 En IPv4 local connections poner all en todas las opciones y guardar.
 
-imagen
+![Captura de pantalla 88][img88]
 
 [**Indice**](#indice)
 
-2. Instalar cliente de base de datos postgresql
+##### 2. Instalar cliente de base de datos Postgres
 
-En la máquina desde la que quieres acceder debes instalar el cliente postgres.
+En la máquina desde la que quieres acceder debes instalar el cliente Postgres.
 
 `$ sudo apt-get install postgresql-client`
 
-[**Indice**](#indice)
+##### 3. Instalar gestor de base de datos
 
-3. Instalación cliente de base de DATOS
+Instalar pgAdmin3, que se puede encontrar facilmente en la aplicación de software de linux.
 
-Instalar pgAdmin3, que se puede encontrar facilmente en la aplicación de software.
+##### 4. Conectar remotamente a la base de datos
 
-[**Indice**](#indice)
+Crear una nueva conexión a la base de datos e introducir la información de la misma.
 
-4. Conectar remotamente a la base de datos
-
-Crear una nueva conexión a base de datos e introducir la información de la misma.
-
-imagen
+![Captura de pantalla 89][img89]
 
 [**Indice**](#indice)
 
-5. Acceder a la información de la base de DATOS
+#### Acceder a la información de la base de datos<a name="id18b"/>
 
 Elegir la base de datos deseada en el panel izquierdo y navegar a través de las pestañas desplegables que aparecen para ver la información.
 
-imagen
+![Captura de pantalla 90][img90]
 
-En este caso la base de datos informatica_sotrondio cuenta con 341 tablas en total, que al pinchar en Tables aparecen listadas en la pestaña Properties del panel derecho.
+En este caso la base de datos **informatica_sotrondio** cuenta con **341 tablas** en total, que al pinchar en *Tables* aparecen listadas en la pestaña *Properties* del panel derecho.
 
 Podemos acceder a toda la información de la empresa desde aquí, como por ejemplo la información de login de la empresa.
 
-imagen
+![Captura de pantalla 91][img91]
 
-Para buscar cualquier objeto de la base de datos accedemos desde la pestaña Edit -> Search objects.
+Para buscar cualquier objeto de la base de datos accedemos desde:
 
-Si queremos acceder a la información de las tablas solo tenemos que pinchar el botón derecho soble el nombre de la tabla y elegir View data.
+> Edit > Search objects.
 
-imagen
+Si queremos acceder a la información de las tablas solo tenemos que pinchar el botón derecho soble el nombre de la tabla y elegir *View data*.
+
+![Captura de pantalla 92][img92]
 
 [**Indice**](#indice)
 
@@ -843,8 +867,8 @@ imagen
 [img64]: ./capturas/img64.png
 [img65]: ./capturas/img65.png
 [img66]: ./capturas/img66.png
-[img67]: ./capturas/img67_.png
-[img68]: ./capturas/img68_.png
+[img67]: ./capturas/img67.png
+[img68]: ./capturas/img68.png
 [img69]: ./capturas/img69.png
 [img70]: ./capturas/img70.png
 [img71]: ./capturas/img71.png
@@ -862,12 +886,9 @@ imagen
 [img83]: ./capturas/img83.png
 [img84]: ./capturas/img84.png
 [img85]: ./capturas/img85.png
-[img86]: ./capturas/img86.png
 [img87]: ./capturas/img87.png
 [img88]: ./capturas/img88.png
 [img89]: ./capturas/img89.png
 [img90]: ./capturas/img90.png
 [img91]: ./capturas/img91.png
 [img92]: ./capturas/img92.png
-[img93]: ./capturas/img93.png
-[img94]: ./capturas/img94.png
