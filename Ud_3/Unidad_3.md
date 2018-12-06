@@ -1,25 +1,26 @@
-# INDICE<a name="indice"/>
+![Logo Odoo][odoo]
 
-* [Configurar acceso remoto a Ubuntu Server](#id1)
-* [Preparar instalación Odoo](#id2)
+# Indice<a name="indice"/>
+
+* [Crear nueva base de datos](#id1)
+* [Modificar la compañia por defecto](#id2)
   * [Instalar las dependencias](#id2a)
   * [Instalar *wkhtmltopdf*](#id2b)
 
 ***
 
-# CONTENIDO
+# Contenido
 
 
-## CREAR NUEVA BASE DE DATOS NUEVA<a name="id1"/>
+## Crear nueva base de datos<a name="id1"/>
 
 Al conectar a Odoo a través del servicio web  nos ofrece conectarnos a las bases de datos de que disponemos, y tambien crear nuevas:
 
-imagen 1
 ![Captura de pantalla 1][img1]
 
-[**INDICE**](#indice)
+[**Indice**](#indice)
 
-## MODIFICAR LA COMPAÑIA POR DEFECTO
+## Modificar la compañia por defecto<a name="id2"/>
 
 Configuracion -> Compañias -> Editar
 
@@ -197,9 +198,8 @@ imagen 23
 
 Para aplicar las tarifas deberemos hacerlo al crear un pedido de ventas.
 
-~~~
 Se puede crear una Tarifa general y añadir reglas que aplicaran distintos calculos segun los criterios que indiquemos como la categoria de producto. Asi podra incluir distintas formas de calcular el precio si en un mismo pedido tenemos productos de distintas categorias.
-~~~
+
 
 ## REALIZAR PEDIDO A PROVEEDOR
 
@@ -604,7 +604,8 @@ imagen
 
 
 
+[odoo]: ./capturas/odoo_logo.png
+[img1]: ./capturas/CAPTURA_1.png
 
-[img1]: ./CAPTURAS/CAPTURA_1.png
 
 
