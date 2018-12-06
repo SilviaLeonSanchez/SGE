@@ -4,8 +4,17 @@
 
 * [Crear nueva base de datos](#id1)
 * [Modificar la compañia por defecto](#id2)
-  * [Instalar las dependencias](#id2a)
-  * [Instalar *wkhtmltopdf*](#id2b)
+* [Instalar los módulos de la internacionalización al español](#id3)
+* [Establecer el plan contable para una PYME española](#id4)
+* [Instalar los modulos necesarios para la práctica](#id5)
+  * [Ventas](#id5a)
+  * [Gestión de inventario](#id5b)
+  * [Gestión de compras](#id5c)
+* [Crear almacenes](#id6)
+* [Crear proveedores](#id7)
+* [Crear clientes](#id8)
+* [Crear categorías de productos](#id9)
+
 
 
 
@@ -22,29 +31,33 @@ Al conectar a Odoo a través del servicio web  nos ofrece conectarnos a las base
 
 ## Modificar la compañia por defecto<a name="id2"/>
 
-> Configuracion -> Compañias -> Editar
+`Configuracion > Compañias > Editar`
 
 Incluimos los datos necesarios.
 
-imagen 5
+![Captura de pantalla 2][img2]
 
-## INSTALAR LOS MODULOS NECESARIOS PARA LA PRACTICA
+[**Indice**](#indice)
+
+## Instalar los módulos de la internacionalización al español<a name="id3"/>
 
 * l10n_es
 
-imagen 2
+![Captura de pantalla 3][img3]
 
 * l10n_es_partner
 
-imagen 3
+![Captura de pantalla 4][img4]
 
 * l10n_es_toponyms
 
-imagen 4
+![Captura de pantalla 5][img5]
 
-## ESTABLECER EL PLAN CONTABLE PARA UNA PYME ESPAÑOLA
+[**Indice**](#indice)
 
-Contabilidad -> Configuracion -> Plan Contable -> Plantilla
+## Establecer el plan contable para una PYME española<a name="id4"/>
+
+> Contabilidad > Configuracion > Plan Contable > Plantilla
 
 Elegimos PGCE PYMEs 2008
 
@@ -52,74 +65,88 @@ Se rellenan los datos automaticamente con la informacion que tenemos de los modu
 
 Pinchamos en Aplicar.
 
-imagen 6
+![Captura de pantalla 6][img6]
 
-## INSTALAR LOS MODULOS NECESARIOS
+[**Indice**](#indice)
 
-Ventas
-imagen 7
+## Instalar los modulos necesarios para la práctica<a name="id5"/>
 
-Gestion de inventario
-imagen 8
+#### Ventas<a name="id5a"/>
 
-Gestion de compras
-imagen 9
+![Captura de pantalla 7][img7]
 
+#### Gestion de inventario<a name="id5b"/>
 
-## CREAR ALMACENES
+![Captura de pantalla 8][img8]
 
-En Inventario -> Configuracion -> Ubicación y almacén -> Nivel de uso de almacenes y ubicaciones marcar la opcion:
-Gestiona varios Almacenes, con varias ubicaciones cada uno
+#### Gestion de compras<a name="id5c"/>
 
-imagen 29
+![Captura de pantalla 9][img9]
 
-Aparece la opción Gestión de almacenes:
+[**Indice**](#indice)
 
+## Crear almacenes<a name="id6"/>
+
+> Inventario > Configuracion > Ubicación y almacén > Nivel de uso de almacenes y ubicaciones
+
+Marcar la opcion:
+Gestiona varios Almacenes, con varias ubicaciones cada uno.
+
+![Captura de pantalla 10][img10]
+
+Aparece la opción Gestión de almacenes.
 Modifico el almacen que aparece por defecto y creo los Almacenes extra que necesite.
 
-imagen 30
+![Captura de pantalla 11][img11]
 
-Creo las ubicaciones necesarias dentro de los almacenes indicando en ubicacion padre el almacen al que pertenece. En este caso no es necesario dado que solo necesitamos una ubicacion por almacen que por defecto es existencias.
+Creo las ubicaciones necesarias dentro de los almacenes indicando en ubicacion padre el almacen al que pertenece.
 
-Una vez  creadas aparecen listadas en Ubicaciones:
+![Captura de pantalla 12][img12]
 
-imagen 31
+En este caso no es necesario dado que solo necesitamos una ubicacion por almacen que por defecto es existencias.
+Una vez creadas aparecen listadas en Ubicaciones:
 
-imagen 21??
+![Captura de pantalla 13][img13]
 
-## CREAR PROVEEDORES
+[**Indice**](#indice)
 
-Compras -> Proveedores -> Crear
+## Crear proveedores<a name="id7"/>
 
-imagen 10
+> Compras > Proveedores > Crear
+
+![Captura de pantalla 14][img14]
 
 Se rellenan sus datos, sin olvidar el NIF que va en la pestaña de Contabilidad, incluyendo delante el prefijo ES para que el sistema lo acepte.
 
-No olvidar marcar la casilla de Compañia en vez de Individual si son empresas.
+No olvidar marcar la casilla de Compañia en vez de Individual en caso de que sea una empresa.
 
-* Si ya teniamos creadas las compañias  basta con elegirla en el despelegable que aparece debajo del nombre.
+En caso de que ya tuvieramos creada la compañia bastaría con elegirla en el despelegable que aparece debajo del nombre.
 
-imagen 11
+![Captura de pantalla 15][img15]
 
-Si hemos marcado en la pestaña Ventas y Compras del formulario la casilla indicando que son proveedores deberian aparecer en la pagina principal de proveedores:
+Si en la pestaña Ventas y Compras del formulario hemos marcado la casilla indicando que son proveedores deberian aparecer en la pagina principal de proveedores:
 
-imagen 12
+![Captura de pantalla 16][img16]
 
-## CREAR CLIENTES DE LA EMPRESA
+[**Indice**](#indice)
 
-Ventas -> Clientes -> Crear
+## Crear clientes<a name="id8"/>
 
-imagen 13
+> Ventas > Clientes > Crear
+
+![Captura de pantalla 17][img17]
 
 Se rellenan los datos exactamente igual que para los proveedores, solo que esta vez marcaremos la casilla de cliente en vez de proveedor y la casilla Individual si son personas.
 
-imagen 14
+![Captura de pantalla 18][img18]
 
 Comprobamos que aparecen en la pagina de Clientes:
 
-imagen 15
+![Captura de pantalla 19][img19]
 
-## CREAR CATEGORIAS DE PRODUCTOS
+[**Indice**](#indice)
+
+## Crear categorías de productos<a name="id9"/>
 
 Inventario -> Categoria de productos -> Crear
 
@@ -145,6 +172,7 @@ Deberia quedar asi:
 
 imagen 18
 
+[**Indice**](#indice)
 
 ## CREAR PRODUCTOS
 
@@ -173,6 +201,7 @@ Al terminar se deberian encontrar todos en la pagina principal de productos
 
 imagen 22
 
+[**Indice**](#indice)
 
 ## CREAR TARIFA DE VENTA
 
@@ -200,6 +229,7 @@ Para aplicar las tarifas deberemos hacerlo al crear un pedido de ventas.
 
 Se puede crear una Tarifa general y añadir reglas que aplicaran distintos calculos segun los criterios que indiquemos como la categoria de producto. Asi podra incluir distintas formas de calcular el precio si en un mismo pedido tenemos productos de distintas categorias.
 
+[**Indice**](#indice)
 
 ## REALIZAR PEDIDO A PROVEEDOR
 
@@ -249,6 +279,8 @@ imagen
 
 Debe aparecer como Pagado.
 
+[**Indice**](#indice)
+
 ## REALIZAR VENTA A CLIENTE
 
 1. Realizar venta
@@ -292,6 +324,8 @@ imagen
 Elegir la forma de pago y Validar
 
 Debe aparecer como pagada.
+
+[**Indice**](#indice)
 
 ## MÓDULO TPV
 
@@ -358,6 +392,8 @@ En Movimientos de existencias comprobamos que se realizó la venta correctamente
 
 imagen
 
+[**Indice**](#indice)
+
 ## MÓDULO CRM
 
 1. Instalación
@@ -405,6 +441,8 @@ imagen
 En Ventas -> Flujo de ventas pinchamos en la oportunidad y en la opción Marcar como ganada
 imagen
 
+[**Indice**](#indice)
+
 ## CREAR SITIO WEB
 
 1. Instalar Constructor de sitio web
@@ -426,6 +464,7 @@ En primer lugar pulsamos en Editar y empezamos a modificar los elementos:
 
 imagen 3
 
+[**Indice**](#indice)
 
 ## INSTALAR TIENDA ONLINE
 
@@ -534,6 +573,8 @@ Elegir la plantilla que hemos creado anterioemente en la configuración y Enviar
 
 imagen
 
+[**Indice**](#indice)
+
 ## ANÁLISIS DE BASE DE DATOS ODOO
 
 Para comprobar la estructura de la base de datos creada por Odoo tenemos varias opciones de conexión (desde el propio servidor, conectar por ssh al servidor y conectar por psql...).
@@ -550,7 +591,7 @@ Conectar con root:
 
 imagen
 
-Descomentamos la linea listen_addresses y ponemos '*'
+Descomentamos la linea listen_addresses y ponemos un asterisco
 para que permita conectar a cualquier IP.
 
 imagen
@@ -597,7 +638,7 @@ Si queremos acceder a la información de las tablas solo tenemos que pinchar el 
 
 imagen
 
-
+[**Indice**](#indice)
 
 
 
@@ -605,7 +646,23 @@ imagen
 
 
 [odoo]: ./capturas/odoo_logo.png
-[img1]: ./capturas/CAPTURA_1.png
-
-
-
+[img1]: ./capturas/img1.png
+[img2]: ./capturas/img2.png
+[img3]: ./capturas/img3.png
+[img4]: ./capturas/img4.png
+[img5]: ./capturas/img5.png
+[img6]: ./capturas/img6.png
+[img7]: ./capturas/img7.png
+[img8]: ./capturas/img8.png
+[img9]: ./capturas/img9.png
+[img10]: ./capturas/img10.png
+[img11]: ./capturas/img11.png
+[img12]: ./capturas/img12.png
+[img13]: ./capturas/img13.png
+[img14]: ./capturas/img14.png
+[img15]: ./capturas/img15.png
+[img16]: ./capturas/img16.png
+[img17]: ./capturas/img17.png
+[img18]: ./capturas/img18.png
+[img19]: ./capturas/img19.png
+[img20]: ./capturas/img20.png
