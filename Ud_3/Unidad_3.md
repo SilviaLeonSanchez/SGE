@@ -26,7 +26,18 @@
   2. [Comprobar stock](#id13b)
   3. [Generar factura](#id13c)
   4. [Registrar pago](#id13d)
-
+* [Módulo TPV](#id14)
+  1. [Instalación](#id14a)
+  2. [Configuración](#id14b)
+  3. [Realización de ventas](#id14c)
+  4. [Realización de devoluciones](#id14d)
+  5. [Comprobacion de stock](#id14e)
+* [Módulo CRM](#id15)
+  1. [Instalación](#id15a)
+  2. [Crear oportunidades de venta](#id15b)
+  3. [Enviar presupuesto por correo electrónico](#id15c)
+  4. [Planificar llamada a cliente](#id15d)
+  5. [Ganar oportunidad de venta](#id15e)
 
 
 
@@ -311,19 +322,25 @@ Debe aparecer como **Pagado**.
 
 #### 1. Realizar venta<a name="id13a"/>
 
-En Ventas -> Clientes elegimos el cliente que desea realizar la compra.
-imagen
+Elegimos el cliente que desea realizar la compra en
 
-Pinchamos en Ventas (esquina superior derecha de la ficha del cliente) y aparecera el listado de todas las ventas realizadas a ese cliente. Seleccionamos la opcion Crear.
+> Ventas > Clientes
 
-imagen
+![Captura de pantalla 35][img35]  
 
-Seleccionar los productos y la cantidad.Debe aparecer toda la informacion de los mismos en el formulario automaticamente.
-Seleccionamos la tarifa que se le aplica.
-En la pestaña Otra informacion podemos elegir desde que ubicación se le envian los productos. Asegurarse de que es la correcta y comprobar si es necesario si hay existencias suficientes.
+Pinchamos en *Ventas* (esquina superior derecha de la ficha del cliente) y aparecera el listado de todas las ventas realizadas a ese cliente.
 
-Guardamos y pinchamos en Confirmar venta si todo es correcto.
-imagen
+Seleccionamos la opcion *Crear*.
+
+![Captura de pantalla 36][img36]  
+
+* Seleccionar los **productos** y la **cantidad**. Debe aparecer toda la información de los mismos en el formulario automáticamente.
+* Seleccionar la **tarifa** que se le aplica.
+* Elegir desde que ubicación se le envían los productos en la pestaña *Otra informacion*. Asegurarse de que es la correcta y comprobar si hay existencias suficientes.
+
+Guardamos y pinchamos en *Confirmar venta* si todo es correcto.
+
+![Captura de pantalla 37][img37]
 
 Si queremos realizar varios pedidos repetimos el proceso.
 
@@ -331,246 +348,291 @@ Si queremos realizar varios pedidos repetimos el proceso.
 
 #### 2. Comprobar stock<a name="id13b"/>
 
-En Inventario -> Informes -> Movimientos de existencias podemos comprobar todas las operaciones realizadas sobre el stock: movimientos de una ubicacion a otra, compras, ventas... Aparece la informacion de los productos, su ubicacion inicial y final y su estado.
+Para comprobar todas las operaciones realizadas sobre el stock:
+
+> Inventario > Informes > Movimientos de existencias
+
+Movimientos de una ubicacion a otra, compras, ventas... Aparece la informacion de los productos, ubicacion inicial, ubicacion final y su estado.
 
 [**Indice**](#indice)
 
 #### 3. Generar factura<a name="id13c"/>
 
-En Ventas -> Presupuestos seleccionamos los pedidos de los que vamos a generar la factura y pinchamos en el desplegable Accion -> Orden de facturacion.
+> Ventas > Presupuestos
 
-Elegimos Crear y ver facturas y Validar
+Seleccionamos los pedidos de los que vamos a generar la factura y pinchamos en el desplegable:
 
-imagen
+> Accion > Orden de facturacion
+
+Elegimos *Crear y ver facturas* y *Validar*.
+
+![Captura de pantalla 38][img38]
 
 [**Indice**](#indice)
 
 #### 4. Registrar pago<a name="id13d"/>
 
-Desde Contabilidad -> Ventas -> Factura de cliente elegimos la factura y nos aparece el formulario de la misma.
+> Contabilidad > Ventas > Factura de cliente
 
-Pinchar en Registrar pago
+Elegir la factura y al pinchar en ella aparece el formulario de la misma.
 
-imagen
+Pinchar en *Registrar pago*.
 
-Elegir la forma de pago y Validar
+![Captura de pantalla 39][img39]  
 
-Debe aparecer como pagada.
+Elegir la forma de pago y *Validar*.
 
-[**Indice**](#indice)
-
-## MÓDULO TPV
-
-1. Instalación
-
-Activar el modo desarrollador en Configuración (esquina inferior derecha)
-Buscamos en Aplicaciones el modulo Punto de Venta e instalamos.
-
-2. Configuración
-Comprobamos los productos que estarán disponibles para su venta en Punto de Venta -> Pedidos -> Productos
-
-imagen
-
-Eliminamos los que no sean necesarios seleccionando el producto y pinchando en Accion -> Suprimir.
-
-imagen
-
-En Punto de venta -> Configuración -> Configuración elegimos las opciones que consideremos oportunas para el funcionamiento del modulo y seleccionamos Aplicar.
-
-imagen
+Debe aparecer como **pagada**.
 
 [**Indice**](#indice)
 
-3. Realización de ventas
+## Módulo TPV<a name="id14"/>
 
-En Punto de venta -> Tablero aparecen las sesiones disponibles. Si no tenemos ninguna elegir Nueva sesión.
+#### 1. Instalación<a name="id14a"/>
 
-imagen
+En *Configuración* activar el **modo desarrollador** (esquina inferior derecha)
 
-Aparece el terminal de venta
+Buscar en *Aplicaciones* el módulo *Punto de Venta* e instalar.
 
-imagen
+#### 2. Configuración<a name="id14b"/>
 
-Pinchamos en los productos que se van a vender y elegimos el cliente
+Comprobamos los productos que estarán disponibles para su venta en:
 
-imagen
+> Punto de Venta > Pedidos > Productos
 
-Pinchamos en Pagos, seleccionamos el metodo de pago, si es Efectivo introducimos tambien la cantidad introducida y pinchamos en Validar.
+![Captura de pantalla 40][img40]
 
-imagen
+Eliminamos los que no sean necesarios seleccionando el producto y pinchando en
 
-Genera la venta y muestra el ticket
+> Accion > Suprimir
 
-imagen
+![Captura de pantalla 41][img41]
 
-[**Indice**](#indice)
+> Punto de venta > Configuración > Configuración
 
-4. Realización de devoluciones
+Elegir las opciones que se consideren oportunas para el funcionamiento del módulo y seleccionar *Aplicar*.
 
-Hay que salir del modo terminal de venta pinchando en Cerrar y Confirmar (en la esquina superior derecha).
-En Punto de venta -> Pedidos -> Pedidos seleccionamos el pedido del que se quiere realizar la devolución.
-
-imagen
-
-Elegir la opcion Devolver productos
-
-imagen
-
-Al volver a Pedidos aparece otro pedido igual pero con el importe negativo por ser una devolución.
-
-Pinchar en el y confirmar la devolucion del dinero eligiendo Pagos -> Realizar pago
-
-imagen
+![Captura de pantalla 42][img42]
 
 [**Indice**](#indice)
 
-5. Comprobacion de stock
+#### 3. Realización de ventas<a name="id14c"/>
 
-En Movimientos de existencias comprobamos que se realizó la venta correctamente pasando los productos del almacen a la ubicación del cliente, y que al realizar la devolución el producto volvió del cliente al almacen.
+Las sesiones disponibles aparecen en:
 
-imagen
+> Punto de venta > Tablero
+
+Si no tenemos ninguna elegir *Nueva sesión*.
+
+![Captura de pantalla 43][img43]  
+
+Aparece el terminal de venta.
+
+![Captura de pantalla 44][img44]
+
+Pinchar en los **productos** que se van a vender y elegir el **cliente**.
+
+![Captura de pantalla 45][img45]
+
+Pinchar en *Pagos*, seleccionar el **metodo de pago**, si es *Efectivo* introducir también la cantidad introducida y pinchar en *Validar*.
+
+![Captura de pantalla 46][img46]
+
+Genera la venta y muestra el ticket.
+
+![Captura de pantalla 47][img47]
 
 [**Indice**](#indice)
 
-## MÓDULO CRM
+#### 4. Realización de devoluciones<a name="id14d"/>
 
-1. Instalación
+Salir del modo terminal de venta pinchando en *Cerrar* y *Confirmar* (en la esquina superior derecha).
 
-En modo desarrollador buscar el modulo CRM en Aplicaciones e instalar.
-En Ventas aprecen funcionalidades nuevas ademas de otras pestañas como Calendario o Rastreador de enlaces
+> Punto de venta > Pedidos > Pedidos
 
-imagen
+Seleccionar el pedido del que se quiere realizar la devolución:
+
+![Captura de pantalla 48][img48]
+
+Elegir la opcion *Devolver productos*.
+
+![Captura de pantalla 49][img49]
+
+Al volver a *Pedidos* aparece otro pedido igual pero con el importe negativo por ser una devolución.
+
+Pinchar en él y confirmar la devolución del dinero eligiendo:
+
+> Pagos > Realizar pago
+
+![Captura de pantalla 50][img50]
 
 [**Indice**](#indice)
 
-2. Crear oportunidades de venta
+#### 5. Comprobacion de stock<a name="id14e"/>
 
-Pinchamos en Ventas directas -> Nuevo -> Oportunidad
+En *Movimientos de existencias* comprobamos que se realizó la venta correctamente pasando los productos del almacén a la ubicación del cliente, y que al realizar la devolución el producto volvió del cliente al almacén.
 
-imagen
+![Captura de pantalla 51][img51]
 
-Pinchamos en presupuesto y aparece un formulario.
-En el presuopuesto le vamos a aplicar un 10% de descuento, para ello creamos una tarifa sobre la Tarifa general (pinchamos en el desplegable Tarifa -> Crear tarifa) y se la aplicamos.
+[**Indice**](#indice)
 
-imagen
+## Módulo CRM<a name="id15"/>
+
+#### 1. Instalación<a name="id15a"/>
+
+Con el **modo desarrollador** activado buscar el modulo CRM en *Aplicaciones* e instalar.
+
+En *Ventas* aparecen funcionalidades nuevas además de otras pestañas como *Calendario* o *Rastreador de enlaces*.
+
+![Captura de pantalla 52][img52]
+
+[**Indice**](#indice)
+
+#### 2. Crear oportunidades de venta<a name="id15b"/>
+
+> Ventas directas > Nuevo > Oportunidad
+
+![Captura de pantalla 53][img53]
+
+Aparece el formulario de la Oportunidad.
+
+![Captura de pantalla 54][img54]
+
+Pinchamos en *Presupuesto* y aparece un formulario para rellenar.
+
+Le vamos a aplicar un 10% de descuento, para ello creamos una tarifa sobre la Tarifa general.
+
+> Tarifa > Crear tarifa
+
+Pinchamos en el desplegable y se la aplicamos. Después en *Guardar y cerrar*.
+
+![Captura de pantalla 55][img55]
 
 Añadir los productos al presupuesto y guardar.
 
 [**Indice**](#indice)
 
-3. Enviar presupuesto por correo electrónico
+#### 3. Enviar presupuesto por correo electrónico<a name="id15c"/>
 
-En el presupuesto pinchar en Enviar por correo electrónico.
+![Captura de pantalla 56][img56]
 
-imagen
+En el presupuesto pinchar en *Enviar por correo electrónico*.
 
-imagen
+![Captura de pantalla 57][img57]
 
-Pulsamos en Enviar
+Introducimos los datos necesarios pulsamos en *Enviar*.
 
-[**Indice**](#indice)
-
-4. Planificar llamada a cliente
-
-En Ventas -> Flujo de Ventas aparecen las Oportunidades creadas, en este caso el presupuesto enviado.
-
-imagen
-
-Pinchamos en la oportunidad, en un circulo de color muy pequeño que aparece junto al simbolo de la camara. Rellenar el dialogo que aparece con la informacion de la actividad a realizar y pinchar Planificar actividad.
-
-imagen
+![Captura de pantalla 58][img58]
 
 [**Indice**](#indice)
 
-5. Ganar oportunidad de venta
+#### 4. Planificar llamada a cliente<a name="id15d"/>
 
-En Ventas -> Flujo de ventas pinchamos en la oportunidad y en la opción Marcar como ganada
-imagen
+Para consultar las Oportunidades creadas, en este caso el presupuesto enviado:
 
-[**Indice**](#indice)
+> Ventas > Flujo de Ventas
 
-## CREAR SITIO WEB
+![Captura de pantalla 59][img59]
 
-1. Instalar Constructor de sitio web
+Pinchar en la oportunidad, en un circulo de color, muy pequeño, que aparece junto al simbolo de la camara.
 
-Con el modo desarrollador activado vamos a Aplicaciones e instalamos Constructor del sitio web.
+Rellenar el diálogo que aparece con la información de la actividad a realizar y pinchar en *Planificar actividad*.
 
-2. Elegir tipo de plantilla
-
-imagen 1 3/12
-
-Aparece estas dos opciones al instalar la aplicación. Elijo Plain Bootstrap y pincho en el boton Instalar que tiene en la esquina inferior derecha.
-
-imagen 2
+![Captura de pantalla 60][img60]
 
 [**Indice**](#indice)
 
-3. Personalizar la pagina
+#### 5. Ganar oportunidad de venta<a name="id15e"/>
 
-Solo es necesario seguir las marcas que aparecen del tutorial e ir realizando las acciones que nos indican.
+> Ventas > Flujo de ventas
+
+Pinchar en la oportunidad, en la opción *Marcar como ganada*.
+
+![Captura de pantalla 61][img61]
+
+[**Indice**](#indice)
+
+## Crear sitio web<a name="id16"/>
+
+Con el **modo desarrollador** activado ir a *Aplicaciones* e instalar *Constructor del sitio web*.
+
+Aparecen dos plantillas para elegir al instalar la aplicación:
+
+![Captura de pantalla 62][img62]
+
+Elijo Plain Bootstrap y pincho en el boton *Instalar* que tiene en la esquina inferior derecha.
+
+![Captura de pantalla 63][img63]
+
+[**Indice**](#indice)
+
+Para personalizar la pagina solo es necesario seguir las marcas que aparecen del tutorial e ir realizando las acciones que nos indican.
+
 En primer lugar pulsamos en Editar y empezamos a modificar los elementos:
 
-imagen 3
+![Captura de pantalla 64][img64]
 
 [**Indice**](#indice)
 
-## INSTALAR TIENDA ONLINE
+## Instalar tienda online<a name="id17"/>
 
 Encuentro problemas en la instalacion de la tienda asique tengo que volver a una instantanea anterior, justo despues de la creación de los productos, los clientes y los proveedores.
 
-imagen dia 4
+![Captura de pantalla 65][img65]
 
-1. Instalar la aplicaión
+#### 1. Instalar la aplicación
 
-En modo desarrollador ir a Aplicaciones e instalar Tienda del sitio web. Si no se ha instalado la aplicación del sitio web esta se instalará automaticamente.
+En **modo desarrollador** ir a *Aplicaciones* e instalar *Tienda del sitio web*. Si no se ha instalado la aplicación *Sitio web* esta se instalará automaticamente.
 
 [**Indice**](#indice)
 
-2. Editar la tienda y el sitio web
+#### 2. Editar la tienda y el sitio web
 
-Elegir el tema entre los dos que te proponen. Aparece la página de inicio y solo hay que seguir el tutorial empezando por opción Editar. Es como con configurar el sitio web, solo que esta vez añaden la pestaña tienda.
+Elegir el tema entre los dos que te proponen. Aparece la página de inicio y solo hay que seguir el tutorial empezando por opción Editar. Es como con configurar el sitio web, solo que esta vez añaden la pestaña *Tienda*.
 
-imagen
+![Captura de pantalla 66][img66]
 
 En la tienda aparecen automáticamente los productos que hubiera ya creados.
 
-imagen
+![Captura de pantalla 67][img67]
 
 Personalizar el sitio web arrastrando los componentes de la paleta que aparece a la izquierda y modificando textos e imagenes.
 
-imagen
+![Captura de pantalla 68][img68]  
 
 [**Indice**](#indice)
 
-3. Cambiar la configuración de la tienda y el sitio web
+#### 3. Cambiar la configuración de la tienda y el sitio web
 
-En Administración del sitio web -> Configuración
+> Administración del sitio web > Configuración
 
-imagen
+![Captura de pantalla 69][img69]
 
-Entre otras cosas podemos editar la configuración de envios de email de confirmación de pedido
-
-[**Indice**](#indice)
-
-4. Incorporar localización con Google Maps
-
-En Administración del sitio web -> Configuración -> Dominio -> Google Maps seguir el enlace para crear la clave API
-
-imagen
-
-Crear una key de la API de Google
-
-imagen anterior
-
-Introducirla en Odoo
-
-Si vamos al sitio web, en la pestaña contáctenos aparece un mapa con la dirección que ha sacado de la información de la empresa.
-
-imagen mapa
+Entre otras cosas podemos editar la configuración de envios de email de confirmación de pedido.
 
 [**Indice**](#indice)
 
-5. Formas de pago
+#### 4. Incorporar localización con Google Maps
+
+> Administración del sitio web > Configuración > Dominio > Google Maps
+
+Seguir el enlace para crear la clave API
+
+![Captura de pantalla 70][img70]
+
+Crear una key de la API de Google.
+
+![Captura de pantalla 71][img71]
+
+Introducirla en Odoo.
+
+Si vamos al **sitio web**, en la pestaña *Contáctenos* aparece un mapa con la dirección que ha sacado de la información de la empresa.
+
+![Captura de pantalla 72][img72]
+
+[**Indice**](#indice)
+
+#### 5. Formas de pago
 
 Añadir la tarifa que se va a aplicar a los productos de la tienda.
 Administración del sitio web -> Catálogo -> Tarifas -> Crear
@@ -588,7 +650,7 @@ imagen
 
 [**Indice**](#indice)
 
-6. Realizar compra a traves de la tienda online
+#### 6. Realizar compra a traves de la tienda online
 
 Al haber añadido las tarifas se deben visualizar correctamente los precios de los productos.
 
@@ -626,7 +688,7 @@ Ahora en facturas ya aparece la orden como pagada.
 
 [**Indice**](#indice)
 
-7. Enviar email de confiramción de compra
+#### 7. Enviar email de confiramción de compra
 
 En Administración del sitio web -> Pedidos podemos pinchar en el pedido y enviar por correo electrónico.
 Elegir la plantilla que hemos creado anterioemente en la configuración y Enviar.
@@ -740,7 +802,7 @@ imagen
 [img24]: ./capturas/img24.png
 [img25]: ./capturas/img25.png
 [img25b]: ./capturas/img25b.png
-[img26]: ./capturas/img26_.png
+[img26]: ./capturas/img26.png
 [img27]: ./capturas/img27.png
 [img28]: ./capturas/img28.png
 [img29]: ./capturas/img29.png
@@ -754,3 +816,58 @@ imagen
 [img37]: ./capturas/img37.png
 [img38]: ./capturas/img38.png
 [img39]: ./capturas/img39.png
+[img40]: ./capturas/img40.png
+[img41]: ./capturas/img41.png
+[img42]: ./capturas/img42.png
+[img43]: ./capturas/img43.png
+[img44]: ./capturas/img44.png
+[img45]: ./capturas/img45.png
+[img46]: ./capturas/img46.png
+[img47]: ./capturas/img47.png
+[img48]: ./capturas/img48.png
+[img49]: ./capturas/img49.png
+[img50]: ./capturas/img50.png
+[img51]: ./capturas/img51.png
+[img52]: ./capturas/img52.png
+[img53]: ./capturas/img53.png
+[img54]: ./capturas/img54.png
+[img55]: ./capturas/img55.png
+[img56]: ./capturas/img56.png
+[img57]: ./capturas/img57.png
+[img58]: ./capturas/img58.png
+[img59]: ./capturas/img59.png
+[img60]: ./capturas/img60.png
+[img61]: ./capturas/img61.png
+[img62]: ./capturas/img62.png
+[img63]: ./capturas/img63.png
+[img64]: ./capturas/img64.png
+[img65]: ./capturas/img65.png
+[img66]: ./capturas/img66.png
+[img67]: ./capturas/img67_.png
+[img68]: ./capturas/img68_.png
+[img69]: ./capturas/img69.png
+[img70]: ./capturas/img70.png
+[img71]: ./capturas/img71.png
+[img72]: ./capturas/img72.png
+[img73]: ./capturas/img73.png
+[img74]: ./capturas/img74.png
+[img75]: ./capturas/img75.png
+[img76]: ./capturas/img76.png
+[img77]: ./capturas/img77.png
+[img78]: ./capturas/img78.png
+[img79]: ./capturas/img79.png
+[img80]: ./capturas/img80.png
+[img81]: ./capturas/img81.png
+[img82]: ./capturas/img82.png
+[img83]: ./capturas/img83.png
+[img84]: ./capturas/img84.png
+[img85]: ./capturas/img85.png
+[img86]: ./capturas/img86.png
+[img87]: ./capturas/img87.png
+[img88]: ./capturas/img88.png
+[img89]: ./capturas/img89.png
+[img90]: ./capturas/img90.png
+[img91]: ./capturas/img91.png
+[img92]: ./capturas/img92.png
+[img93]: ./capturas/img93.png
+[img94]: ./capturas/img94.png
