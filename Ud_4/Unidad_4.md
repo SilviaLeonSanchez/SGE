@@ -5,6 +5,8 @@
 
 * [Crear nueva empresa](#id1)
 * [Modificar modelo de datos](#id2)
+* [Modificar vista](#id3)
+* [Crear vista heredada](#id4)
 
 # Contenido
 
@@ -21,6 +23,7 @@ Seguir los pasos de la Unidad 3 para:
   * Contabilidad y finanzas
 
 [**Indice**](#indice)
+
 
 ## Modificar modelo de datos<a name="id2"/>
 
@@ -48,33 +51,61 @@ Para los objetos que creemos nosotros nombrarlos con x_nombreobjeto.
 
 [**Indice**](#indice)
 
-## Modificar vista
 
-Estando en la vista que queremos modificar pulsar el botón con forma de escarabajo que hay en la barra superior.
+## Modificar vista<a name="id3"/>
+
+Estando en la vista que queremos modificar pulsar el botón con forma de escarabajo que hay en la barra superior ('Herramientas del desarollador').
 
 ![Captura de pantalla 5][img5]
 
 En este caso pulsamos la opción 'Editar formVer'.
+
+`Esta opcion variará sugún el tipo de vista que queramos editar`
 
 ![Captura de pantalla 6][img6]
 
 Si en el campo heredar hay otra vista tener cuidado porque a lo mejor queremos modificar esa.
 Para ello pulsar el botón que aparece junto al nombre y nos lleva a la vista padre (es la vista padre si no hereda de ninguna otra).
 
-* Opción 1: Sobre el formulario de producto original
 ![Captura de pantalla 7][img7]
 
-* Opción 2: Creando una nueva vista que herede de la original
+
+## Crear vista heredada<a name="id4"/>
+
+1. Obtener información de la vista padre
+
+    Vamos a la vista de la cual queremos que herede la nueva vista que vamos a crear.
+
+![Captura de pantalla 11][img11]
+
+`Herramientas del desarollador > Editar FormVer`
+
+![Captura de pantalla 12][img12]
+
+
+2. Definir la nueva vista:
+
+    `Editar > Vistas Heredadas > Añadir un elemento`
 
 ![Captura de pantalla 8][img8]
 
-Modificar la acción de ventana para que nos lleve a la vista que hemos creado.
+3. Modificar la acción de ventana para que nos lleve a la vista que hemos creado.
 
   `Configuración > Técnico > Acciones > Acciones de ventana`
 
 Elegir la acción a la que se llama para abrir esa vista y pulsar en ella.
 
 ![Captura de pantalla 9][img9]
+
+Pulsar el botón 'Editar'.
+
+![Captura de pantalla 10][img10]
+
+`Opciones generales > Vistas > Ref. vista`
+
+Rellenar con el nombre de la vista que hemos creado.
+
+Puede aparecer vacío si inicialmente la acción de ventana dirige hacia una vista por defecto.
 
 ## Crear modelo de datos
 
