@@ -40,12 +40,11 @@ Seguir los pasos de la Unidad 3 para:
 3. Añadir los campos necesarios:
 
 Pulsar 'Editar' y al final de la lista 'Añadir elemento'.
+Para los campos que creemos nosotros nombrarlos con x_nombrecampo.
 
 ![Captura de pantalla 3][img3]
 
 Pulsar 'Guardar' en el formulario y 'Guardar' en la lista de objetos. Aparecerá al final de la lista (si hay más de una página comprobar la última).
-
-Para los objetos que creemos nosotros nombrarlos con x_nombreobjeto.
 
 ![Captura de pantalla 4][img4]
 
@@ -72,43 +71,37 @@ Para ello pulsar el botón que aparece junto al nombre y nos lleva a la vista pa
 
 ## Crear vista heredada<a name="id4"/>
 
+Se puede obtener el mismo resultado que en el apartado anterior (aunque con otras implicaciones) mediante la herencia.
+
 1. Obtener información de la vista padre
 
     Vamos a la vista de la cual queremos que herede la nueva vista que vamos a crear.
-
-![Captura de pantalla 11][img11]
 
 `Herramientas del desarollador > Editar FormVer`
 
 ![Captura de pantalla 12][img12]
 
-
 2. Definir la nueva vista:
 
     `Editar > Vistas Heredadas > Añadir un elemento`
 
-![Captura de pantalla 8][img8]
+![Captura de pantalla 13][img13]
 
-3. Modificar la acción de ventana para que nos lleve a la vista que hemos creado.
+Asegurarnos de que la nueva vista tiene un numero de secuencia menor que la vista de la que hereda, pues se abre por niveles de prioridad (siempre la vista de número menor).
 
-  `Configuración > Técnico > Acciones > Acciones de ventana`
+Si refrescamos el navegador y vamos a la vista aparecerá la nueva vista.
 
-Elegir la acción a la que se llama para abrir esa vista y pulsar en ella.
+![Captura de pantalla 14][img14]
 
-![Captura de pantalla 9][img9]
+![Captura de pantalla 15][img15]
 
-Pulsar el botón 'Editar'.
 
-![Captura de pantalla 10][img10]
 
-`Opciones generales > Vistas > Ref. vista`
 
-Rellenar con el nombre de la vista que hemos creado.
-
-Puede aparecer vacío si inicialmente la acción de ventana dirige hacia una vista por defecto.
 
 ## Crear modelo de datos
 
+Para los objetos que creemos nosotros nombrarlos con x_nombreobjeto.
 
 
 ## Crear nueva vista
