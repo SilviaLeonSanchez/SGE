@@ -4,9 +4,20 @@
 # Indice<a name="indice"/>
 
 * [Crear nueva empresa](#id1)
-* [Modificar modelo de datos](#id2)
-* [Modificar vista](#id3)
-* [Crear vista heredada](#id4)
+* [Crear modelo de datos](#id2)
+* [Modificar modelo de datos](#id3)
+* [Relaciones entre modelos de datos](#id4)
+* [Crear nueva vista](#id5)
+    * [Árbol](#id5a)
+    * [Formulario](#id5b)
+* [Crear vista heredada](#id6)
+* [Modificar vista](#id7)
+* [Crear acción de ventana](#id8)
+* [Crear elemento de menú](#id9)
+* [Permisos](#id10)
+* [Crear grupo de permisos](#id11)
+* [Crear un tablero](#id12)
+* [Informes](#)
 
 # Contenido
 
@@ -24,8 +35,17 @@ Seguir los pasos de la Unidad 3 para:
 
 [**Indice**](#indice)
 
+## Crear modelo de datos<a name="id2"/>
 
-## Modificar modelo de datos<a name="id2"/>
+  `Configuración > Técnico > Estructura de la base de datos > Modelos > Crear`
+
+  ![Captura de pantalla 16][img16]
+
+En `Descripción del modelo` escribir el nombre que sera visible, y tanto en `Modelo` como el nombre del los nuevos campos usar la nomenclatura x_nombreobjeto para indicar que es una entidad creada por nosotros.
+
+[**Indice**](#indice)
+
+## Modificar modelo de datos<a name="id3"/>
 
 1. Acceder a los modelos de datos de la base de datos:
 
@@ -40,7 +60,7 @@ Seguir los pasos de la Unidad 3 para:
 3. Añadir los campos necesarios:
 
 Pulsar 'Editar' y al final de la lista 'Añadir elemento'.
-Para los campos que creemos nosotros nombrarlos con x_nombrecampo.
+
 
 ![Captura de pantalla 3][img3]
 
@@ -50,26 +70,36 @@ Pulsar 'Guardar' en el formulario y 'Guardar' en la lista de objetos. Aparecerá
 
 [**Indice**](#indice)
 
+## Relaciones entre modelos de datos<a name="id4"/>
 
-## Modificar vista<a name="id3"/>
+## Crear nueva vista<a name="id5"/>
 
-Estando en la vista que queremos modificar pulsar el botón con forma de escarabajo que hay en la barra superior ('Herramientas del desarollador').
+`Configuración > Técnico > Interfaz de usuario > Vistas`
 
-![Captura de pantalla 5][img5]
+Crear una nueva y como nombre poner el nombre del modelo .form o .tree (el nombre del tipo de vista). Asociar el modelo correcto y crear la vista en xml.
 
-En este caso pulsamos la opción 'Editar formVer'.
+* Etiqueta padre el tipo de vista
 
-`Esta opcion variará sugún el tipo de vista que queramos editar`
+```
+<tree>
+  <field name=""/>
+</tree>
+```
 
-![Captura de pantalla 6][img6]
+Si es form se dividen en grupos
 
-Si en el campo heredar hay otra vista tener cuidado porque a lo mejor queremos modificar esa.
-Para ello pulsar el botón que aparece junto al nombre y nos lleva a la vista padre (es la vista padre si no hereda de ninguna otra).
+```
+<form>
+  <group>
+    <field name=""/>
+  </group>
+</form>
+```
+Si hereda de alguna otra vista indicarlo también.
 
-![Captura de pantalla 7][img7]
+[**Indice**](#indice)
 
-
-## Crear vista heredada<a name="id4"/>
+## Crear vista heredada<a name="id6"/>
 
 Se puede obtener el mismo resultado que en el apartado anterior (aunque con otras implicaciones) mediante la herencia.
 
@@ -99,45 +129,41 @@ Si refrescamos el navegador y vamos a la vista aparecerá la nueva vista.
 
 
 
-## Crear modelo de datos
 
-Para los objetos que creemos nosotros nombrarlos con x_nombreobjeto.
+[**Indice**](#indice)
+
+## Modificar vista<a name="id7"/>
+
+Estando en la vista que queremos modificar pulsar el botón con forma de escarabajo que hay en la barra superior ('Herramientas del desarollador').
+
+![Captura de pantalla 5][img5]
+
+En este caso pulsamos la opción 'Editar formVer'.
+
+`Esta opcion variará sugún el tipo de vista que queramos editar`
+
+![Captura de pantalla 6][img6]
+
+Si en el campo heredar hay otra vista tener cuidado porque a lo mejor queremos modificar esa.
+Para ello pulsar el botón que aparece junto al nombre y nos lleva a la vista padre (es la vista padre si no hereda de ninguna otra).
+
+![Captura de pantalla 7][img7]
+
+[**Indice**](#indice)
 
 
-## Crear nueva vista
+## Crear acción de ventana<a name="id8"/>
 
-`Configuración > Técnico > Interfaz de usuario > Vistas`
-
-Crear una nueva y como nombre poner el nombre del modelo .form o .tree (el nombre del tipo de vista). Asociar el modelo correcto y crear la vista en xml.
-
-* Etiqueta padre el tipo de vista
-
-```
-<tree>
-  <field name=""/>
-</tree>
-```
-
-Si es form se dividen en grupos
-
-```
-<form>
-  <group>
-    <field name=""/>
-  </group>
-</form>
-```
-Si hereda de alguna otra vista indicarlo también.
-
-## Crear acción de ventana
-
-`Configuración > Técnoico > Acciones > Acciones de ventana'
+`Configuración > Técnoico > Acciones > Acciones de ventana`
 
 Crear la acción que abrirá la Vistas.
 
 Como nombre de la acción elegir el nombre que aparecerá en el menú.
 
-## Crear elemento de menú
+[**Indice**](#indice)
+
+
+## Crear elemento de menú<a name="id9"/>
 
 Son jerárquicos, elegir donde irá colocado
 
@@ -145,8 +171,10 @@ Indicar la acción que ejecutará (la que creamos anteriormente)
 
 ~ Al buscar busca automaticamente por el campo Name
 
+[**Indice**](#indice)
 
-## Permisos
+
+## Permisos<a name="id10"/>
 
 `Configuración > Usuarios > Grupos`
 
@@ -162,7 +190,10 @@ En Aplicación (en la ventana del usuario) aparecen las aplicaciones y el rol qu
 
 Abajo aparecen las opciones donde elegir el rol o roles que queremos asignarle para cada aplicación.
 
-## Crear un grupo de permisos
+[**Indice**](#indice)
+
+
+## Crear un grupo de permisos<a name="id11"/>
 
 'Configuración > Usuarios > Grupos'
 
@@ -174,11 +205,29 @@ Meter al usuario en el grupo de permisos que acabamos de crear.
 
 Para comprobar que el nuevo usuario tiene permisos podemos abrir sesión con el en otro navegador y así no tenemos que cerrar nuestra sesiónl.
 
+[**Indice**](#indice)
+
+
+## Crear un tablero<a name="id12"/>
 
 
 
+[**Indice**](#indice)
 
 
-
-
-[Capturas/Captura_1.jpg](#img1)
+[img1]: ./Capturas/Captura_1.png
+[img2]: ./Capturas/Captura_2.png
+[img3]: ./Capturas/Captura_3.png
+[img4]: ./Capturas/Captura_4.png
+[img5]: ./Capturas/Captura_5.png
+[img6]: ./Capturas/Captura_6.png
+[img7]: ./Capturas/Captura_7.png
+[img8]: ./Capturas/Captura_8.png
+[img9]: ./Capturas/Captura_9.png
+[img10]: ./Capturas/Captura_10.png
+[img11]: ./Capturas/Captura_11.png
+[img12]: ./Capturas/Captura_12.png
+[img13]: ./Capturas/Captura_13.png
+[img14]: ./Capturas/Captura_14.png
+[img15]: ./Capturas/Captura_15.png
+[img16]: ./Capturas/Captura_16.png
