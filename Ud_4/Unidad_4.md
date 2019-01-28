@@ -22,11 +22,11 @@
 
 # Contenido
 
-Para realizar la mayoría de los cambios es necesario activar las opciones de desarrollador desde el menu de Configuración.
+Para realizar la mayoría de los cambios es necesario activar las opciones de desarollador desde el menu de Configuración.
 
 ## Crear nueva empresa<a name="id1"/>
 
-Seguir los pasos de la Unidad 3 para:
+Seguir los pasos de la [Unidad 3][ud3] para:
 1. Crear y configurar una nueva empresa con su base de datos
 2. Instalar los módulos de la internacionalización al español
 3. Establecer el plan contable
@@ -378,3 +378,4 @@ Para elegir donde aparecerá el nuevo tablero vamos a los [elementos de menú](#
 [img14]: ./Capturas/Captura_14.png
 [img15]: ./Capturas/Captura_15.png
 [img16]: ./Capturas/Captura_16.png
+[ud3]: ../Ud_3/Unidad_3.md
