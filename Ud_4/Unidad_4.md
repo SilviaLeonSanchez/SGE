@@ -66,25 +66,25 @@ Para que lo haga Odoo automaticamente solo hay que pinchar en 'Crear un menú' e
 
 1. Acceder a los modelos de datos de la base de datos:
 
-`Configuración > Técnico > Estructura de la base de datos > Modelos`
+   `Configuración > Técnico > Estructura de la base de datos > Modelos`
 
-![Captura de pantalla 1][img1]
+   ![Captura de pantalla 1][img1]
 
 2. Seleccionar el objeto que queremos modificar:
 
-![Captura de pantalla 2][img2]
+   ![Captura de pantalla 2][img2]
 
 3. Añadir o modificar los campos necesarios:
 
-Pulsar 'Editar' y al final de la lista 'Añadir elemento'.
+   Pulsar 'Editar' y al final de la lista 'Añadir elemento'.
 
-![Captura de pantalla 3][img3]
+   ![Captura de pantalla 3][img3]
 
-Pulsar 'Guardar' en el formulario y 'Guardar' en la lista de objetos.
+   Pulsar 'Guardar' en el formulario y 'Guardar' en la lista de objetos.
 
-![Captura de pantalla 4][img4]
+   ![Captura de pantalla 4][img4]
 
-Aparecerá al final de la lista (si hay más de una página comprobar la última).
+   Aparecerá al final de la lista (si hay más de una página comprobar la última).
 
 [**Indice**](#indice)
 
@@ -97,7 +97,7 @@ Primero tenemos que conocer el nombre del otro modelo con el que queremos establ
 
 `Configuración > Técnico > Estructura de la base de datos > Modelos`
 
-O si no sabemos exactamente cual es podemos acceder a él editando cualquiera de las vistas que lo usen, ya que aparecerá en el campo 'Modelo'.
+Si no sabemos exactamente cual es podemos acceder a él editando cualquiera de las vistas que lo usen, ya que aparecerá en el campo 'Modelo'.
 
 [Modificar el modelo](#id3) añadiendo un campo que recoja la información del otro modelo con el que queremos establecer la relación.
 
@@ -116,12 +116,15 @@ Al incluir el nuevo campo en las vistas, estas se adaptan según el tipo de rela
 Hay varios tipos de vistas, entre otros:
 
 * Kanban
+
 ----CAPTURA
 
 * Árbol
+
 ----CAPTURA
 
 * Formulario
+
 ----CAPTURA
 
 Para ver todas las vistas disponibles:
@@ -138,21 +141,18 @@ Asociar en 'Modelo' el objeto de la base de datos sobre el que actúa y crear el
 
 * Arbol:
 
-```
-<tree string="Etiqueta modelo">
-    <field name="nombre_campo"/>
-</tree>
-```
+      <tree string="Etiqueta modelo">
+          <field name="nombre_campo"/>
+      </tree>
 
 * Formulario:
 
-```
-<form string="Etiqueta modelo">
-    <group>
-        <field name="nombre_campo"/>
-    </group>
-</form>
-```
+      <form string="Etiqueta modelo">
+          <group>
+              <field name="nombre_campo"/>
+          </group>
+      </form>
+
 Se divide en grupos.
 
 Para que la nueva vista sea visible desde algun lugar tendremos que asociarla a alguna [Acción de ventana](#id8).
@@ -304,6 +304,8 @@ Por último realizar la comprobación de acceso con ese usuario entrando a Odoo 
 Debería tener acceso solo a las aplicaciones indicadas, es decir, el resto de aplicaciones y opciones de menú no serán visibles para este usuario.
 
 ----CAPTURA
+
+[**Indice**](#indice)
 
 
 ## Permisos
