@@ -114,7 +114,10 @@ En el modelo espacio incluyo un campo cliente para indicar que muchos espacios p
 
 Al incluir el nuevo campo en las vistas, estas se adaptan según el tipo de relación y el modelo (ofreciendo un desplegable o lo que haga falta para recoger la nueva información).
 
+![Captura de pantalla 24][img24]
+
 [**Indice**](#indice)
+
 
 ## Vistas
 
@@ -124,7 +127,7 @@ Hay varios tipos de vistas, entre otros:
 
 * Kanban
 
-    ![Captura de pantalla 14][img14]
+    ![Captura de pantalla 23][img23]
 
 * Árbol
 
@@ -264,11 +267,9 @@ Para que aparezca en la barra superior solo tenemos que indicar que no hereda de
 
   ![Captura de pantalla 22][img22]
 
-Para que el elemento de menú Espacio esté dentro de Espacios solo hay que hacer que herede de él y asociarle la acción de ventana adecuada.
+Para que el elemento de menú Alquilar esté dentro de Espacios solo hay que hacer que herede de él y asociarle la acción de ventana adecuada.
 
 En caso de que el elemento no esté asignado a ningún grupo de permisos será visible para todos los usuarios. En el momento en que se asigne a un grupo desaparecerá de aquellos a los que no esté asignado.
-
-  ![Captura de pantalla 23][img23]
 
 [**Indice**](#indice)
 
@@ -279,27 +280,25 @@ En caso de que el elemento no esté asignado a ningún grupo de permisos será v
 
 Aparecen los usuarios disponibles.
 
-----CAPTURA
+  ![Captura de pantalla 25][img25]
 
 Para crear un nuevo usuario pinchar en Crear.
-
-----CAPTURA
 
 Introducir el nombre y correo electronico y seleccionar los permisos para cada aplicación seleccionando el rol adecuado.
 
 Si no queremos que tenga acceso a alguna aplicación simplemente no se selecciona ningún rol para esa aplicación.
 
-----CAPTURA
+  ![Captura de pantalla 26][img26]
 
 Pinchar en 'Cambiar contraseña' para indicar una nueva ya que por defecto no lo hace.
 
-----CAPTURA
+  ![Captura de pantalla 27][img27]
 
 Por último realizar la comprobación de acceso con ese usuario entrando a Odoo desde otro navegador (para poder dejar abierta la sesión actual) con el email y contraseña del usuario.
 
 Debería tener acceso solo a las aplicaciones indicadas, es decir, el resto de aplicaciones y opciones de menú no serán visibles para este usuario.
 
-----CAPTURA
+[**Indice**](#indice)
 
 
 ## Permisos
@@ -310,15 +309,9 @@ Debería tener acceso solo a las aplicaciones indicadas, es decir, el resto de a
 
 Aparecen todos los grupos disponibles indicando en el nombre la estructura jerarquica que forman.
 
-----CAPTURA
-
-Podemos usar el buscador para comprobar que grupos hay para una aplicación concreta.
-
-----CAPTURA
+  ![Captura de pantalla 28][img28]
 
 Pinchando en cada grupo aparecen en las distintas pestañas caracteristicas como 'Permisos de acceso', 'Usuarios', 'Menús' o 'Vistas', pudiendo modificarlo pinchando en 'Editar'.
-
-----CAPTURA
 
 Los permisos se aplican sobre cada objeto y son crear, eliminar, leer y modificar.
 
@@ -327,23 +320,25 @@ Los permisos se aplican sobre cada objeto y son crear, eliminar, leer y modifica
 
 ### Grupo de permisos<a name="id12"/>
 
-Se utiliza la herencia, de forma que un rol que tenga ciertos permisos, el grupo que herede de él siempre tendrá esos permisos y los adicionales.
+Se utiliza la herencia, de forma que si un grupo tiene ciertos permisos, el grupo que herede de él siempre tendrá esos permisos y los adicionales que se le añadan.
 
 `Configuración > Usuarios > Grupos > Crear`
 
-Indicar la aplicación sobre la que se aplicará el grupo de permisos, el nombre del grupo y el grupo del que hereda.
+Indicar la aplicación (si procede), el nombre del grupo y el grupo del que hereda. Se pueden añadir también los usuarios que van a disfrutar de los privilegios de acceso que otorga el grupo.
 
-----CAPTURA
+  ![Captura de pantalla 37][img37]
+
+En la pestaña 'Hereda' podemos incluir permisos ya agrupados para facilitar la tarea. En este caso dotamos al Grupo Usuario del perfil de acceso más limitado, utilizando los grupos Usuario que ya creó Odoo para las aplicaciones instaladas.
+
+  ![Captura de pantalla 38][img38]
+
+Para comprobar los cambios abrimos otro navegador y vemos como el usuario Empleado recien añadido al Grupo Empleado tiene acceso a la información que acabamos de indicar.
+
+
 
 `Permisos de acceso > Añadir un elemento`
 
 Añadir también los permisos adicionales indicando el objeto y los permisos que tiene sobre el, dandole un nombre a la nueva regla y pinchando en 'Guardar'.
-
-----CAPTURA
-
-`Configuración > Usuarios > Usuarios`
-
-Seleccionar un usuario y asignarle al nuevo grupo de permisos para comprobar que funciona.
 
 [**Indice**](#indice)
 
@@ -352,11 +347,21 @@ Seleccionar un usuario y asignarle al nuevo grupo de permisos para comprobar que
 
 Es una vista que incluye otras vistas. Se puede instalar la aplicación 'Tableros' para manejarlos.
 
-Podemos crear distintos tableros. Después solo tenemos que ir a las vistas, y en 'Favoritos' seleccionar la opción 'Añadir a mi tablero'.
+  ![Captura de pantalla 29][img29]
+
+Estando en la vista que queremos añadir al tablero pulsamos la lupa de la barra de busqueda. Esto despliega unas opciones extra donde nos permite incluir esa vista en el tablero desplegando 'Favoritos' y seleccionando la opción 'Añadir a mi tablero'.
+
+  ![Captura de pantalla 34][img34]
 
 Una vez en el Tablero podemos ordenas las vistas que hemos añadido anteriormente o modificar el layout pulsando 'Cambiar diseño'.
 
+  ![Captura de pantalla 35][img35]
+
 Para elegir donde aparecerá el nuevo tablero vamos a los [elementos de menú](#id9) y buscamos por el nombre del tablero. La aplicación ha creado un elemento de menú para el mismo y podemos modificar la ruta para ubicarlo donde necesitemos.
+
+También podemos limitar el acceso al mismo como con cualquier otra vista, incluyendola en la pestaña 'Menús' del grupo de permisos que queremos que tenga acceso a ella, y desaparecerá de los demás grupos en los que no se haya añadido explicitamente o hereden el permiso.
+
+  ![Captura de pantalla 36][img36]
 
 [**Indice**](#indice)
 
@@ -390,9 +395,13 @@ El lenguaje que utiliza es <a href="https://www.odoo.com/documentation/10.0/refe
 
     Rellenamos los datos básicos del informe. En 'Nombre de la plantilla' tendremos que indicar la vista que vamos a crear (llamarla nombre_modelo.informe o algo similar).
 
+      ![Captura de pantalla 30][img30]
+
     Vamos a 'Vistas Qweb' para crear la nueva vista.
 
     Lo que pusimos en 'Nombre de la plantilla' tiene que coincidir con el 'Nombre de la vista', y tenemos que indicar que es de tipo QWeb. Indicar además el mismo modelo de datos.
+
+      ![Captura de pantalla 31][img31]
 
 2. Enlazar el informe:
 
@@ -402,6 +411,8 @@ El lenguaje que utiliza es <a href="https://www.odoo.com/documentation/10.0/refe
 
     Si el nombre de la plantilla es nombre_modelo.informe, en el campo 'Modulo' debo poner nombre_modelo y en 'Identificador externo' informe.
 
+      ![Captura de pantalla 32][img32]
+
     En 'Nombre del modelo' necesitamos una parte de la url que aparece en la pestaña del navegador que tiene abierta la vista del informe. Concretamente el valor de model (ir.ui.view).
 
     Necesitamos también el id de la vista para 'ID de registro', que sera el valor de id que aparece en la url.
@@ -409,6 +420,8 @@ El lenguaje que utiliza es <a href="https://www.odoo.com/documentation/10.0/refe
 3. Comprobar el enlace:
 
     Desde la vista de la plantilla, si hemos guardado los cambios y recargado el navegador, debe aparecer en 'ID externo' la referencia nombre_modelo.informe gracias al enlace creado.
+
+      ![Captura de pantalla 33][img33]
 
 4. Añadir plantilla al menú:
 
