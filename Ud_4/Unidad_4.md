@@ -144,13 +144,13 @@ Crear una nueva y poner la extensión adecuada al nombre (.form, .tree, etc seg�
 
 Asociar en 'Modelo' el objeto de la base de datos sobre el que actúa y crear el xml.
 
-* Arbol:
+* Kanban:
 
  ![Captura de pantalla 17][img17]
 
 * Formulario:
 
- ![Captura de pantalla 17][img17]
+ ![Captura de pantalla 18][img18]
 
 Para que la nueva vista sea visible desde algun lugar tendremos que asociarla a alguna [acción de ventana](#id8) que sea llamada desde algún [elemento de menú](#id9).
 
@@ -177,7 +177,7 @@ Para que la nueva vista sea visible desde algun lugar tendremos que asociarla a 
 
     Asegurarnos de que la nueva vista tiene un numero de secuencia menor que la vista de la que hereda, pues se abre por niveles de prioridad (siempre la vista de número menor).
 
-    No obstante, en las [Acciones de ventana](#id8b) podemos indicar que vista queremos que se muestre de forma especifica. Por eso puede que no se vea la nueva vista aunque tenga secuencia menor si hay otra vista seleccionada para esa acción.
+    No obstante, en las [acciones de ventana](#id8b) podemos indicar que vista queremos que se muestre de forma especifica. Por eso puede que no se vea la nueva vista aunque tenga secuencia menor si hay otra vista seleccionada para esa acción.
 
     Si refrescamos el navegador y vamos a la vista aparecerán los nuevos elementos.
 
@@ -234,19 +234,12 @@ Podemos ahora asociar esta nueva acción a algún [elemento de menú](#id9).
 
 ### Modificar acción de Ventana<a name="id8b"/>
 
-Podemos modificar la acción que hace que al pinchar un elemento de menú se abra una vista, para conseguir que se abra otra.
-
-Accediendo desde el propio elemento de menú:
+Podemos modificar la acción que hace que al pinchar un elemento de menú se abra una vista, para conseguir que se abra otra accediendo desde el propio elemento de menú:
 
 `Configuración > Técnico > Interfaz de usuario > Elementos menú > Acción`
 
-----CAPTURA
-
-En 'Modo de vista' aparecen listados los tipos de vista que hay disponibles para esta acción.
-
 En 'Vistas' aparecen especificadas las vistas que se abrirán según el modo (tree, kanban, formulario, calendario) y la secuencia de prioridad.
-
-Si no hay ninguna indicada se guía simplemente por el número de secuencia.
+Las vistas incluidas en esta sección harán que se muestren los iconos para cambiar entre los tipos de vista en la esquina superior derecha.
 
 [**Indice**](#indice)
 
