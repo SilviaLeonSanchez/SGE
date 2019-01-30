@@ -151,11 +151,15 @@ Asociar en 'Modelo' el objeto de la base de datos sobre el que actúa y crear el
 
  ![Captura de pantalla 17][img17]
 
+* Árbol:
+
+ ![Captura de pantalla 39][img39]
+
 * Formulario:
 
  ![Captura de pantalla 18][img18]
 
-Para que la nueva vista sea visible desde algun lugar tendremos que asociarla a alguna [acción de ventana](#id8) que sea llamada desde algún [elemento de menú](#id9).
+Para que la nueva vista sea visible desde algún lugar tendremos que asociarla a alguna [acción de ventana](#id8) que sea llamada desde algún [elemento de menú](#id9).
 
 [**Indice**](#indice)
 
@@ -286,7 +290,7 @@ Para crear un nuevo usuario pinchar en Crear.
 
 Introducir el nombre y correo electronico y seleccionar los permisos para cada aplicación seleccionando el rol adecuado.
 
-Si no queremos que tenga acceso a alguna aplicación simplemente no se selecciona ningún rol para esa aplicación.
+Si no queremos que tenga acceso a alguna aplicación simplemente no se selecciona ningún rol para esa aplicación, no obtante, recordar que si no se le da ningún permiso no podrá acceder a Odoo.
 
   ![Captura de pantalla 26][img26]
 
@@ -313,7 +317,7 @@ Aparecen todos los grupos disponibles indicando en el nombre la estructura jerar
 
 Pinchando en cada grupo aparecen en las distintas pestañas caracteristicas como 'Permisos de acceso', 'Usuarios', 'Menús' o 'Vistas', pudiendo modificarlo pinchando en 'Editar'.
 
-Los permisos se aplican sobre cada objeto y son crear, eliminar, leer y modificar.
+Los permisos que se aplican sobre cada objeto y son crear, eliminar, leer y modificar.
 
 [**Indice**](#indice)
 
@@ -322,23 +326,55 @@ Los permisos se aplican sobre cada objeto y son crear, eliminar, leer y modifica
 
 Se utiliza la herencia, de forma que si un grupo tiene ciertos permisos, el grupo que herede de él siempre tendrá esos permisos y los adicionales que se le añadan.
 
-`Configuración > Usuarios > Grupos > Crear`
+* Crear grupo de permisos Empleado
 
-Indicar la aplicación (si procede), el nombre del grupo y el grupo del que hereda. Se pueden añadir también los usuarios que van a disfrutar de los privilegios de acceso que otorga el grupo.
+  `Configuración > Usuarios > Grupos > Crear`
 
-  ![Captura de pantalla 37][img37]
+  Indicar la aplicación (si procede), el nombre del grupo y el grupo del que hereda. Se pueden añadir también los usuarios que van a disfrutar de los privilegios de acceso que otorga el grupo.
 
-En la pestaña 'Hereda' podemos incluir permisos ya agrupados para facilitar la tarea. En este caso dotamos al Grupo Usuario del perfil de acceso más limitado, utilizando los grupos Usuario que ya creó Odoo para las aplicaciones instaladas.
+    ![Captura de pantalla 37][img37]
 
-  ![Captura de pantalla 38][img38]
+  En la pestaña 'Hereda' podemos incluir permisos ya agrupados para facilitar la tarea. En este caso dotamos al Grupo Usuario del perfil de acceso más limitado, utilizando los grupos Usuario que ya creó Odoo para las aplicaciones instaladas de Ventas, Compras e Inventario.
 
-Para comprobar los cambios abrimos otro navegador y vemos como el usuario Empleado recien añadido al Grupo Empleado tiene acceso a la información que acabamos de indicar.
+    ![Captura de pantalla 38][img38]
 
+    `Permisos de acceso > Añadir un elemento`
 
+  Para añadir o modificar permisos sobre un objeto y los permisos que tiene sobre el, dándole un nombre a la nueva regla y pinchando en 'Guardar'.
 
-`Permisos de acceso > Añadir un elemento`
+  Para comprobar los cambios abrimos otro navegador y vemos como el usuario Empleado recien añadido al Grupo Empleado tiene acceso a la información que acabamos de indicar.
 
-Añadir también los permisos adicionales indicando el objeto y los permisos que tiene sobre el, dandole un nombre a la nueva regla y pinchando en 'Guardar'.
+    ![Captura de pantalla 40][img40]
+
+* Crear grupo de permisos Gerente
+
+  Podríamos hacer que el grupo Gerente heredase de el grupo Empleado, pero realmente los permisos ya los tiene al heredar del grupo Responsable en las aplicaciones de Ventas, Compras e Inventario. Todos los usuarios de este grupo por herencia pertenecerán también a los grupos de los que herede este.
+
+    ![Captura de pantalla 41][img41]
+
+  Para que además tenga acceso al Tablero Gerente y a la sección Espacios le incluimos los elementos de menú asociados.
+
+    ![Captura de pantalla 42][img42]
+
+  No obstante, esto no será suficiente para que tenga acceso a los Espacios ya que tanto las vistas como los elementos de menú trabajan sobre el modelo Espacio. Por lo tanto debemos darle permiso de acceso al modelo explicitamente.
+
+    ![Captura de pantalla 43][img43]
+
+  Hay que tener cuidado porque si en algún momento añadimos a un usuario a un grupo este adquiere los permisos del grupo, pero si lo sacamos de él, Odoo no le quita los permisos asociados.
+
+  Al comprobar el usuario gerente que forma parte del grupo Gerente vemos que tiene el control de todo el ERP incluyendo el Tablero y los Espacios pero que no tiene acceso a la configuración.
+
+    ![Captura de pantalla 44][img44]
+
+* Crear grupo de permisos Administrador
+
+  Por último creamos el grupo más completo de todos, que tendrá acceso a lo mismo que el grupo Gerente, a la configuración (a traves del grupo Administrador original) y le incluiremos tambien la configuración técnica, a la que no tenía acceso ningún grupo ni usuario hasta ahora.
+
+    ![Captura de pantalla 45][img45]  
+
+  Vemos que el usuario Administrador que esta dentro del grupo Administrador tiene acceso a toda la configuración del ERP.
+
+    ![Captura de pantalla 46][img46]
 
 [**Indice**](#indice)
 
@@ -359,9 +395,9 @@ Una vez en el Tablero podemos ordenas las vistas que hemos añadido anteriorment
 
 Para elegir donde aparecerá el nuevo tablero vamos a los [elementos de menú](#id9) y buscamos por el nombre del tablero. La aplicación ha creado un elemento de menú para el mismo y podemos modificar la ruta para ubicarlo donde necesitemos.
 
-También podemos limitar el acceso al mismo como con cualquier otra vista, incluyendola en la pestaña 'Menús' del grupo de permisos que queremos que tenga acceso a ella, y desaparecerá de los demás grupos en los que no se haya añadido explicitamente o hereden el permiso.
+Por defecto, si al crearlo no indicamos que usuario o grupo tendrá acceso al tablero este será visible para todos. Podemos limitar el acceso dando permisos a algún grupo.
 
-  ![Captura de pantalla 36][img36]
+En ese caso desaparecerá para los demás a no ser que se lo haya añadido explicitamente o hereden el permiso.
 
 [**Indice**](#indice)
 
@@ -488,5 +524,15 @@ Se pueden aprovechar los otros informes como ejemplo para conseguir el resultado
 [img37]: ./Capturas/img37.png
 [img38]: ./Capturas/img38.png
 [img39]: ./Capturas/img39.png
+[img40]: ./Capturas/img40.png
+[img41]: ./Capturas/img41.png
+[img42]: ./Capturas/img42.png
+[img43]: ./Capturas/img43.png
+[img44]: ./Capturas/img44.png
+[img45]: ./Capturas/img45.png
+[img46]: ./Capturas/img46.png
+[img47]: ./Capturas/img47.png
+[img48]: ./Capturas/img48.png
+[img49]: ./Capturas/img49.png
 [ud3]: ../Ud_3/Unidad_3.md
 [odoo]: ../Ud_3/capturas/odoo_logo.png
