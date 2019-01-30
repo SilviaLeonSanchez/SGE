@@ -429,13 +429,13 @@ El lenguaje que utiliza es <a href="https://www.odoo.com/documentation/10.0/refe
 
     `Configuración > Técnico > Informes > Informes > Crear`
 
-    Rellenamos los datos básicos del informe. En 'Nombre de la plantilla' tendremos que indicar la vista que vamos a crear (llamarla nombre_modelo.informe o algo similar).
+    Rellenamos los datos básicos del informe. El nombre y el tipo que prefiramos, el 'Modelo' es del que va a sacar la información y en 'Nombre de la plantilla' indicar la vista que vamos a crear después (llamarla nombre_modelo.informe o algo similar).
 
       ![Captura de pantalla 30][img30]
 
     Vamos a 'Vistas Qweb' para crear la nueva vista.
 
-    Lo que pusimos en 'Nombre de la plantilla' tiene que coincidir con el 'Nombre de la vista', y tenemos que indicar que es de tipo QWeb. Indicar además el mismo modelo de datos.
+    Lo que pusimos en 'Nombre de la plantilla' tiene que coincidir con el 'Nombre de la vista', y tenemos que indicar que es de tipo QWeb además del modelo de datos.
 
       ![Captura de pantalla 31][img31]
 
@@ -469,18 +469,29 @@ El lenguaje que utiliza es <a href="https://www.odoo.com/documentation/10.0/refe
 
     Cuando necesitemos acceder al modelo de datos del informe podemos hacerlo haciendo referencia al objeto 'docs'. Es una colección generada automáticamente con todos los objetos disponibles para sacar en el informe (una coleccion de clientes, de productos, de facturas, etc).
 
-    Podemos crear una variable para guardar lo que hay en docs:
+    * Informe de embarcaciones:
 
-        <t t-set="variable" t-value="docs"/>
+   ![Captura de pantalla 47][img47]  
 
-    Para mostrar un campo:
+   Para generarlo vamos al formulario del producto y seleccionamos el tipo de informe en el desplegable 'Imprimir'.
 
-        <div>
-            <strong>Etiqueta campo:</strong>
-            <span t-field="variable.nombre_campo"/>
-        </div>    
+   ![Captura de pantalla 48][img48]  
 
-Se pueden aprovechar los otros informes como ejemplo para conseguir el resultado deseado.
+   En este caso se muestra la información de la embarcación elegida.
+
+   ![Captura de pantalla 49][img49]  
+
+    * Informe de espacios:
+
+   ![Captura de pantalla 50][img50]  
+
+   Realizamos la comprobacion con un espacio ocupado.
+
+   ![Captura de pantalla 51][img51]  
+
+   Y también con un espacio vacío.
+
+   Aunque muestran la información necesaria, los informes son bastante espartanos. Lo ideal sería invertir algo más de tiempo para que la plantilla fuese mas agradable a la vista usando las herramientas que nos proporcionan los lenguajes HTML y QWeb.
 
 [**Indice**](#indice)
 
@@ -534,5 +545,8 @@ Se pueden aprovechar los otros informes como ejemplo para conseguir el resultado
 [img47]: ./Capturas/img47.png
 [img48]: ./Capturas/img48.png
 [img49]: ./Capturas/img49.png
+[img50]: ./Capturas/img50.png
+[img51]: ./Capturas/img51.png
+[img52]: ./Capturas/img52.png
 [ud3]: ../Ud_3/Unidad_3.md
 [odoo]: ../Ud_3/capturas/odoo_logo.png
