@@ -360,8 +360,6 @@ Se utiliza la herencia, de forma que si un grupo tiene ciertos permisos, el grup
 
     ![Captura de pantalla 43][img43]
 
-  Hay que tener cuidado porque si en algún momento añadimos a un usuario a un grupo este adquiere los permisos del grupo, pero si lo sacamos de él, Odoo no le quita los permisos asociados.
-
   Al comprobar el usuario gerente que forma parte del grupo Gerente vemos que tiene el control de todo el ERP incluyendo el Tablero y los Espacios pero que no tiene acceso a la configuración.
 
     ![Captura de pantalla 44][img44]
